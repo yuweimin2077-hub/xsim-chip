@@ -2,13 +2,17 @@ import numpy as np
 import pytest
 
 from xsim_chip_analysis import (
+    ConeBeamConfig,
     Material,
     SimulationConfig,
+    SpectrumConfig,
     build_run_manifest,
     estimate_memory,
     inject_demo_defects,
     make_package_slice,
     material_to_attenuation,
+    normalise_energy_image,
+    summarise_spectrum,
 )
 
 
@@ -87,3 +91,62 @@ def test_phantom_input_validation() -> None:
     with pytest.raises(ValueError, match="square 2D"):
         inject_demo_defects(np.zeros((3, 4), dtype=np.uint8))
 
+
+def test_spectral_and_cone_beam_configs_are_manifest_ready() -> None:
+    spectrum = SpectrumConfig()
+    geometry = ConeBeamConfig()
+
+    assert spectrum.to_manifest()["filters_mm"][1] == {
+        "element": "Cu",
+        "thickness_mm": 1.0,
+    }
+    assert geometry.magnification == pytest.approx(3.0)
+    assert geometry.object_pixel_size_mm == pytest.approx((0.16 / 3, 0.16 / 3))
+
+
+@pytest.mark.parametrize(
+    "factory",
+    [
+        lambda: SpectrumConfig(tube_voltage_kv=0),
+        lambda: SpectrumConfig(tube_voltage_kv=4, energy_bin_size_kev=4),
+        lambda: SpectrumConfig(filters_mm=(("Cu", -1.0),)),
+        lambda: ConeBeamConfig(detector_pixels_xy=(0, 10)),
+        lambda: ConeBeamConfig(source_position_mm=(1.0, 0.0, 0.0)),
+    ],
+)
+def test_spectral_configs_reject_invalid_values(factory) -> None:
+    with pytest.raises(ValueError):
+        factory()
+
+
+def test_spectrum_summary_and_energy_normalisation() -> None:
+    energy = np.array([20.0, 40.0, 80.0])
+    counts = np.array([1.0, 2.0, 1.0])
+    summary = summarise_spectrum(energy, counts)
+
+    assert summary["bins"] == 3
+    assert summary["mean_energy_kev"] == pytest.approx(45.0)
+    assert summary["fraction_below_40_kev"] == pytest.approx(0.25)
+    result = normalise_energy_image(np.array([[0.0, 5.0], [10.0, 20.0]]), 10.0)
+    assert np.array_equal(result, np.array([[0.0, 0.5], [1.0, 1.0]], dtype=np.float32))
+
+
+@pytest.mark.parametrize(
+    "energy,counts",
+    [
+        ([20.0], [0.0]),
+        ([20.0, 40.0], [1.0]),
+        ([-20.0], [1.0]),
+        ([20.0], [float("nan")]),
+    ],
+)
+def test_spectrum_summary_rejects_invalid_arrays(energy, counts) -> None:
+    with pytest.raises(ValueError):
+        summarise_spectrum(np.asarray(energy), np.asarray(counts))
+
+
+def test_energy_normalisation_rejects_invalid_inputs() -> None:
+    with pytest.raises(ValueError):
+        normalise_energy_image(np.zeros((2, 2, 2)), 1.0)
+    with pytest.raises(ValueError):
+        normalise_energy_image(np.zeros((2, 2)), 0.0)

@@ -24,6 +24,10 @@ its licensing statement remain intact in `LICENSE.md`.
 - Executed the reduced simulation on a Colab Tesla T4 with ASTRA 2.5.0,
   archived the reproducibility manifest and result summary, and verified the
   CUDA `FBP_CUDA` path end to end.
+- Added validated spectral and cone-beam configuration objects plus spectrum
+  summary and flat-field normalisation utilities.
+- Added a Colab-first gVXR notebook comparing unfiltered and Al/Cu-filtered
+  160 kV radiographs of a compact SiO₂/Cu/SAC305 package phantom.
 
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.

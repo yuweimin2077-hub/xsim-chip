@@ -2,6 +2,7 @@
 
 [![Open defect-analysis demo in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/01_defect_analysis_colab.ipynb)
 [![Open ASTRA GPU smoke test in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/02_astra_colab_gpu_smoke.ipynb)
+[![Open gVXR spectral demo in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/03_gvxr_colab_spectral.ipynb)
 
 > **Portfolio extension (2026-09-08):** This derivative preserves the NIST
 > simulation workflow and adds a Colab-first path for 3D defect inspection and
@@ -31,6 +32,13 @@ injects deterministic defects, simulates Beer–Lambert transmission with Poisso
 noise, reconstructs with filtered backprojection, and saves a run manifest.
 The attenuation coefficients are relative demonstration values rather than a
 calibrated material spectrum; the full gVXR spectral workflow remains separate.
+
+The third notebook adds a reduced gVXR cone-beam experiment with a 160 kV
+polychromatic source, Al/Cu filtration, and a deterministic SiO₂/Cu/SAC305
+package phantom. It compares filtered and unfiltered spectra and radiographs,
+then saves a complete reproducibility manifest. See
+[`docs/GVXR_SPECTRAL_WORKFLOW.md`](docs/GVXR_SPECTRAL_WORKFLOW.md) for the
+assumptions and interpretation limits.
 
 A synthetic chip, or semiconductor package, has been procedurally created using
 Python. While the generated semiconductor package is simplified relative to a
