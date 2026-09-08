@@ -10,7 +10,7 @@ interview-ready engineering workflow while preserving upstream attribution.
 - [x] Locate 3D defect components and report physical measurements.
 - [x] Rank severity and attach testable root-cause hypotheses.
 - [x] Add unit tests and a Colab quick start.
-- [x] Add a Python 3.11/3.12 GitHub Actions test workflow.
+- [x] Add a Python 3.11/3.12/3.13 GitHub Actions test workflow.
 - [x] Publish the fork and verify GitHub Actions remotely.
 
 ## Milestone 2 — Reproducible simulation
@@ -20,7 +20,7 @@ interview-ready engineering workflow while preserving upstream attribution.
 - [x] Record run configuration, dependency versions, duration, platform, and GPU.
 - [x] Quantify major host-memory buffers for quick and NIST-reference profiles.
 - [x] Implement and locally validate the reduced parallel-beam experiment inputs.
-- [ ] Run and archive the ASTRA forward/reconstruction result in Colab.
+- [x] Run and archive the ASTRA forward/reconstruction result in Colab.
 - [ ] Integrate reduced gVXR spectral projection after the ASTRA smoke test.
 - [ ] Validate a reduced 3D cone-beam reconstruction and measure peak VRAM.
 

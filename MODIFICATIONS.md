@@ -21,6 +21,9 @@ its licensing statement remain intact in `LICENSE.md`.
   photon noise, CUDA/CPU filtered backprojection, metrics, and saved artefacts.
 - Declared Python 3.11–3.14 support for the analysis package and added Python
   3.13 CI coverage for compatibility with the current Colab runtime.
+- Executed the reduced simulation on a Colab Tesla T4 with ASTRA 2.5.0,
+  archived the reproducibility manifest and result summary, and verified the
+  CUDA `FBP_CUDA` path end to end.
 
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.

@@ -25,6 +25,9 @@ image quality.
 7. Inspect the sinogram, reconstruction, error map, NRMSE, and run manifest.
 8. Download `/content/xsim_outputs` if the experiment should be retained.
 
+The first archived T4 validation is recorded in
+[`results/colab_astra_smoke_2026-09-08.md`](results/colab_astra_smoke_2026-09-08.md).
+
 The `xsim-chip-analysis` package supports Python 3.11–3.14 so that it can run
 on current Colab runtimes. The upstream precompiled `img2stl` Cython extension
 is a separate constraint and remains limited to its supplied Python 3.11/3.12
