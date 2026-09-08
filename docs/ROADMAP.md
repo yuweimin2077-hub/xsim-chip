@@ -21,7 +21,9 @@ interview-ready engineering workflow while preserving upstream attribution.
 - [x] Quantify major host-memory buffers for quick and NIST-reference profiles.
 - [x] Implement and locally validate the reduced parallel-beam experiment inputs.
 - [x] Run and archive the ASTRA forward/reconstruction result in Colab.
-- [ ] Integrate reduced gVXR spectral projection after the ASTRA smoke test.
+- [x] Integrate and validate a reduced single-material gVXR spectral projection
+  after the ASTRA smoke test.
+- [ ] Extend the gVXR projection to the SiO₂/Cu/SAC305 package phantom.
 - [ ] Validate a reduced 3D cone-beam reconstruction and measure peak VRAM.
 
 ## Milestone 3 — Realistic defect injection

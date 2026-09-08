@@ -28,8 +28,12 @@ its licensing statement remain intact in `LICENSE.md`.
   summary and flat-field normalisation utilities.
 - Added a Colab-first gVXR notebook comparing unfiltered and Al/Cu-filtered
   160 kV radiographs of a compact SiO₂/Cu/SAC305 package phantom.
-- Selected gVXR 2.1's `createNewContext` API after Colab validation showed the
-  legacy context helper did not allocate a usable projection buffer.
+- Reworked the gVXR Colab smoke test around an explicit deterministic Kramers
+  spectrum after gVXR 2.1's automatic `setVoltage()` path returned an empty
+  projection or crashed the current Colab runtime.
+- Added Al/Cu filtering from gVXR mass attenuation coefficients, isolated
+  renderer contexts for each spectrum, projection-shape validation, and Colab
+  stale-notebook recovery guidance.
 
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.
