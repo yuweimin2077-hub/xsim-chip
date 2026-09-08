@@ -1,6 +1,7 @@
 # X-ray Simulations of Chip Packages (xsim-chip)
 
 [![Open defect-analysis demo in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/01_defect_analysis_colab.ipynb)
+[![Open ASTRA GPU smoke test in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/02_astra_colab_gpu_smoke.ipynb)
 
 > **Portfolio extension (2026-09-08):** This derivative preserves the NIST
 > simulation workflow and adds a Colab-first path for 3D defect inspection and
@@ -23,6 +24,13 @@ xsim-inspect reference.tif candidate.tif --output outputs/report.json
 ```
 
 The original full XCT simulation and reconstruction workflow follows below.
+
+The second Colab notebook provides a resource-budgeted parallel-beam smoke test
+using ASTRA. It automatically selects CUDA when available, falls back to CPU,
+injects deterministic defects, simulates Beer–Lambert transmission with Poisson
+noise, reconstructs with filtered backprojection, and saves a run manifest.
+The attenuation coefficients are relative demonstration values rather than a
+calibrated material spectrum; the full gVXR spectral workflow remains separate.
 
 A synthetic chip, or semiconductor package, has been procedurally created using
 Python. While the generated semiconductor package is simplified relative to a

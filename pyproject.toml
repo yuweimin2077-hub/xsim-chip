@@ -17,6 +17,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8", "pytest-cov>=5"]
 demo = ["matplotlib>=3.10"]
+simulation = ["astra-toolbox>=2.5,<2.6", "matplotlib>=3.10", "psutil>=7"]
 
 [project.scripts]
 xsim-inspect = "xsim_chip_analysis.cli:main"
@@ -27,4 +28,3 @@ include = ["xsim_chip_analysis*"]
 [tool.pytest.ini_options]
 addopts = "-q"
 testpaths = ["tests"]
-

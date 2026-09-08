@@ -15,10 +15,14 @@ interview-ready engineering workflow while preserving upstream attribution.
 
 ## Milestone 2 — Reproducible simulation
 
-- Parameterise phantom size, random seed, projection count, and output path.
-- Add a low-memory Colab profile and GPU capability check.
-- Record run configuration, dependency versions, duration, RAM, and VRAM.
-- Validate cone-beam and parallel-beam outputs on a reduced phantom.
+- [x] Add explicit phantom size, random seed, projection count, and detector profiles.
+- [x] Add a low-memory Colab profile and ASTRA CUDA capability check.
+- [x] Record run configuration, dependency versions, duration, platform, and GPU.
+- [x] Quantify major host-memory buffers for quick and NIST-reference profiles.
+- [x] Implement and locally validate the reduced parallel-beam experiment inputs.
+- [ ] Run and archive the ASTRA forward/reconstruction result in Colab.
+- [ ] Integrate reduced gVXR spectral projection after the ASTRA smoke test.
+- [ ] Validate a reduced 3D cone-beam reconstruction and measure peak VRAM.
 
 ## Milestone 3 — Realistic defect injection
 

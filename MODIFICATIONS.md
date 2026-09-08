@@ -13,7 +13,12 @@ its licensing statement remain intact in `LICENSE.md`.
 - Added a command-line interface, automated tests, Python packaging metadata,
   and a Google Colab quick-start notebook.
 - Expanded `.gitignore` for reproducible Python and notebook development.
+- Added low-memory and NIST-reference runtime profiles with transparent NumPy
+  buffer estimates and reproducibility manifests.
+- Added a deterministic package cross-section with controlled solder-void,
+  solder-bridge, and copper-open ground truth.
+- Added an ASTRA Colab notebook for parallel-beam forward projection, simulated
+  photon noise, CUDA/CPU filtered backprojection, metrics, and saved artefacts.
 
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.
-
