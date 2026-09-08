@@ -11,7 +11,7 @@ radiography. It is deliberately compact enough for a standard Colab T4.
   and an additional 1.0 mm Cu filter.
 - A 192 × 128 ideal energy-integrating detector with 0.16 mm detector pixels.
 - A magnification of 3 and an object-plane pixel size of about 53.3 µm.
-- A deterministic package-like phantom containing SiO₂, copper, and SAC305.
+- A deterministic SiO₂ cuboid smoke-test phantom; multi-material package geometry is tracked as a follow-up because it currently destabilises the Colab gVXR 2.1 runtime.
 - A gVXR 2.1 `createNewContext` renderer, which is compatible with the current
   headless Colab OpenGL environment.
 
