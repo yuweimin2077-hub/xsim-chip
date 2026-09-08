@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xsim-chip-analysis"
+version = "0.1.0"
+description = "Reference-based 3D defect inspection and root-cause hypotheses for xsim-chip volumes"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.15",
+  "tifffile>=2025",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5"]
+demo = ["matplotlib>=3.10"]
+
+[project.scripts]
+xsim-inspect = "xsim_chip_analysis.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["xsim_chip_analysis*"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+

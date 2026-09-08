@@ -5,3 +5,13 @@
 *.vtk
 *.pvsm
 *.mp4
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+*.egg-info/
+build/
+dist/
+outputs/

@@ -1,5 +1,29 @@
 # X-ray Simulations of Chip Packages (xsim-chip)
 
+[![Open defect-analysis demo in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/01_defect_analysis_colab.ipynb)
+
+> **Portfolio extension (2026-09-08):** This derivative preserves the NIST
+> simulation workflow and adds a Colab-first path for 3D defect inspection and
+> root-cause hypothesis generation. See [MODIFICATIONS.md](MODIFICATIONS.md) for
+> attribution and change history, and [docs/ROADMAP.md](docs/ROADMAP.md) for the
+> engineering plan. Root-cause outputs are screening hypotheses and require
+> supporting process evidence.
+
+## Quick defect inspection in Google Colab
+
+Open the badge above to run a small CPU example without Conda or a local GPU.
+The example injects a solder void and solder bridge into a labelled reference
+volume, groups 3D differences into connected components, and reports material
+metrics, physical size, severity, location, and candidate root causes.
+
+For local or scripted use after installing this repository:
+
+```bash
+xsim-inspect reference.tif candidate.tif --output outputs/report.json
+```
+
+The original full XCT simulation and reconstruction workflow follows below.
+
 A synthetic chip, or semiconductor package, has been procedurally created using
 Python. While the generated semiconductor package is simplified relative to a
 real package, the generated package contains representative geometric features
