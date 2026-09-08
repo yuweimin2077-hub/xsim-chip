@@ -7,7 +7,7 @@ name = "xsim-chip-analysis"
 version = "0.1.0"
 description = "Reference-based 3D defect inspection and root-cause hypotheses for xsim-chip volumes"
 readme = "README.md"
-requires-python = ">=3.11,<3.13"
+requires-python = ">=3.11,<3.15"
 dependencies = [
   "numpy>=1.26",
   "scipy>=1.15",

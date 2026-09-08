@@ -19,6 +19,8 @@ its licensing statement remain intact in `LICENSE.md`.
   solder-bridge, and copper-open ground truth.
 - Added an ASTRA Colab notebook for parallel-beam forward projection, simulated
   photon noise, CUDA/CPU filtered backprojection, metrics, and saved artefacts.
+- Declared Python 3.11–3.14 support for the analysis package and added Python
+  3.13 CI coverage for compatibility with the current Colab runtime.
 
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.

@@ -25,6 +25,11 @@ image quality.
 7. Inspect the sinogram, reconstruction, error map, NRMSE, and run manifest.
 8. Download `/content/xsim_outputs` if the experiment should be retained.
 
+The `xsim-chip-analysis` package supports Python 3.11–3.14 so that it can run
+on current Colab runtimes. The upstream precompiled `img2stl` Cython extension
+is a separate constraint and remains limited to its supplied Python 3.11/3.12
+binaries; this smoke test does not import that extension.
+
 The notebook follows ASTRA's documented `create_projector`, `create_sino`,
 `FBP_CUDA`, `use_cuda`, and `get_gpu_info` interfaces. See the official
 [installation guide](https://astra-toolbox.com/docs/install.html),
@@ -39,4 +44,3 @@ The notebook follows ASTRA's documented `create_projector`, `create_sino`,
   polychromatic spectrum are not yet modelled.
 - gVXR spectral simulation and reduced 3D cone-beam reconstruction are the next
   validation steps.
-
