@@ -11,7 +11,7 @@ interview-ready engineering workflow while preserving upstream attribution.
 - [x] Rank severity and attach testable root-cause hypotheses.
 - [x] Add unit tests and a Colab quick start.
 - [x] Add a Python 3.11/3.12 GitHub Actions test workflow.
-- [ ] Publish the fork so GitHub Actions can run remotely.
+- [x] Publish the fork and verify GitHub Actions remotely.
 
 ## Milestone 2 — Reproducible simulation
 
