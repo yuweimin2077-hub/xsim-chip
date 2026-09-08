@@ -12,6 +12,8 @@ radiography. It is deliberately compact enough for a standard Colab T4.
 - A 192 × 128 ideal energy-integrating detector with 0.16 mm detector pixels.
 - A magnification of 3 and an object-plane pixel size of about 53.3 µm.
 - A deterministic package-like phantom containing SiO₂, copper, and SAC305.
+- A gVXR 2.1 `createNewContext` renderer, which is compatible with the current
+  headless Colab OpenGL environment.
 
 The notebook compares the two spectra, records mean/peak energy and the
 low-energy photon fraction, computes flat-field-normalised transmission, and
