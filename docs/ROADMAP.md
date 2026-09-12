@@ -3,6 +3,9 @@
 The objective is to turn the NIST proof of concept into a reproducible,
 interview-ready engineering workflow while preserving upstream attribution.
 
+> Portfolio scope frozen after Milestone 2. The unchecked items below are
+> documented future work, not requirements for the completed resume project.
+
 ## Milestone 1 — Colab-ready defect analytics
 
 - [x] Preserve the NIST upstream history and licence.

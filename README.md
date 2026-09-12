@@ -11,6 +11,10 @@
 > engineering plan. Root-cause outputs are screening hypotheses and require
 > supporting process evidence.
 
+**Portfolio result:** the scoped Colab workflow is complete. See
+[docs/FINAL_RESULT.md](docs/FINAL_RESULT.md) for the verified GPU result,
+reproduction links, limitations, and resume-ready project summary.
+
 ## Quick defect inspection in Google Colab
 
 Open the badge above to run a small CPU example without Conda or a local GPU.
@@ -33,10 +37,10 @@ noise, reconstructs with filtered backprojection, and saves a run manifest.
 The attenuation coefficients are relative demonstration values rather than a
 calibrated material spectrum; the full gVXR spectral workflow remains separate.
 
-The third notebook adds a reduced gVXR cone-beam experiment with a 160 kV
-polychromatic source, Al/Cu filtration, and a deterministic SiO₂/Cu/SAC305
-package phantom. It compares filtered and unfiltered spectra and radiographs,
-then saves a complete reproducibility manifest. See
+The third notebook adds a reduced gVXR cone-beam smoke test with a 160 kV
+deterministic Kramers spectrum, Al/Cu filtration, and a single SiO₂ cuboid.
+It compares filtered and unfiltered spectra and radiographs, then saves a
+complete reproducibility manifest. See
 [`docs/GVXR_SPECTRAL_WORKFLOW.md`](docs/GVXR_SPECTRAL_WORKFLOW.md) for the
 assumptions and interpretation limits.
 
