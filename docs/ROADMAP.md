@@ -3,8 +3,8 @@
 The objective is to turn the NIST proof of concept into a reproducible,
 interview-ready engineering workflow while preserving upstream attribution.
 
-> Portfolio scope frozen after Milestone 2. The unchecked items below are
-> documented future work, not requirements for the completed resume project.
+> Portfolio scope includes Milestones 1–2 and a small 2D reconstruction-to-
+> inspection closure. The unchecked items below remain optional future work.
 
 ## Milestone 1 — Colab-ready defect analytics
 
@@ -26,6 +26,11 @@ interview-ready engineering workflow while preserving upstream attribution.
 - [x] Run and archive the ASTRA forward/reconstruction result in Colab.
 - [x] Integrate and validate a reduced single-material gVXR spectral projection
   after the ASTRA smoke test.
+- [x] Connect the reconstructed 2D slice to fixed-threshold material segmentation,
+  aligned reference comparison, defect masks, and strict pixel-level metrics.
+- [x] Verify the same notebook Python cells locally on CUDA and CPU; archive
+  manifests, inspection report, and a six-panel figure.
+- [x] Correct dimensionality and timing claims in the historical T4 result.
 - [ ] Extend the gVXR projection to the SiO₂/Cu/SAC305 package phantom.
 - [ ] Validate a reduced 3D cone-beam reconstruction and measure peak VRAM.
 
@@ -38,7 +43,9 @@ interview-ready engineering workflow while preserving upstream attribution.
 
 ## Milestone 4 — Detection and metrology
 
-- Segment reconstructed volumes with a documented baseline.
+- [x] Segment a reconstructed 2D slice and measure strict pixel precision,
+  recall, Dice, IoU, and suspected component area without truth-fitted thresholds.
+- Segment reconstructed 3D volumes with a documented baseline (future work).
 - Measure precision, recall, Dice/IoU, defect volume error, and localisation
   error against synthetic ground truth.
 - Compare robustness across noise, artefact, and projection-count conditions.

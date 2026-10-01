@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "created_utc": "2026-10-01T17:47:21.005085+00:00",
+  "runtime": {
+    "python": "3.12.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "is_google_colab": false,
+    "colab_release_tag": null,
+    "gpu": {
+      "available": "true",
+      "description": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.62, 8188"
+    },
+    "elapsed_seconds": 0.05129839999995056
+  },
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "astra-toolbox": "2.5.0",
+    "gvxr": null
+  },
+  "planning_3d_config": {
+    "profile": "quick-colab",
+    "volume_shape_zyx": [
+      129,
+      129,
+      129
+    ],
+    "detector_shape_rc": [
+      129,
+      192
+    ],
+    "projections": 180,
+    "voxel_size_um": 16.0,
+    "seed": 2060
+  },
+  "planning_3d_memory_estimate": {
+    "label_volume_uint8_gib": 0.002,
+    "working_volume_float32_gib": 0.008,
+    "projection_stack_float32_gib": 0.0166,
+    "projection_stack_uint16_gib": 0.0083,
+    "reconstruction_float32_gib": 0.008,
+    "declared_numpy_buffers_gib": 0.0429,
+    "streamed_projection_floor_gib": 0.0263
+  },
+  "experiment": {
+    "dimension": 2,
+    "slice_shape_yx": [
+      129,
+      129
+    ],
+    "sinogram_shape_angles_bins": [
+      180,
+      192
+    ],
+    "projections": 180,
+    "detector_bins": 192,
+    "pixel_size_um": 16.0,
+    "pixel_size_mm": 0.016,
+    "seed": 2060,
+    "attenuation_model": "synthetic_relative_per_mm"
+  },
+  "result": {
+    "algorithm": "FBP_CUDA",
+    "filter": "hann",
+    "normalized_rmse": 0.0657169297337532,
+    "normalization": "shared_known_attenuation_max_0.95",
+    "photon_count": 100000,
+    "zero_count_rays": 0,
+    "timings_seconds": {
+      "projection_noise_reconstruction": 0.05129839999995056,
+      "fbp_run_and_readback": 0.044829000000049746
+    },
+    "inspection_summary": {
+      "component_count": 6,
+      "suspected_defect_pixels": 216,
+      "suspected_defect_area_um2": 55296.0
+    },
+    "defect_evaluation": {
+      "metric_scope": "strict_2d_pixel_overlap_not_object_detection_accuracy",
+      "per_defect": {
+        "solder_void": {
+          "true_positive_pixels": 13,
+          "false_positive_pixels": 111,
+          "false_negative_pixels": 0,
+          "precision": 0.10483870967741936,
+          "recall": 1.0,
+          "dice": 0.1897810218978102,
+          "iou": 0.10483870967741936
+        },
+        "solder_bridge": {
+          "true_positive_pixels": 58,
+          "false_positive_pixels": 0,
+          "false_negative_pixels": 30,
+          "precision": 1.0,
+          "recall": 0.6590909090909091,
+          "dice": 0.7945205479452054,
+          "iou": 0.6590909090909091
+        },
+        "copper_open": {
+          "true_positive_pixels": 30,
+          "false_positive_pixels": 4,
+          "false_negative_pixels": 0,
+          "precision": 0.8823529411764706,
+          "recall": 1.0,
+          "dice": 0.9375,
+          "iou": 0.8823529411764706
+        }
+      },
+      "union": {
+        "true_positive_pixels": 101,
+        "false_positive_pixels": 115,
+        "false_negative_pixels": 30,
+        "precision": 0.4675925925925926,
+        "recall": 0.7709923664122137,
+        "dice": 0.5821325648414986,
+        "iou": 0.4105691056910569
+      }
+    }
+  }
+}

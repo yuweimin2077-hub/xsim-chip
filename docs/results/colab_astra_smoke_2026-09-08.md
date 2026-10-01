@@ -17,16 +17,17 @@ and filtered backprojection, validating the notebook's intended GPU path.
 | NumPy | 2.1.3 |
 | SciPy | 1.16.3 |
 | Profile | `quick-colab` |
-| Volume shape | 129 × 129 × 129 |
-| Detector shape | 129 × 192 |
+| Actual reconstructed slice | 129 × 129 (2D) |
+| Actual sinogram | 180 views × 192 detector bins |
+| Planning-only 3D profile | 129 × 129 × 129; detector 129 × 192 |
 | Projections | 180 |
 | Voxel size | 16 µm |
 | Random seed | 2060 |
 | Reconstruction | `FBP_CUDA`, Hann filter |
 | Photon count | 100,000 |
-| Reconstruction time | 0.2337 s |
+| Projection + noise + reconstruction stage time | 0.2337 s |
 | Normalized RMSE | 0.244846 |
-| Declared NumPy buffers | 0.0429 GiB |
+| Planning-only 3D declared NumPy buffers | 0.0429 GiB (not measured usage) |
 
 Controlled defect masks contained 13 solder-void pixels, 88 solder-bridge
 pixels, and 30 copper-open pixels in the deterministic 2D cross-section.
@@ -37,6 +38,14 @@ These generated arrays are intentionally excluded from Git; rerunning
 `notebooks/02_astra_colab_gpu_smoke.ipynb` recreates them.
 
 ## Interpretation
+
+**Clarification added 2026-10-01:** the source notebook uses ASTRA `data2d`
+and `FBP_CUDA`, so this validation reconstructed a 2D slice. The saved 129³
+configuration described a planning estimate. The timer started before forward
+projection; 0.2337 s is not isolated FBP time. The historical noise model did
+not apply pixel-size attenuation scaling and normalized truth/reconstruction
+by their separate maxima. These original measurements are retained, not
+silently replaced with the new [closed-loop result](slice_closed_loop_2026-10-01.md).
 
 This result is a functional and reproducibility milestone, not a calibrated
 image-quality benchmark. Attenuation is relative and the model does not yet

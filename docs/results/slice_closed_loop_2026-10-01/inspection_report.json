@@ -1,0 +1,141 @@
+{
+  "method": "fixed_material_thresholds_then_aligned_reference_difference_2d",
+  "thresholds": [
+    0.075,
+    0.4,
+    0.8
+  ],
+  "shape_yx": [
+    129,
+    129
+  ],
+  "pixel_size_um": 16.0,
+  "min_component_pixels": 4,
+  "summary": {
+    "component_count": 6,
+    "suspected_defect_pixels": 216,
+    "suspected_defect_area_um2": 55296.0
+  },
+  "components": [
+    {
+      "defect_kind": "solder_void",
+      "pixel_count": 39,
+      "area_um2": 9984.0,
+      "centroid_yx_pixels": [
+        92.0,
+        36.15384615384615
+      ],
+      "centroid_yx_um": [
+        1472.0,
+        578.4615384615385
+      ]
+    },
+    {
+      "defect_kind": "solder_void",
+      "pixel_count": 32,
+      "area_um2": 8192.0,
+      "centroid_yx_pixels": [
+        91.8125,
+        63.03125
+      ],
+      "centroid_yx_um": [
+        1469.0,
+        1008.5
+      ]
+    },
+    {
+      "defect_kind": "solder_void",
+      "pixel_count": 32,
+      "area_um2": 8192.0,
+      "centroid_yx_pixels": [
+        92.1875,
+        92.96875
+      ],
+      "centroid_yx_um": [
+        1475.0,
+        1487.5
+      ]
+    },
+    {
+      "defect_kind": "solder_void",
+      "pixel_count": 21,
+      "area_um2": 5376.0,
+      "centroid_yx_pixels": [
+        92.0,
+        64.0
+      ],
+      "centroid_yx_um": [
+        1472.0,
+        1024.0
+      ]
+    },
+    {
+      "defect_kind": "solder_bridge",
+      "pixel_count": 58,
+      "area_um2": 14848.0,
+      "centroid_yx_pixels": [
+        92.51724137931035,
+        78.0
+      ],
+      "centroid_yx_um": [
+        1480.2758620689656,
+        1248.0
+      ]
+    },
+    {
+      "defect_kind": "copper_open",
+      "pixel_count": 34,
+      "area_um2": 8704.0,
+      "centroid_yx_pixels": [
+        36.088235294117645,
+        63.6764705882353
+      ],
+      "centroid_yx_um": [
+        577.4117647058823,
+        1018.8235294117648
+      ]
+    }
+  ],
+  "limitations": "Aligned synthetic 2D screening baseline; boundaries and partial-volume effects can cause false positives. No measured 3D defect volume or causal diagnosis is inferred.",
+  "evaluation": {
+    "metric_scope": "strict_2d_pixel_overlap_not_object_detection_accuracy",
+    "per_defect": {
+      "solder_void": {
+        "true_positive_pixels": 13,
+        "false_positive_pixels": 111,
+        "false_negative_pixels": 0,
+        "precision": 0.10483870967741936,
+        "recall": 1.0,
+        "dice": 0.1897810218978102,
+        "iou": 0.10483870967741936
+      },
+      "solder_bridge": {
+        "true_positive_pixels": 58,
+        "false_positive_pixels": 0,
+        "false_negative_pixels": 30,
+        "precision": 1.0,
+        "recall": 0.6590909090909091,
+        "dice": 0.7945205479452054,
+        "iou": 0.6590909090909091
+      },
+      "copper_open": {
+        "true_positive_pixels": 30,
+        "false_positive_pixels": 4,
+        "false_negative_pixels": 0,
+        "precision": 0.8823529411764706,
+        "recall": 1.0,
+        "dice": 0.9375,
+        "iou": 0.8823529411764706
+      }
+    },
+    "union": {
+      "true_positive_pixels": 101,
+      "false_positive_pixels": 115,
+      "false_negative_pixels": 30,
+      "precision": 0.4675925925925926,
+      "recall": 0.7709923664122137,
+      "dice": 0.5821325648414986,
+      "iou": 0.4105691056910569
+    }
+  }
+}

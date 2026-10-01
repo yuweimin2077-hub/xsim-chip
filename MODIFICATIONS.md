@@ -35,5 +35,18 @@ its licensing statement remain intact in `LICENSE.md`.
   renderer contexts for each spectrum, projection-shape validation, and Colab
   stale-notebook recovery guidance.
 
+## 2026-10-01
+
+- Connected the ASTRA 2D reconstruction to fixed-threshold segmentation,
+  aligned-reference defect signatures, component area measurements, and
+  independent ground-truth pixel evaluation.
+- Added explicit pixel-size attenuation scaling and separate FBP/readback
+  versus full projection/noise/reconstruction stage timers.
+- Added a local runner executing the notebook's same Python experiment cells
+  and archived both CUDA and CPU results plus a six-panel comparison figure.
+- Added 14 tests (40 total); clarified that 3D label inspection is separate
+  from the integrated 2D CT workflow and corrected historical geometry/time
+  claims without replacing the original T4 measurements.
+
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.

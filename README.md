@@ -14,28 +14,34 @@ root-cause screening hypotheses.
 
 - Deterministic solder-void, solder-bridge, and copper-open defects.
 - ASTRA forward projection and filtered backprojection on a Colab GPU.
+- A complete 2D reconstruction-to-inspection baseline with fixed material
+  thresholds, aligned reference comparison, and measured false positives/misses.
 - Material-aware 3D connected-component inspection and physical measurements.
 - Severity ranking with evidence-labelled root-cause hypotheses.
 - Reproducibility manifests covering parameters, packages, hardware, and time.
 - A reduced gVXR spectral smoke test with Al/Cu filtration.
 
-## Verified Colab result
+## Verified results
 
 | Item | Result |
 | --- | --- |
-| GPU | NVIDIA Tesla T4 |
-| Volume | 129 × 129 × 129 voxels at 16 µm |
-| Acquisition | 180 projections; 129 × 192 detector |
+| Current validation | Local NVIDIA RTX 4060 GPU and CPU fallback |
+| Reconstructed slice | 129 × 129 pixels at 16 µm |
+| Acquisition | 180 views × 192 detector bins |
 | Reconstruction | ASTRA 2.5.0 `FBP_CUDA`, Hann filter |
-| Reconstruction time | 0.2337 s |
-| Normalized RMSE | 0.244846 |
-| Tests | 26 passing |
+| GPU projection + noise + reconstruction time | 0.051298 s |
+| Shared-scale GPU normalized RMSE | 0.065717 |
+| GPU pixel precision / recall / Dice | 0.468 / 0.771 / 0.582 |
+| Current tests | 40 passing |
 
-See the [final portfolio result](docs/FINAL_RESULT.md) and
-[archived Colab run](docs/results/colab_astra_smoke_2026-09-08.md) for the
-complete configuration and interpretation.
+The [2D closed-loop result](docs/results/slice_closed_loop_2026-10-01.md)
+includes configuration, errors, and runtime manifests; see the
+[final portfolio summary](docs/FINAL_RESULT.md). The updated notebook is ready
+for Colab. The [historical T4 run](docs/results/colab_astra_smoke_2026-09-08.md)
+used an older attenuation/noise scale and RMSE normalization, so its results
+are not directly comparable. The 129³ profile is a planning-only 3D estimate.
 
-![Reconstructed XCT slice](resources/recon_2400_chip_4um_cone_Front_0376.jpg)
+![2D reconstruction and defect comparison](docs/results/slice_closed_loop_2026-10-01/overview.jpg)
 
 ## Workflow
 
@@ -44,20 +50,30 @@ synthetic package + controlled defects
                  ↓
        X-ray forward projection
                  ↓
-          GPU reconstruction
+          2D GPU reconstruction
                  ↓
- reference/candidate volume comparison
+  fixed material thresholds + aligned reference
                  ↓
-3D defects → measurements → severity → hypotheses
+2D defect masks → area → false positives and misses
 ```
+
+3D labelled-volume inspection and process hypotheses are demonstrated
+separately in the first notebook; reconstructed 3D CT inspection is future work.
 
 ## Run it
 
-The fastest route is to open one of the Colab badges above. The defect-analysis
-notebook runs on CPU; the ASTRA and gVXR notebooks are intended for a T4 GPU
+Open the **ASTRA GPU** badge above and run all cells for the complete 2D demo.
+The defect-analysis notebook runs on CPU; ASTRA and gVXR are intended for a T4 GPU
 runtime.
 
-For local inspection:
+For a local rerun of the same experiment:
+
+```bash
+python -m pip install -e ".[simulation]"
+python tools/run_slice_notebook.py
+```
+
+For supplied 3D labelled-volume inspection:
 
 ```bash
 python -m pip install -e .
@@ -75,7 +91,7 @@ pytest
 
 | Path | Purpose |
 | --- | --- |
-| `xsim_chip_analysis/` | Inspection, phantom, runtime, and spectral utilities |
+| `xsim_chip_analysis/` | 2D/3D inspection, phantom, runtime, and spectral utilities |
 | `notebooks/` | Three reproducible Colab demonstrations |
 | `tests/` | Automated unit tests |
 | `1_generate_chip_imgs/` | Original synthetic-package generation scripts |
@@ -91,9 +107,8 @@ attenuation and omits scatter, detector blur, and scanner calibration. The
 gVXR notebook is intentionally a single-material smoke test. Root-cause outputs
 are hypotheses for screening and require supporting process evidence.
 
-The portfolio scope is frozen after the completed Colab analytics and reduced
-simulation milestones; more complex multi-material and production benchmarking
-work is documented only as future work in the [roadmap](docs/ROADMAP.md).
+The portfolio includes the small 2D closed loop; multi-material simulation and
+production benchmarking remain future work in the [roadmap](docs/ROADMAP.md).
 
 ## Attribution
 
