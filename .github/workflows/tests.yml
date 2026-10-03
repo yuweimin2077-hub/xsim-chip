@@ -24,3 +24,5 @@ jobs:
         run: python -m pip install -e ".[dev,simulation]"
       - name: Run tests
         run: pytest --cov=xsim_chip_analysis --cov-report=term-missing --cov-fail-under=85
+      - name: Check assistant retrieval and evidence without model downloads
+        run: python tools/evaluate_assistant.py

@@ -64,6 +64,16 @@ interview-ready engineering workflow while preserving upstream attribution.
   and a reproducible connected demo.
 - [ ] Add a bilingual presentation and process-parameter benchmark study.
 
+## Milestone 6 — Evidence-grounded language assistant
+
+- [x] Wrap saved 2D/3D reports and live reconstructed-array inspection as tools.
+- [x] Add a bilingual, attributed starter corpus with BM25 retrieval.
+- [x] Add optional PyTorch/Hugging Face model inference and bounded JSON tool actions.
+- [x] Validate source/finding references and preserve numeric measurements in Python.
+- [x] Add a Colab notebook, offline baseline, command-line interface and regression tests.
+- [ ] Train and evaluate LoRA/SFT adapters on independently reviewed cases.
+- [ ] Extend and evaluate the knowledge corpus with domain experts and real samples.
+
 ## Engineering rules
 
 - Every result must be reproducible from a notebook or command.

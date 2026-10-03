@@ -19,12 +19,18 @@ dev = ["pytest>=8", "pytest-cov>=5"]
 demo = ["matplotlib>=3.10"]
 simulation = ["astra-toolbox>=2.5,<2.6", "matplotlib>=3.10", "psutil>=7"]
 spectral = ["gvxr>=2.1,<2.2", "matplotlib>=3.10", "psutil>=7"]
+llm = ["torch>=2.6,<3", "transformers>=4.57.1,<5", "accelerate>=1,<2", "lm-format-enforcer>=0.11,<1"]
+quantization = ["bitsandbytes>=0.45,<1"]
 
 [project.scripts]
 xsim-inspect = "xsim_chip_analysis.cli:main"
+xsim-assist = "xsim_chip_analysis.assistant.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["xsim_chip_analysis*"]
+
+[tool.setuptools.package-data]
+"xsim_chip_analysis.assistant" = ["knowledge.json"]
 
 [tool.pytest.ini_options]
 addopts = "-q"

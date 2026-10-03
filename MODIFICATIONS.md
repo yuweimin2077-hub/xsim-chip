@@ -66,5 +66,14 @@ its licensing statement remain intact in `LICENSE.md`.
   real text outputs and inline figures for GitHub preview, with explicit local
   CPU/GPU provenance. Preserved the Colab experiment code and Notebook 03.
 
+## 2026-10-03
+
+- Added an optional PyTorch/Hugging Face inspection assistant and Colab Notebook 05.
+- Wrapped saved 2D/3D reports and live reconstructed-array analysis in registered tools.
+- Added attributed bilingual knowledge cards, BM25 retrieval and validated evidence selection.
+- Kept all numeric measurements in deterministic Python and labelled retrieval-only/fallback modes.
+- Added adversarial protocol, grounding, dimensionality and real inspection integration tests.
+- Preserved the original CT algorithms and declared LoRA/SFT as future work.
+
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.

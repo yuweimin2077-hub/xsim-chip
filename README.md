@@ -4,6 +4,18 @@ A Colab-first portfolio extension of NIST's
 [`xsim-chip`](https://github.com/usnistgov/xsim-chip): synthetic package defects,
 X-ray reconstruction, 3D defect measurements, and root-cause screening hypotheses.
 
+**New — LLM + RAG inspection assistant:**
+[![Open assistant in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/05_llm_rag_agent_colab.ipynb)
+
+Ask a question in Chinese or English, inspect a registered reconstruction or
+saved report, retrieve attributed technical notes, and produce a cited report.
+Notebook 05 runs Qwen through PyTorch/Hugging Face with bounded tool calling.
+Measurements stay in Python; the model selects relevant finding/source pairs,
+and reviewed bilingual text supplies the explanations. See the
+[assistant guide](docs/LLM_ASSISTANT.md) for scope and reproduction.
+The [executed validation](docs/results/llm_assistant_2026-10-03.md) records real
+Qwen CPU inference, three successful tool-workflow scenarios and 100 passing tests.
+
 [![Tests](https://github.com/yuweimin2077-hub/xsim-chip/actions/workflows/tests.yml/badge.svg)](https://github.com/yuweimin2077-hub/xsim-chip/actions/workflows/tests.yml)
 
 **Start here — connected 2D → 3D experiment:**
@@ -32,7 +44,7 @@ is copied to manufacture a volume. Defect truth is reserved for evaluation.
 | Reconstruction | ASTRA 2.5.0 `FBP_CUDA`, Hann filter |
 | Shared-scale normalized RMSE | 0.064574 |
 | Strict voxel precision / recall / Dice | 0.271 / 0.794 / 0.404 |
-| Validation | RTX 4060 Laptop GPU and CPU fallback; 64 local tests |
+| CT validation | RTX 4060 Laptop GPU and CPU fallback |
 
 The connection works, but simple thresholds still produce many boundary
 false positives. This is **not production-grade defect detection**.
@@ -55,6 +67,7 @@ python tools/run_slice_notebook.py --volume
 
 | Notebook | Purpose |
 | --- | --- |
+| [05 · LLM + RAG assistant](notebooks/05_llm_rag_agent_colab.ipynb) | Cited report and bounded model-driven inspection tools |
 | [04 · Connected 3D](notebooks/04_slice_wise_3d_colab.ipynb) | Recommended complete slice-wise experiment |
 | [02 · Single-slice CT](notebooks/02_astra_colab_gpu_smoke.ipynb) | Smaller 2D reconstruction and inspection |
 | [01 · 3D label inspection](notebooks/01_defect_analysis_colab.ipynb) | Standalone introduction to the same 3D inspector |
@@ -66,6 +79,17 @@ open their GitHub preview to see results without running Colab.
 For development: `python -m pip install -e ".[dev,simulation]"`, then `pytest`.
 The original NIST generation, simulation, and reconstruction directories are
 preserved. See the [Colab guide](docs/COLAB_GPU_WORKFLOW.md) for details.
+
+For an offline, **retrieval-only** assistant report (no model download):
+
+```bash
+python -m xsim_chip_analysis.assistant.cli --report docs/results/volume_bridge_2026-10-02/volume_inspection_report.json
+```
+
+For actual model inference, install `.[llm]` and append
+`--model Qwen/Qwen2.5-1.5B-Instruct --strict`. The model weights are downloaded
+from Hugging Face on first use. Colab GPU and optional 4-bit loading are
+documented in Notebook 05. This extension does not train or fine-tune a model.
 
 ## Scope and attribution
 

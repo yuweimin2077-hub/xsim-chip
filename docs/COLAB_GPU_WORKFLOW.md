@@ -1,5 +1,13 @@
 # Colab GPU workflow
 
+## Language assistant
+
+[Notebook 05](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/05_llm_rag_agent_colab.ipynb)
+adds a real Hugging Face model, attributed retrieval and bounded inspection tools.
+It can use the archived report immediately or inspect Notebook 04 output arrays
+in the same runtime. The [assistant guide](LLM_ASSISTANT.md) describes model
+memory, optional quantization, inputs and the explicitly labelled offline mode.
+
 ## Recommended: connected 2D → 3D demonstration
 
 1. Open [Notebook 04 in Colab](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/04_slice_wise_3d_colab.ipynb).

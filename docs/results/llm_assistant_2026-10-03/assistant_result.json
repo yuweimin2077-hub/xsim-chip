@@ -1,0 +1,1401 @@
+{
+  "schema_version": "1.0",
+  "mode": "llm_agent",
+  "case_id": "sample",
+  "question": "检查这个芯片样本的疑似焊料空洞，解释可能的伪影和需要进一步复核的事项。",
+  "evidence": {
+    "dimensions": 3,
+    "shape": [
+      16,
+      129,
+      129
+    ],
+    "spacing_um": 16.0,
+    "provenance": "fixed_threshold_segmentation_of_reconstructed_slice_stack",
+    "component_count": 82,
+    "counts_by_kind": {
+      "copper_bridge_or_residue": 22,
+      "solder_void_or_open": 4,
+      "solder_bridge": 1,
+      "copper_open_or_underfill": 2,
+      "dielectric_void_or_crack": 50,
+      "dielectric_misalignment": 3
+    },
+    "findings": [
+      {
+        "id": "D0001",
+        "kind": "copper_bridge_or_residue",
+        "count": 1984,
+        "size": 8126464.0,
+        "unit": "um3",
+        "centroid_um": [
+          122.15322580645162,
+          1471.8870967741937,
+          1245.6129032258063
+        ]
+      },
+      {
+        "id": "D0002",
+        "kind": "copper_bridge_or_residue",
+        "count": 924,
+        "size": 3784704.0,
+        "unit": "um3",
+        "centroid_um": [
+          119.77489177489177,
+          1471.7575757575758,
+          576.7272727272727
+        ]
+      },
+      {
+        "id": "D0003",
+        "kind": "solder_void_or_open",
+        "count": 605,
+        "size": 2478080.0,
+        "unit": "um3",
+        "centroid_um": [
+          119.80165289256199,
+          1471.5239669421487,
+          577.2694214876033
+        ]
+      },
+      {
+        "id": "D0004",
+        "kind": "solder_void_or_open",
+        "count": 580,
+        "size": 2375680.0,
+        "unit": "um3",
+        "centroid_um": [
+          116.38620689655173,
+          1471.503448275862,
+          1019.3655172413793
+        ]
+      },
+      {
+        "id": "D0005",
+        "kind": "solder_void_or_open",
+        "count": 574,
+        "size": 2351104.0,
+        "unit": "um3",
+        "centroid_um": [
+          116.73867595818815,
+          1471.665505226481,
+          1476.1811846689895
+        ]
+      },
+      {
+        "id": "D0006",
+        "kind": "solder_bridge",
+        "count": 348,
+        "size": 1425408.0,
+        "unit": "um3",
+        "centroid_um": [
+          168.0,
+          1480.2758620689656,
+          1248.0
+        ]
+      },
+      {
+        "id": "D0007",
+        "kind": "copper_open_or_underfill",
+        "count": 266,
+        "size": 1089536.0,
+        "unit": "um3",
+        "centroid_um": [
+          87.93984962406014,
+          577.0225563909775,
+          1016.6616541353384
+        ]
+      },
+      {
+        "id": "D0008",
+        "kind": "solder_void_or_open",
+        "count": 169,
+        "size": 692224.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.33136094674556,
+          1472.284023668639,
+          1024.0
+        ]
+      },
+      {
+        "id": "D0009",
+        "kind": "dielectric_void_or_crack",
+        "count": 779,
+        "size": 3190784.0,
+        "unit": "um3",
+        "centroid_um": [
+          152.1540436456996,
+          1476.9293966623877,
+          1248.1437740693195
+        ]
+      },
+      {
+        "id": "D0010",
+        "kind": "dielectric_misalignment",
+        "count": 266,
+        "size": 1089536.0,
+        "unit": "um3",
+        "centroid_um": [
+          87.93984962406014,
+          577.0225563909775,
+          1016.6616541353384
+        ]
+      },
+      {
+        "id": "D0011",
+        "kind": "copper_bridge_or_residue",
+        "count": 97,
+        "size": 397312.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.57731958762886,
+          1472.4948453608247,
+          1024.0
+        ]
+      },
+      {
+        "id": "D0012",
+        "kind": "dielectric_misalignment",
+        "count": 65,
+        "size": 266240.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.61538461538461,
+          1472.0,
+          1024.0
+        ]
+      },
+      {
+        "id": "D0013",
+        "kind": "dielectric_void_or_crack",
+        "count": 48,
+        "size": 196608.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1392.0,
+          496.0
+        ]
+      },
+      {
+        "id": "D0014",
+        "kind": "dielectric_void_or_crack",
+        "count": 48,
+        "size": 196608.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1392.0,
+          944.0
+        ]
+      },
+      {
+        "id": "D0015",
+        "kind": "dielectric_void_or_crack",
+        "count": 48,
+        "size": 196608.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1392.0,
+          1552.0
+        ]
+      },
+      {
+        "id": "D0016",
+        "kind": "dielectric_void_or_crack",
+        "count": 48,
+        "size": 196608.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1552.0,
+          496.0
+        ]
+      },
+      {
+        "id": "D0017",
+        "kind": "dielectric_void_or_crack",
+        "count": 48,
+        "size": 196608.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1552.0,
+          656.0
+        ]
+      },
+      {
+        "id": "D0018",
+        "kind": "dielectric_void_or_crack",
+        "count": 48,
+        "size": 196608.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1552.0,
+          944.0
+        ]
+      },
+      {
+        "id": "D0019",
+        "kind": "dielectric_void_or_crack",
+        "count": 48,
+        "size": 196608.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1552.0,
+          1552.0
+        ]
+      },
+      {
+        "id": "D0020",
+        "kind": "dielectric_void_or_crack",
+        "count": 47,
+        "size": 192512.0,
+        "unit": "um3",
+        "centroid_um": [
+          118.12765957446808,
+          1391.659574468085,
+          655.6595744680851
+        ]
+      },
+      {
+        "id": "D0021",
+        "kind": "dielectric_void_or_crack",
+        "count": 23,
+        "size": 94208.0,
+        "unit": "um3",
+        "centroid_um": [
+          125.21739130434783,
+          1360.0,
+          1003.1304347826087
+        ]
+      },
+      {
+        "id": "D0022",
+        "kind": "dielectric_void_or_crack",
+        "count": 18,
+        "size": 73728.0,
+        "unit": "um3",
+        "centroid_um": [
+          121.77777777777777,
+          1360.0,
+          1041.7777777777778
+        ]
+      },
+      {
+        "id": "D0023",
+        "kind": "dielectric_void_or_crack",
+        "count": 18,
+        "size": 73728.0,
+        "unit": "um3",
+        "centroid_um": [
+          127.11111111111111,
+          1584.0,
+          1006.2222222222222
+        ]
+      },
+      {
+        "id": "D0024",
+        "kind": "dielectric_void_or_crack",
+        "count": 17,
+        "size": 69632.0,
+        "unit": "um3",
+        "centroid_um": [
+          114.82352941176471,
+          1455.0588235294117,
+          912.0
+        ]
+      },
+      {
+        "id": "D0025",
+        "kind": "dielectric_void_or_crack",
+        "count": 17,
+        "size": 69632.0,
+        "unit": "um3",
+        "centroid_um": [
+          113.88235294117646,
+          1455.0588235294117,
+          1584.0
+        ]
+      },
+      {
+        "id": "D0026",
+        "kind": "dielectric_void_or_crack",
+        "count": 17,
+        "size": 69632.0,
+        "unit": "um3",
+        "centroid_um": [
+          113.88235294117646,
+          1488.9411764705883,
+          912.0
+        ]
+      },
+      {
+        "id": "D0027",
+        "kind": "dielectric_void_or_crack",
+        "count": 17,
+        "size": 69632.0,
+        "unit": "um3",
+        "centroid_um": [
+          114.82352941176471,
+          1584.0,
+          1040.9411764705883
+        ]
+      },
+      {
+        "id": "D0028",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          352.0
+        ]
+      },
+      {
+        "id": "D0029",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          416.0
+        ]
+      },
+      {
+        "id": "D0030",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          800.0
+        ]
+      },
+      {
+        "id": "D0031",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1008.0
+        ]
+      },
+      {
+        "id": "D0032",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1072.0
+        ]
+      },
+      {
+        "id": "D0033",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1184.0
+        ]
+      },
+      {
+        "id": "D0034",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1248.0
+        ]
+      },
+      {
+        "id": "D0035",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1472.0
+        ]
+      },
+      {
+        "id": "D0036",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1632.0
+        ]
+      },
+      {
+        "id": "D0037",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1360.0,
+          560.0
+        ]
+      },
+      {
+        "id": "D0038",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1360.0,
+          592.0
+        ]
+      },
+      {
+        "id": "D0039",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1360.0,
+          1456.0
+        ]
+      },
+      {
+        "id": "D0040",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1360.0,
+          1488.0
+        ]
+      },
+      {
+        "id": "D0041",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1456.0,
+          464.0
+        ]
+      },
+      {
+        "id": "D0042",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1456.0,
+          688.0
+        ]
+      },
+      {
+        "id": "D0043",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1488.0,
+          464.0
+        ]
+      },
+      {
+        "id": "D0044",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1488.0,
+          688.0
+        ]
+      },
+      {
+        "id": "D0045",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1488.0,
+          1584.0
+        ]
+      },
+      {
+        "id": "D0046",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1584.0,
+          560.0
+        ]
+      },
+      {
+        "id": "D0047",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1584.0,
+          592.0
+        ]
+      },
+      {
+        "id": "D0048",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1584.0,
+          1456.0
+        ]
+      },
+      {
+        "id": "D0049",
+        "kind": "dielectric_void_or_crack",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1584.0,
+          1488.0
+        ]
+      },
+      {
+        "id": "D0050",
+        "kind": "copper_bridge_or_residue",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          352.0
+        ]
+      },
+      {
+        "id": "D0051",
+        "kind": "copper_bridge_or_residue",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          416.0
+        ]
+      },
+      {
+        "id": "D0052",
+        "kind": "copper_bridge_or_residue",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          800.0
+        ]
+      },
+      {
+        "id": "D0053",
+        "kind": "copper_bridge_or_residue",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1008.0
+        ]
+      },
+      {
+        "id": "D0054",
+        "kind": "copper_bridge_or_residue",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1072.0
+        ]
+      },
+      {
+        "id": "D0055",
+        "kind": "copper_bridge_or_residue",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1184.0
+        ]
+      },
+      {
+        "id": "D0056",
+        "kind": "copper_bridge_or_residue",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1248.0
+        ]
+      },
+      {
+        "id": "D0057",
+        "kind": "copper_bridge_or_residue",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1472.0
+        ]
+      },
+      {
+        "id": "D0058",
+        "kind": "copper_bridge_or_residue",
+        "count": 16,
+        "size": 65536.0,
+        "unit": "um3",
+        "centroid_um": [
+          120.0,
+          1040.0,
+          1632.0
+        ]
+      },
+      {
+        "id": "D0059",
+        "kind": "dielectric_void_or_crack",
+        "count": 15,
+        "size": 61440.0,
+        "unit": "um3",
+        "centroid_um": [
+          128.0,
+          1712.0,
+          160.0
+        ]
+      },
+      {
+        "id": "D0060",
+        "kind": "dielectric_void_or_crack",
+        "count": 13,
+        "size": 53248.0,
+        "unit": "um3",
+        "centroid_um": [
+          96.0,
+          1040.0,
+          592.0
+        ]
+      },
+      {
+        "id": "D0061",
+        "kind": "dielectric_void_or_crack",
+        "count": 13,
+        "size": 53248.0,
+        "unit": "um3",
+        "centroid_um": [
+          144.0,
+          784.0,
+          1248.0
+        ]
+      },
+      {
+        "id": "D0062",
+        "kind": "dielectric_void_or_crack",
+        "count": 13,
+        "size": 53248.0,
+        "unit": "um3",
+        "centroid_um": [
+          144.0,
+          1040.0,
+          864.0
+        ]
+      },
+      {
+        "id": "D0063",
+        "kind": "copper_bridge_or_residue",
+        "count": 13,
+        "size": 53248.0,
+        "unit": "um3",
+        "centroid_um": [
+          96.0,
+          1040.0,
+          592.0
+        ]
+      },
+      {
+        "id": "D0064",
+        "kind": "copper_bridge_or_residue",
+        "count": 13,
+        "size": 53248.0,
+        "unit": "um3",
+        "centroid_um": [
+          144.0,
+          784.0,
+          1248.0
+        ]
+      },
+      {
+        "id": "D0065",
+        "kind": "copper_bridge_or_residue",
+        "count": 13,
+        "size": 53248.0,
+        "unit": "um3",
+        "centroid_um": [
+          144.0,
+          1040.0,
+          864.0
+        ]
+      },
+      {
+        "id": "D0066",
+        "kind": "dielectric_void_or_crack",
+        "count": 12,
+        "size": 49152.0,
+        "unit": "um3",
+        "centroid_um": [
+          152.0,
+          608.0,
+          800.0
+        ]
+      },
+      {
+        "id": "D0067",
+        "kind": "copper_bridge_or_residue",
+        "count": 12,
+        "size": 49152.0,
+        "unit": "um3",
+        "centroid_um": [
+          152.0,
+          608.0,
+          800.0
+        ]
+      },
+      {
+        "id": "D0068",
+        "kind": "dielectric_void_or_crack",
+        "count": 10,
+        "size": 40960.0,
+        "unit": "um3",
+        "centroid_um": [
+          72.0,
+          848.0,
+          1248.0
+        ]
+      },
+      {
+        "id": "D0069",
+        "kind": "copper_bridge_or_residue",
+        "count": 10,
+        "size": 40960.0,
+        "unit": "um3",
+        "centroid_um": [
+          72.0,
+          848.0,
+          1248.0
+        ]
+      },
+      {
+        "id": "D0070",
+        "kind": "dielectric_void_or_crack",
+        "count": 9,
+        "size": 36864.0,
+        "unit": "um3",
+        "centroid_um": [
+          64.0,
+          784.0,
+          800.0
+        ]
+      },
+      {
+        "id": "D0071",
+        "kind": "dielectric_void_or_crack",
+        "count": 9,
+        "size": 36864.0,
+        "unit": "um3",
+        "centroid_um": [
+          64.0,
+          848.0,
+          1072.0
+        ]
+      },
+      {
+        "id": "D0072",
+        "kind": "dielectric_void_or_crack",
+        "count": 9,
+        "size": 36864.0,
+        "unit": "um3",
+        "centroid_um": [
+          128.0,
+          848.0,
+          592.0
+        ]
+      },
+      {
+        "id": "D0073",
+        "kind": "dielectric_misalignment",
+        "count": 9,
+        "size": 36864.0,
+        "unit": "um3",
+        "centroid_um": [
+          176.0,
+          1088.0,
+          1840.0
+        ]
+      },
+      {
+        "id": "D0074",
+        "kind": "copper_open_or_underfill",
+        "count": 9,
+        "size": 36864.0,
+        "unit": "um3",
+        "centroid_um": [
+          176.0,
+          1088.0,
+          1840.0
+        ]
+      },
+      {
+        "id": "D0075",
+        "kind": "copper_bridge_or_residue",
+        "count": 9,
+        "size": 36864.0,
+        "unit": "um3",
+        "centroid_um": [
+          64.0,
+          784.0,
+          800.0
+        ]
+      },
+      {
+        "id": "D0076",
+        "kind": "copper_bridge_or_residue",
+        "count": 9,
+        "size": 36864.0,
+        "unit": "um3",
+        "centroid_um": [
+          64.0,
+          848.0,
+          1072.0
+        ]
+      },
+      {
+        "id": "D0077",
+        "kind": "copper_bridge_or_residue",
+        "count": 9,
+        "size": 36864.0,
+        "unit": "um3",
+        "centroid_um": [
+          128.0,
+          848.0,
+          592.0
+        ]
+      },
+      {
+        "id": "D0078",
+        "kind": "dielectric_void_or_crack",
+        "count": 8,
+        "size": 32768.0,
+        "unit": "um3",
+        "centroid_um": [
+          56.0,
+          1040.0,
+          1696.0
+        ]
+      },
+      {
+        "id": "D0079",
+        "kind": "dielectric_void_or_crack",
+        "count": 8,
+        "size": 32768.0,
+        "unit": "um3",
+        "centroid_um": [
+          184.0,
+          784.0,
+          1008.0
+        ]
+      },
+      {
+        "id": "D0080",
+        "kind": "dielectric_void_or_crack",
+        "count": 8,
+        "size": 32768.0,
+        "unit": "um3",
+        "centroid_um": [
+          184.0,
+          1712.0,
+          1872.0
+        ]
+      },
+      {
+        "id": "D0081",
+        "kind": "copper_bridge_or_residue",
+        "count": 8,
+        "size": 32768.0,
+        "unit": "um3",
+        "centroid_um": [
+          56.0,
+          1040.0,
+          1696.0
+        ]
+      },
+      {
+        "id": "D0082",
+        "kind": "copper_bridge_or_residue",
+        "count": 8,
+        "size": 32768.0,
+        "unit": "um3",
+        "centroid_um": [
+          184.0,
+          784.0,
+          1008.0
+        ]
+      }
+    ]
+  },
+  "input_provenance": {
+    "input": "saved_report",
+    "sha256": "ac2d842f69ce12386e753dd6dfb07e6224b3207cc09f106347afe78a72fedf1c"
+  },
+  "retrieved": [
+    {
+      "id": "K-COPPER",
+      "title": "Copper differences require independent confirmation",
+      "terms": "copper open missing copper excess residue bridge 铜 开路 铜缺失 残留",
+      "applies_to": [
+        "copper_open",
+        "copper_open_or_underfill",
+        "copper_bridge_or_residue"
+      ],
+      "text": {
+        "en": "The project assigns copper-difference signatures by comparing material labels. These labels do not measure electrical continuity or establish a plating or etching cause.",
+        "zh": "项目通过比较材料标签给出铜差异信号。这些标签并未测量电气连续性，也不能确认电镀或蚀刻根因。"
+      },
+      "check": {
+        "en": "Review reconstruction and segmentation, then use continuity tests or process records when a physical cause must be established.",
+        "zh": "先复核重建和分割；需要确认物理原因时，再结合导通测试或工艺记录。"
+      },
+      "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/xsim_chip_analysis/inspection.py",
+      "locator": "_DEFECT_KINDS and analyze_against_reference",
+      "scope": "Project screening logic, not externally validated causal evidence",
+      "retrieval_score": 6.419125
+    },
+    {
+      "id": "K-VOID",
+      "title": "QFN/SON voiding: reflow and via design",
+      "terms": "solder void missing solder low density reflow flux 空洞 孔洞 焊料缺失 低密度 回流",
+      "applies_to": [
+        "solder_void",
+        "solder_void_or_open"
+      ],
+      "text": {
+        "en": "TI describes how reflow flux activity and thermal-via treatment can affect QFN/SON voiding. This is background for a candidate explanation, not proof of the cause in this synthetic sample.",
+        "zh": "TI 指出，回流过程中的助焊剂活性和散热过孔处理会影响 QFN/SON 空洞。这只能提供候选解释，不能证明本合成样本的制造根因。"
+      },
+      "check": {
+        "en": "If applicable to the actual package, review the paste supplier's reflow profile and via design; compare adjacent slices before confirming a void.",
+        "zh": "若实际封装适用，检查焊膏供应商的回流曲线和过孔设计，并结合相邻切片复核空洞。"
+      },
+      "source_url": "https://www.ti.com/lit/an/slua271c/slua271c.pdf#page=7",
+      "locator": "SLUA271C, December 2023, section 3.4.1, printed page 7",
+      "scope": "QFN/SON assembly guidance; applicability to other package geometries requires review",
+      "retrieval_score": 4.129318
+    },
+    {
+      "id": "K-BRIDGE",
+      "title": "QFN/SON solder bridging and land geometry",
+      "terms": "solder bridge excess solder short spacing 焊桥 桥连 短路 焊料多余",
+      "applies_to": [
+        "solder_bridge"
+      ],
+      "text": {
+        "en": "TI relates solder-bridge prevention to pad geometry and clearance. Excess-solder differences are a screening signature; imaging errors can also produce them.",
+        "zh": "TI 将焊桥预防与焊盘几何及间距联系起来。多余焊料差异属于筛查信号，成像误差也可能产生这种信号。"
+      },
+      "check": {
+        "en": "Review the actual land pattern and confirm connectivity in the reconstructed region. Do not import a package-specific acceptance limit into this demo.",
+        "zh": "检查实际焊盘布局并复核重建区域的连通性，不把特定封装的验收限值直接套用到本演示。"
+      },
+      "source_url": "https://www.ti.com/lit/an/slua271c/slua271c.pdf#page=6",
+      "locator": "SLUA271C, December 2023, sections 3.2-3.4, printed pages 6-7",
+      "scope": "QFN/SON geometry guidance; no universal pass/fail rule",
+      "retrieval_score": 3.400619
+    },
+    {
+      "id": "K-ARTIFACT",
+      "title": "Measured boundary false positives in the synthetic CT baseline",
+      "terms": "artifact false positive threshold partial volume Hann boundary void artefact 伪影 误报 边界 阈值 空洞",
+      "applies_to": [
+        "*"
+      ],
+      "text": {
+        "en": "The archived slice-wise experiment shows boundary misclassification after Hann FBP and fixed thresholding, including missing-solder predictions on clean slices. Candidate differences are not confirmed physical defects.",
+        "zh": "已归档的逐层实验显示，Hann FBP 与固定阈值分割会导致边界误分，包括在无缺陷层中预测出焊料缺失。候选差异不等于已确认的物理缺陷。"
+      },
+      "check": {
+        "en": "Inspect grayscale, reference alignment and neighboring slices together; validate any revised segmentation on independent samples.",
+        "zh": "同时检查灰度图、参考体对齐情况和相邻切片；改进分割后，用独立样本验证。"
+      },
+      "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/docs/results/volume_bridge_2026-10-02.md",
+      "locator": "Measured result and CUDA per-signature evaluation",
+      "scope": "Project synthetic baseline; not a general scanner calibration",
+      "retrieval_score": 1.960952
+    }
+  ],
+  "selections": [
+    {
+      "finding_id": "D0001",
+      "source_id": "K-COPPER"
+    },
+    {
+      "finding_id": "D0009",
+      "source_id": "K-ARTIFACT"
+    },
+    {
+      "finding_id": "D0003",
+      "source_id": "K-VOID"
+    },
+    {
+      "finding_id": "D0006",
+      "source_id": "K-BRIDGE"
+    },
+    {
+      "finding_id": "D0007",
+      "source_id": "K-ARTIFACT"
+    },
+    {
+      "finding_id": "D0010",
+      "source_id": "K-ARTIFACT"
+    }
+  ],
+  "trace": [
+    {
+      "raw_model_output": "{\n  \"tool\": \"inspect_case\",\n  \"arguments\": {\n    \"case_id\": \"sample\"\n  }\n}",
+      "tool": "inspect_case",
+      "arguments": {
+        "case_id": "sample"
+      },
+      "status": "accepted",
+      "result": {
+        "dimensions": 3,
+        "shape": [
+          16,
+          129,
+          129
+        ],
+        "spacing_um": 16.0,
+        "provenance": "fixed_threshold_segmentation_of_reconstructed_slice_stack",
+        "component_count": 82,
+        "counts_by_kind": {
+          "copper_bridge_or_residue": 22,
+          "solder_void_or_open": 4,
+          "solder_bridge": 1,
+          "copper_open_or_underfill": 2,
+          "dielectric_void_or_crack": 50,
+          "dielectric_misalignment": 3
+        },
+        "findings": [
+          {
+            "id": "D0001",
+            "kind": "copper_bridge_or_residue",
+            "count": 1984,
+            "size": 8126464.0,
+            "unit": "um3",
+            "centroid_um": [
+              122.15322580645162,
+              1471.8870967741937,
+              1245.6129032258063
+            ]
+          },
+          {
+            "id": "D0009",
+            "kind": "dielectric_void_or_crack",
+            "count": 779,
+            "size": 3190784.0,
+            "unit": "um3",
+            "centroid_um": [
+              152.1540436456996,
+              1476.9293966623877,
+              1248.1437740693195
+            ]
+          },
+          {
+            "id": "D0003",
+            "kind": "solder_void_or_open",
+            "count": 605,
+            "size": 2478080.0,
+            "unit": "um3",
+            "centroid_um": [
+              119.80165289256199,
+              1471.5239669421487,
+              577.2694214876033
+            ]
+          },
+          {
+            "id": "D0006",
+            "kind": "solder_bridge",
+            "count": 348,
+            "size": 1425408.0,
+            "unit": "um3",
+            "centroid_um": [
+              168.0,
+              1480.2758620689656,
+              1248.0
+            ]
+          },
+          {
+            "id": "D0007",
+            "kind": "copper_open_or_underfill",
+            "count": 266,
+            "size": 1089536.0,
+            "unit": "um3",
+            "centroid_um": [
+              87.93984962406014,
+              577.0225563909775,
+              1016.6616541353384
+            ]
+          },
+          {
+            "id": "D0010",
+            "kind": "dielectric_misalignment",
+            "count": 266,
+            "size": 1089536.0,
+            "unit": "um3",
+            "centroid_um": [
+              87.93984962406014,
+              577.0225563909775,
+              1016.6616541353384
+            ]
+          },
+          {
+            "id": "D0002",
+            "kind": "copper_bridge_or_residue",
+            "count": 924,
+            "size": 3784704.0,
+            "unit": "um3",
+            "centroid_um": [
+              119.77489177489177,
+              1471.7575757575758,
+              576.7272727272727
+            ]
+          },
+          {
+            "id": "D0004",
+            "kind": "solder_void_or_open",
+            "count": 580,
+            "size": 2375680.0,
+            "unit": "um3",
+            "centroid_um": [
+              116.38620689655173,
+              1471.503448275862,
+              1019.3655172413793
+            ]
+          }
+        ],
+        "omitted_components": 74,
+        "scope": "screening differences; no confirmed cause or calibrated confidence"
+      }
+    },
+    {
+      "raw_model_output": "{\n  \"tool\": \"search_knowledge\",\n  \"arguments\": {\n    \"query\": \"chip sample copper bridge residue solder void dielectric misalignment\"\n  }\n}",
+      "tool": "search_knowledge",
+      "arguments": {
+        "query": "chip sample copper bridge residue solder void dielectric misalignment"
+      },
+      "status": "accepted",
+      "result": [
+        {
+          "id": "K-COPPER",
+          "title": "Copper differences require independent confirmation",
+          "terms": "copper open missing copper excess residue bridge 铜 开路 铜缺失 残留",
+          "applies_to": [
+            "copper_open",
+            "copper_open_or_underfill",
+            "copper_bridge_or_residue"
+          ],
+          "text": {
+            "en": "The project assigns copper-difference signatures by comparing material labels. These labels do not measure electrical continuity or establish a plating or etching cause.",
+            "zh": "项目通过比较材料标签给出铜差异信号。这些标签并未测量电气连续性，也不能确认电镀或蚀刻根因。"
+          },
+          "check": {
+            "en": "Review reconstruction and segmentation, then use continuity tests or process records when a physical cause must be established.",
+            "zh": "先复核重建和分割；需要确认物理原因时，再结合导通测试或工艺记录。"
+          },
+          "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/xsim_chip_analysis/inspection.py",
+          "locator": "_DEFECT_KINDS and analyze_against_reference",
+          "scope": "Project screening logic, not externally validated causal evidence",
+          "retrieval_score": 6.419125
+        },
+        {
+          "id": "K-VOID",
+          "title": "QFN/SON voiding: reflow and via design",
+          "terms": "solder void missing solder low density reflow flux 空洞 孔洞 焊料缺失 低密度 回流",
+          "applies_to": [
+            "solder_void",
+            "solder_void_or_open"
+          ],
+          "text": {
+            "en": "TI describes how reflow flux activity and thermal-via treatment can affect QFN/SON voiding. This is background for a candidate explanation, not proof of the cause in this synthetic sample.",
+            "zh": "TI 指出，回流过程中的助焊剂活性和散热过孔处理会影响 QFN/SON 空洞。这只能提供候选解释，不能证明本合成样本的制造根因。"
+          },
+          "check": {
+            "en": "If applicable to the actual package, review the paste supplier's reflow profile and via design; compare adjacent slices before confirming a void.",
+            "zh": "若实际封装适用，检查焊膏供应商的回流曲线和过孔设计，并结合相邻切片复核空洞。"
+          },
+          "source_url": "https://www.ti.com/lit/an/slua271c/slua271c.pdf#page=7",
+          "locator": "SLUA271C, December 2023, section 3.4.1, printed page 7",
+          "scope": "QFN/SON assembly guidance; applicability to other package geometries requires review",
+          "retrieval_score": 4.129318
+        },
+        {
+          "id": "K-BRIDGE",
+          "title": "QFN/SON solder bridging and land geometry",
+          "terms": "solder bridge excess solder short spacing 焊桥 桥连 短路 焊料多余",
+          "applies_to": [
+            "solder_bridge"
+          ],
+          "text": {
+            "en": "TI relates solder-bridge prevention to pad geometry and clearance. Excess-solder differences are a screening signature; imaging errors can also produce them.",
+            "zh": "TI 将焊桥预防与焊盘几何及间距联系起来。多余焊料差异属于筛查信号，成像误差也可能产生这种信号。"
+          },
+          "check": {
+            "en": "Review the actual land pattern and confirm connectivity in the reconstructed region. Do not import a package-specific acceptance limit into this demo.",
+            "zh": "检查实际焊盘布局并复核重建区域的连通性，不把特定封装的验收限值直接套用到本演示。"
+          },
+          "source_url": "https://www.ti.com/lit/an/slua271c/slua271c.pdf#page=6",
+          "locator": "SLUA271C, December 2023, sections 3.2-3.4, printed pages 6-7",
+          "scope": "QFN/SON geometry guidance; no universal pass/fail rule",
+          "retrieval_score": 3.400619
+        },
+        {
+          "id": "K-ARTIFACT",
+          "title": "Measured boundary false positives in the synthetic CT baseline",
+          "terms": "artifact false positive threshold partial volume Hann boundary void artefact 伪影 误报 边界 阈值 空洞",
+          "applies_to": [
+            "*"
+          ],
+          "text": {
+            "en": "The archived slice-wise experiment shows boundary misclassification after Hann FBP and fixed thresholding, including missing-solder predictions on clean slices. Candidate differences are not confirmed physical defects.",
+            "zh": "已归档的逐层实验显示，Hann FBP 与固定阈值分割会导致边界误分，包括在无缺陷层中预测出焊料缺失。候选差异不等于已确认的物理缺陷。"
+          },
+          "check": {
+            "en": "Inspect grayscale, reference alignment and neighboring slices together; validate any revised segmentation on independent samples.",
+            "zh": "同时检查灰度图、参考体对齐情况和相邻切片；改进分割后，用独立样本验证。"
+          },
+          "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/docs/results/volume_bridge_2026-10-02.md",
+          "locator": "Measured result and CUDA per-signature evaluation",
+          "scope": "Project synthetic baseline; not a general scanner calibration",
+          "retrieval_score": 1.960952
+        }
+      ]
+    },
+    {
+      "raw_model_output": "{\n  \"tool\": \"finish\",\n  \"arguments\": {\n    \"selections\": [\n      {\n        \"finding_id\": \"D0001\",\n        \"source_id\": \"K-COPPER\"\n      },\n      {\n        \"finding_id\": \"D0009\",\n        \"source_id\": \"K-ARTIFACT\"\n      },\n      {\n        \"finding_id\": \"D0003\",\n        \"source_id\": \"K-VOID\"\n      },\n      {\n        \"finding_id\": \"D0006\",\n        \"source_id\": \"K-BRIDGE\"\n      },\n      {\n        \"finding_id\": \"D0007\",\n        \"source_id\": \"K-ARTIFACT\"\n      },\n      {\n        \"finding_id\": \"D0010\",\n        \"source_id\": \"K-ARTIFACT\"\n      }\n    ]\n  }\n}",
+      "tool": "finish",
+      "arguments": {
+        "selections": [
+          {
+            "finding_id": "D0001",
+            "source_id": "K-COPPER"
+          },
+          {
+            "finding_id": "D0009",
+            "source_id": "K-ARTIFACT"
+          },
+          {
+            "finding_id": "D0003",
+            "source_id": "K-VOID"
+          },
+          {
+            "finding_id": "D0006",
+            "source_id": "K-BRIDGE"
+          },
+          {
+            "finding_id": "D0007",
+            "source_id": "K-ARTIFACT"
+          },
+          {
+            "finding_id": "D0010",
+            "source_id": "K-ARTIFACT"
+          }
+        ]
+      },
+      "status": "accepted"
+    }
+  ],
+  "model": {
+    "backend": "huggingface_transformers",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "requested_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "resolved_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "device": "cpu",
+    "load_in_4bit": false,
+    "structured_decoding": "lm-format-enforcer; stage-specific JSON schema",
+    "max_new_tokens": 384,
+    "max_input_tokens": 8192,
+    "python": "3.12.3",
+    "packages": {
+      "torch": "2.14.1",
+      "transformers": "4.57.6",
+      "accelerate": "1.15.0",
+      "lm-format-enforcer": "0.11.3"
+    }
+  },
+  "error": null,
+  "elapsed_seconds": 155.54846370000087
+}

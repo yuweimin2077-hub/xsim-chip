@@ -1,5 +1,13 @@
 # Final portfolio result
 
+## Language assistant extension
+
+Notebook 05 adds a Colab-ready PyTorch/Hugging Face language model, attributed
+BM25 retrieval and bounded inspection tools on top of the connected CT pipeline.
+It preserves numeric evidence and renders reviewed Chinese/English explanations
+selected by the model. It does not change CT detection accuracy or claim
+fine-tuning. See the [assistant guide](LLM_ASSISTANT.md).
+
 ## Outcome
 
 The small proof of concept now connects the previously separate 2D CT and 3D

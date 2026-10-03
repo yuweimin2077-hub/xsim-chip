@@ -1,0 +1,116 @@
+{
+  "executed_utc": "2026-10-03T18:24:31.928398+00:00",
+  "scope": "hand-authored smoke queries, not a held-out industrial benchmark",
+  "retrieval": [
+    {
+      "query": "solder void reflow flux",
+      "expected": "K-VOID",
+      "retrieved": [
+        "K-VOID",
+        "K-ARTIFACT",
+        "K-2D"
+      ],
+      "hit_at_3": true
+    },
+    {
+      "query": "焊料空洞 回流",
+      "expected": "K-VOID",
+      "retrieved": [
+        "K-VOID",
+        "K-ARTIFACT",
+        "K-BRIDGE"
+      ],
+      "hit_at_3": true
+    },
+    {
+      "query": "solder bridge pad clearance",
+      "expected": "K-BRIDGE",
+      "retrieved": [
+        "K-BRIDGE",
+        "K-COPPER",
+        "K-VOID"
+      ],
+      "hit_at_3": true
+    },
+    {
+      "query": "焊桥桥连",
+      "expected": "K-BRIDGE",
+      "retrieved": [
+        "K-BRIDGE",
+        "K-VOID",
+        "K-COPPER"
+      ],
+      "hit_at_3": true
+    },
+    {
+      "query": "铜开路",
+      "expected": "K-COPPER",
+      "retrieved": [
+        "K-COPPER",
+        "K-BRIDGE"
+      ],
+      "hit_at_3": true
+    },
+    {
+      "query": "误报伪影",
+      "expected": "K-ARTIFACT",
+      "retrieved": [
+        "K-ARTIFACT",
+        "K-BRIDGE",
+        "K-2D"
+      ],
+      "hit_at_3": true
+    },
+    {
+      "query": "二维面积和体积占比",
+      "expected": "K-2D",
+      "retrieved": [
+        "K-2D",
+        "K-GEOMETRY",
+        "K-VOID"
+      ],
+      "hit_at_3": true
+    },
+    {
+      "query": "3d reconstruction geometry",
+      "expected": "K-GEOMETRY",
+      "retrieved": [
+        "K-GEOMETRY",
+        "K-BRIDGE",
+        "K-2D"
+      ],
+      "hit_at_3": true
+    }
+  ],
+  "retrieval_hit_at_3": 1.0,
+  "model_cases": [
+    {
+      "case": "volume_void",
+      "mode": "llm_agent",
+      "dimensions": 3,
+      "components": 82,
+      "selected_links": 6,
+      "accepted_steps": 3,
+      "rejected_steps": 0
+    },
+    {
+      "case": "slice_area",
+      "mode": "llm_agent",
+      "dimensions": 2,
+      "components": 6,
+      "selected_links": 6,
+      "accepted_steps": 3,
+      "rejected_steps": 0
+    },
+    {
+      "case": "volume_copper",
+      "mode": "llm_agent",
+      "dimensions": 3,
+      "components": 82,
+      "selected_links": 6,
+      "accepted_steps": 3,
+      "rejected_steps": 0
+    }
+  ],
+  "model_inference_executed": true
+}
