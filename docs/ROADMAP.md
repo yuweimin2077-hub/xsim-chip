@@ -3,8 +3,9 @@
 The objective is to turn the NIST proof of concept into a reproducible,
 interview-ready engineering workflow while preserving upstream attribution.
 
-> Portfolio scope includes Milestones 1–2 and a small 2D reconstruction-to-
-> inspection closure. The unchecked items below remain optional future work.
+> Portfolio scope includes Milestones 1–2, the 2D inspection loop, and a small
+> slice-wise 3D reconstruction-to-inspection bridge. The remaining unchecked
+> items are optional future work, not required tasks for this portfolio.
 
 ## Milestone 1 — Colab-ready defect analytics
 
@@ -31,31 +32,37 @@ interview-ready engineering workflow while preserving upstream attribution.
 - [x] Verify the same notebook Python cells locally on CUDA and CPU; archive
   manifests, inspection report, and a six-panel figure.
 - [x] Correct dimensionality and timing claims in the historical T4 result.
+- [x] Connect independent 2D slice reconstructions into a 16-layer volume and
+  pass its segmented labels to the existing 3D inspector (Notebook 04).
+- [x] Execute the full bridge locally on CUDA and CPU and archive the results.
 - [ ] Extend the gVXR projection to the SiO₂/Cu/SAC305 package phantom.
 - [ ] Validate a reduced 3D cone-beam reconstruction and measure peak VRAM.
 
 ## Milestone 3 — Realistic defect injection
 
-- Add controlled solder void, bridge, missing bump, copper open, and layer
-  misalignment generators.
-- Produce paired ground-truth masks for detection evaluation.
-- Define defect size, location, and prevalence experiment matrices.
+- [x] Add depth-localized solder void, bridge, and copper open test cases.
+- [x] Produce paired 3D ground-truth masks for independent evaluation.
+- [ ] Add missing bump and layer misalignment generators.
+- [ ] Define broader defect size, location, and prevalence experiment matrices.
 
 ## Milestone 4 — Detection and metrology
 
 - [x] Segment a reconstructed 2D slice and measure strict pixel precision,
   recall, Dice, IoU, and suspected component area without truth-fitted thresholds.
-- Segment reconstructed 3D volumes with a documented baseline (future work).
-- Measure precision, recall, Dice/IoU, defect volume error, and localisation
-  error against synthetic ground truth.
-- Compare robustness across noise, artefact, and projection-count conditions.
+- [x] Segment a slice-wise reconstructed volume with fixed thresholds and
+  report 3D positions, bounding boxes, and candidate-region volumes.
+- [x] Measure strict voxel precision, recall, Dice/IoU, and aggregate signature
+  volume error, retaining false positives and misses.
+- [ ] Validate object-matched localisation and metrology accuracy.
+- [ ] Compare robustness across noise, artefact, and projection-count conditions.
 
 ## Milestone 5 — Root-cause analysis and presentation
 
 - Join defect signatures with simulated process parameters.
 - Add interpretable feature importance and hypothesis calibration.
-- Publish a bilingual technical report, figures, benchmark table, and a short
-  demo suitable for an Applied Materials interview.
+- [x] Publish a concise portfolio summary, figures, measured error tables,
+  and a reproducible connected demo.
+- [ ] Add a bilingual presentation and process-parameter benchmark study.
 
 ## Engineering rules
 

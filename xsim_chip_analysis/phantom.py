@@ -97,3 +97,33 @@ def material_to_attenuation(labels: np.ndarray) -> np.ndarray:
     attenuation[labels == Material.SAC305_SOLDER] = 0.95
     return attenuation
 
+
+def make_demo_volume(
+    depth: int = 16, size: int = 129, seed: int = 2060,
+) -> tuple[np.ndarray, np.ndarray, dict[str, np.ndarray]]:
+    """Extrude a known-good cross-section and inject depth-bounded defects.
+
+    The reference is deliberately simple. The candidate differs with z:
+    void, bridge and copper open have different depth intervals. Only the
+    *input model* is extruded; every candidate slice is projected separately.
+    """
+
+    if not isinstance(depth, int) or depth < 8:
+        raise ValueError("depth must be an integer of at least 8")
+    reference_slice = make_package_slice(size=size, seed=seed)
+    defective_slice, masks_2d = inject_demo_defects(reference_slice)
+    reference = np.repeat(reference_slice[None], depth, axis=0)
+    candidate = reference.copy()
+    intervals = {
+        "solder_void": (depth // 4, 3 * depth // 4),
+        "solder_bridge": (depth // 2, 7 * depth // 8),
+        "copper_open": (depth // 8, 5 * depth // 8),
+    }
+    truth = {}
+    for kind, (start, stop) in intervals.items():
+        truth[kind] = np.zeros_like(reference, dtype=bool)
+        truth[kind][start:stop] = masks_2d[kind]
+        for z in range(start, stop):
+            candidate[z][masks_2d[kind]] = defective_slice[masks_2d[kind]]
+    return reference, candidate, truth
+

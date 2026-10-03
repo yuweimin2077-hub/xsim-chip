@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
-      - name: Install analysis and test dependencies
-        run: python -m pip install -e ".[dev]"
+      - name: Install analysis, simulation, and test dependencies
+        run: python -m pip install -e ".[dev,simulation]"
       - name: Run tests
         run: pytest --cov=xsim_chip_analysis --cov-report=term-missing --cov-fail-under=85

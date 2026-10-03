@@ -48,5 +48,20 @@ its licensing statement remain intact in `LICENSE.md`.
   from the integrated 2D CT workflow and corrected historical geometry/time
   claims without replacing the original T4 measurements.
 
+## 2026-10-02
+
+- Extracted shared ASTRA projection and Hann FBP functions used by both the
+  existing 2D notebook and a new slice-wise 3D Colab notebook.
+- Added a 16-layer phantom with defects at different depths; every detector
+  row is reconstructed independently before volume assembly.
+- Connected fixed-threshold reconstructed labels to the original 3D inspector,
+  with strict voxel metrics, aggregate volume error, and per-depth figures.
+- Ran the complete notebook locally on CUDA and CPU; archived manifests,
+  the 3D report, and figures, clearly separate from historical Colab T4 results.
+- Added 24 tests (64 local passing), real ASTRA CPU integration checks in CI,
+  and a regression check retaining the existing single-slice GPU metrics.
+- Updated the concise README, Colab entry point, and portfolio summary while
+  retaining explicit geometry assumptions and false-positive limitations.
+
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.

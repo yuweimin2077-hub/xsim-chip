@@ -2,101 +2,80 @@
 
 ## Outcome
 
-This portfolio extension is complete at the reproducible proof-of-concept
-level. It turns the NIST `xsim-chip` workflow into a Colab-first semiconductor
-package XCT demonstration with deterministic defect injection, GPU
-reconstruction, defect metrology, root-cause screening hypotheses, tests, and
-run manifests.
+The small proof of concept now connects the previously separate 2D CT and 3D
+inspection modules. Notebook 04 reconstructs **16 independent slices** from
+their projections, assembles a 16 × 129 × 129 attenuation volume, segments it,
+and sends the resulting labels to the existing 3D inspector.
 
-The updated ASTRA notebook also closes the **2D** reconstruction-to-inspection
-loop with fixed material segmentation and independent defect-mask evaluation.
-Its [2026-10-01 result](results/slice_closed_loop_2026-10-01.md) was verified
-locally on RTX 4060 CUDA and CPU. The separate 3D analytics notebook uses
-supplied labels; a reconstructed 3D CT detection chain is not claimed.
+The input phantom has defects at different depths. The volume is **not** made
+by copying a single reconstructed image, and detection does not read the
+candidate's true material labels. A known-good, aligned reference is used for
+comparison; defect truth is used afterward for evaluation only.
 
-The project deliberately stops here. Full scanner calibration, a complete
-multi-material gVXR package, and production defect-detection benchmarking are
-documented future work rather than claims made by this repository.
+This completes the requested small integration. Full cone-beam reconstruction,
+real-data registration, scanner calibration, and production benchmarking remain
+optional future work. No additional complex module is needed to explain this
+portfolio result honestly.
 
-## Historical Colab reconstruction result
+## Measured result
 
-| Item | Result |
-| --- | --- |
-| Runtime | Google Colab, Python 3.13.15 |
-| GPU | NVIDIA Tesla T4, CUDA compute capability 7.5 |
-| Reconstruction | ASTRA 2.5.0 `FBP_CUDA`, Hann filter |
-| Actual reconstructed slice | 129 × 129 pixels at 16 µm |
-| Actual acquisition | 180 views × 192 detector bins |
-| Noise model | Poisson, 100,000 photons |
-| Projection + noise + reconstruction stage time | 0.2337 s |
-| Normalized RMSE | 0.244846 |
-| Planning-only 3D NumPy buffers | 0.0429 GiB (not measured memory) |
-| Controlled defect pixels | void 13; bridge 88; copper open 30 |
-| Current automated tests | 40 passing |
+| Item | Local CUDA | Local CPU |
+| --- | --- | --- |
+| Actual reconstructed volume | 16 × 129 × 129, 16 µm voxels | Same |
+| Projection stack | 180 angles × 16 rows × 192 bins | Same |
+| ASTRA algorithm | `FBP_CUDA`, Hann | `FBP`, Hann |
+| Shared-scale NRMSE | 0.064574 | 0.064146 |
+| Voxel precision / recall / Dice | 0.271 / 0.794 / 0.404 | 0.275 / 0.794 / 0.409 |
+| True-positive / false-positive / missed voxels | 692 / 1,859 / 180 | 692 / 1,823 / 180 |
 
-The normalized RMSE is a reproducible baseline, not an industrial acceptance
-threshold. Attenuation values are relative, and the reduced reconstruction does
-not model scatter, detector blur, or scanner calibration.
-The archived 0.244846 RMSE uses the historical scaling/normalization; the
-new pixel-size-scaled baseline has a different model and metric convention.
+These are strict voxel-overlap metrics, not object-level accuracy. The simple
+threshold baseline has many false missing-solder boundary voxels and misses
+part of the bridge. The GPU report's 82 material-difference components are
+**not 82 true defects**. Physical measurements and root-cause suggestions are
+candidate-region measurements and screening hypotheses, respectively.
 
-## Demonstrated workflow
+The full experiment ran locally on an RTX 4060 Laptop GPU and CPU; **the updated
+3D notebook has not been newly measured on a Colab T4**. See the
+[complete result, manifests, and depth profiles](results/volume_bridge_2026-10-02.md).
+There are 64 passing local tests with 97.03% coverage, including real ASTRA CPU
+and available-GPU checks. CI covers Python 3.11–3.13 with the GPU-only test
+skipped where hardware is unavailable.
 
-1. Create a known-good 2D package reference and inject controlled defects.
-2. Generate noisy Beer–Lambert projections and reconstruct the candidate slice.
-3. Segment reconstructed attenuation using fixed material thresholds.
-4. Compare segmented labels to the aligned known-good reference.
-5. Report 2D components/areas and strict truth-mask precision, recall, Dice, IoU.
-6. Save the report, comparison figure, arrays, and runtime manifest.
+![Reconstructed volume connected to the 3D inspector](results/volume_bridge_2026-10-02/volume_connection.jpg)
 
-Separately, the first notebook compares supplied 3D material-label volumes
-and reports component positions, physical volumes, severity, and testable
-process hypotheses. Its input is not the second notebook's reconstruction.
+## Reproduce
 
-## Reproduce in Colab
+- [Run the connected 3D experiment in Colab](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/04_slice_wise_3d_colab.ipynb)
+- [Colab instructions](COLAB_GPU_WORKFLOW.md)
+- [Earlier 2D closed-loop result](results/slice_closed_loop_2026-10-01.md)
+- [Historical T4 single-slice run](results/colab_astra_smoke_2026-09-08.md)
 
-- [Defect-analysis notebook](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/01_defect_analysis_colab.ipynb)
-- [ASTRA GPU reconstruction notebook](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/02_astra_colab_gpu_smoke.ipynb)
-- [Reduced gVXR spectral notebook](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/03_gvxr_colab_spectral.ipynb)
-- [Archived ASTRA run record](results/colab_astra_smoke_2026-09-08.md)
+Notebook 01 remains a standalone supplied-label example of the 3D inspector.
+Notebook 02 remains a single-slice demonstration of the shared CT functions.
+Notebook 04 connects those capabilities using a new depth-varying phantom.
+Notebook 03's single-material spectral experiment remains separate.
 
 ## Resume-ready description
 
-**Project:** Python-based X-ray CT defect inspection and root-cause analysis for
-semiconductor packaging
+**Project:** Python-based X-ray CT defect inspection and root-cause screening
+for semiconductor packaging
 
-- Extended NIST's open-source `xsim-chip` workflow into a reproducible Google
-  Colab pipeline for synthetic package defects, X-ray projection, GPU CT
-  reconstruction, fixed-threshold 2D segmentation, and reference-based defect
-  evaluation; implemented a separate 3D labelled-volume inspection module.
-- Implemented deterministic solder-void, solder-bridge, and copper-open test
-  cases with material-aware connected-component analysis, severity ranking,
-  physical measurements, and evidence-labelled root-cause hypotheses.
-- Validated 129 × 129 2D ASTRA CUDA/FBP reconstruction on a Colab T4 and
-  completed the detection chain locally on RTX 4060 and CPU; recorded strict
-  GPU pixel recall of 0.771 and Dice of 0.582 with false-positive analysis,
-  runtime manifests, 40 tests, and Python 3.11–3.13 CI coverage.
+- Extended NIST's `xsim-chip` into a Colab-ready synthetic inspection pipeline,
+  connecting parallel-beam projection, slice-wise ASTRA reconstruction, fixed
+  material segmentation, and reference-based 3D defect analysis.
+- Implemented depth-localized solder-void, solder-bridge, and copper-open test
+  cases, 3D connected-component measurements, and independent voxel/volume
+  evaluation; documented false positives and misses rather than claiming
+  production-level accuracy.
+- Verified a 16 × 129 × 129 volume locally on CUDA and CPU, with reproducible
+  notebooks, runtime manifests, 64 local tests, and Python 3.11–3.13 CI.
 
 ## Interview explanation
 
-“I started from NIST's synthetic semiconductor-package CT project and focused
-on making a smaller version reproducible in Colab. I added controlled defect
-labels, a complete 2D reconstruction-to-inspection experiment, separate
-quantitative 3D label-based defect reporting, and transparent
-run metadata. The result is an engineering proof of concept rather than a
-calibrated production inspection system, and the repository clearly separates
-measured results from assumptions and future work.”
-
-## Measured 2D closed-loop result
-
-![Reference, reconstruction, segmented labels, and detection errors](results/slice_closed_loop_2026-10-01/overview.jpg)
-
-## Representative upstream images (not this experiment's result)
-
-Ground-truth synthetic package slice:
-
-![Synthetic chip ground truth](../resources/simplified_chip_750p_Front_0376.jpg)
-
-Reconstructed XCT slice with simulated artefacts:
-
-![Reconstructed XCT slice](../resources/recon_2400_chip_4um_cone_Front_0376.jpg)
+“I reused a 2D CT reconstruction method to reconstruct every layer of a small
+synthetic package independently. I stacked those results, segmented the
+materials, and connected the output to a 3D reference-comparison module. This
+lets me trace a suspected defect from projection data to its 3D location and
+volume. The main limitation is boundary misclassification from simple
+thresholding, which I quantified with strict voxel metrics. It is a simplified
+parallel-beam engineering demonstration, not a validated industrial scanner.”

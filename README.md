@@ -1,118 +1,77 @@
 # Semiconductor Package X-ray CT Inspection
 
 A Colab-first portfolio extension of NIST's
-[`xsim-chip`](https://github.com/usnistgov/xsim-chip) project for synthetic
-semiconductor-package defects, GPU CT reconstruction, 3D defect metrology, and
-root-cause screening hypotheses.
+[`xsim-chip`](https://github.com/usnistgov/xsim-chip): synthetic package defects,
+X-ray reconstruction, 3D defect measurements, and root-cause screening hypotheses.
 
 [![Tests](https://github.com/yuweimin2077-hub/xsim-chip/actions/workflows/tests.yml/badge.svg)](https://github.com/yuweimin2077-hub/xsim-chip/actions/workflows/tests.yml)
-[![Defect analysis](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/01_defect_analysis_colab.ipynb)
-[![ASTRA GPU](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/02_astra_colab_gpu_smoke.ipynb)
-[![gVXR spectral](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/03_gvxr_colab_spectral.ipynb)
 
-## What this project demonstrates
+**Start here — connected 2D → 3D experiment:**
+[![Open connected 3D demo in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/04_slice_wise_3d_colab.ipynb)
 
-- Deterministic solder-void, solder-bridge, and copper-open defects.
-- ASTRA forward projection and filtered backprojection on a Colab GPU.
-- A complete 2D reconstruction-to-inspection baseline with fixed material
-  thresholds, aligned reference comparison, and measured false positives/misses.
-- Material-aware 3D connected-component inspection and physical measurements.
-- Severity ranking with evidence-labelled root-cause hypotheses.
-- Reproducibility manifests covering parameters, packages, hardware, and time.
-- A reduced gVXR spectral smoke test with Al/Cu filtration.
-
-## Verified results
-
-| Item | Result |
-| --- | --- |
-| Current validation | Local NVIDIA RTX 4060 GPU and CPU fallback |
-| Reconstructed slice | 129 × 129 pixels at 16 µm |
-| Acquisition | 180 views × 192 detector bins |
-| Reconstruction | ASTRA 2.5.0 `FBP_CUDA`, Hann filter |
-| GPU projection + noise + reconstruction time | 0.051298 s |
-| Shared-scale GPU normalized RMSE | 0.065717 |
-| GPU pixel precision / recall / Dice | 0.468 / 0.771 / 0.582 |
-| Current tests | 40 passing |
-
-The [2D closed-loop result](docs/results/slice_closed_loop_2026-10-01.md)
-includes configuration, errors, and runtime manifests; see the
-[final portfolio summary](docs/FINAL_RESULT.md). The updated notebook is ready
-for Colab. The [historical T4 run](docs/results/colab_astra_smoke_2026-09-08.md)
-used an older attenuation/noise scale and RMSE normalization, so its results
-are not directly comparable. The 129³ profile is a planning-only 3D estimate.
-
-![2D reconstruction and defect comparison](docs/results/slice_closed_loop_2026-10-01/overview.jpg)
-
-## Workflow
+## What is connected
 
 ```text
-synthetic package + controlled defects
-                 ↓
-       X-ray forward projection
-                 ↓
-          2D GPU reconstruction
-                 ↓
-  fixed material thresholds + aligned reference
-                 ↓
-2D defect masks → area → false positives and misses
+3D package with depth-localized defects
+→ parallel projections for every slice
+→ shared 2D FBP reconstruction, repeated independently for 16 slices
+→ reconstructed 3D volume → fixed material segmentation
+→ existing 3D reference comparison → locations, volumes, and error metrics
 ```
 
-3D labelled-volume inspection and process hypotheses are demonstrated
-separately in the first notebook; reconstructed 3D CT inspection is future work.
+The new notebook reuses the 2D reconstruction functions and the original 3D
+inspector. Every layer uses its own projection data; no reconstructed slice
+is copied to manufacture a volume. Defect truth is reserved for evaluation.
+
+## Verified result
+
+| Item | Local GPU result |
+| --- | --- |
+| Reconstructed volume `(z, y, x)` | 16 × 129 × 129 voxels; 16 µm spacing |
+| Projections `(angle, z, bin)` | 180 × 16 × 192 |
+| Reconstruction | ASTRA 2.5.0 `FBP_CUDA`, Hann filter |
+| Shared-scale normalized RMSE | 0.064574 |
+| Strict voxel precision / recall / Dice | 0.271 / 0.794 / 0.404 |
+| Validation | RTX 4060 Laptop GPU and CPU fallback; 64 local tests |
+
+The connection works, but simple thresholds still produce many boundary
+false positives. This is **not production-grade defect detection**.
+See the [full result and archived manifests](docs/results/volume_bridge_2026-10-02.md)
+and [portfolio summary](docs/FINAL_RESULT.md). The updated Colab notebook uses
+the same experiment code; this 3D result was measured locally, not on a Colab T4.
+
+![Connected reconstruction and 3D inspection](docs/results/volume_bridge_2026-10-02/volume_connection.jpg)
 
 ## Run it
 
-Open the **ASTRA GPU** badge above and run all cells for the complete 2D demo.
-The defect-analysis notebook runs on CPU; ASTRA and gVXR are intended for a T4 GPU
-runtime.
-
-For a local rerun of the same experiment:
+Open the Colab badge, choose a GPU runtime if available, and run all cells.
+CPU fallback is supported. Outputs are saved in `/content/xsim_volume_outputs`.
 
 ```bash
 python -m pip install -e ".[simulation]"
-python tools/run_slice_notebook.py
+python tools/run_slice_notebook.py --volume
+# Add --cpu to force CPU reconstruction.
 ```
 
-For supplied 3D labelled-volume inspection:
-
-```bash
-python -m pip install -e .
-xsim-inspect reference.tif candidate.tif --output outputs/report.json
-```
-
-For development:
-
-```bash
-python -m pip install -e ".[dev]"
-pytest
-```
-
-## Repository guide
-
-| Path | Purpose |
+| Notebook | Purpose |
 | --- | --- |
-| `xsim_chip_analysis/` | 2D/3D inspection, phantom, runtime, and spectral utilities |
-| `notebooks/` | Three reproducible Colab demonstrations |
-| `tests/` | Automated unit tests |
-| `1_generate_chip_imgs/` | Original synthetic-package generation scripts |
-| `2_xct_simulation/` | Original gVXR projection scripts |
-| `3_xct_reconstruction/` | Original ASTRA reconstruction scripts |
-| `docs/` | Results, assumptions, roadmap, and validation notes |
+| [04 · Connected 3D](notebooks/04_slice_wise_3d_colab.ipynb) | Recommended complete slice-wise experiment |
+| [02 · Single-slice CT](notebooks/02_astra_colab_gpu_smoke.ipynb) | Smaller 2D reconstruction and inspection |
+| [01 · 3D label inspection](notebooks/01_defect_analysis_colab.ipynb) | Standalone introduction to the same 3D inspector |
+| [03 · gVXR spectral](notebooks/03_gvxr_colab_spectral.ipynb) | Separate single-material spectral smoke test |
 
-## Scope and limitations
+For development: `python -m pip install -e ".[dev,simulation]"`, then `pytest`.
+The original NIST generation, simulation, and reconstruction directories are
+preserved. See the [Colab guide](docs/COLAB_GPU_WORKFLOW.md) for details.
 
-This is a reproducible engineering proof of concept, not a calibrated
-production inspection system. The reduced ASTRA experiment uses relative
-attenuation and omits scatter, detector blur, and scanner calibration. The
-gVXR notebook is intentionally a single-material smoke test. Root-cause outputs
-are hypotheses for screening and require supporting process evidence.
+## Scope and attribution
 
-The portfolio includes the small 2D closed loop; multi-material simulation and
-production benchmarking remain future work in the [roadmap](docs/ROADMAP.md).
+The bridge assumes aligned parallel-beam slices without cross-slice ray mixing.
+It is not cone-beam reconstruction or calibrated industrial metrology. Relative
+attenuation, synthetic alignment, and fixed thresholds omit real-scanner
+effects. Root-cause entries are testable hypotheses, not proven diagnoses.
+Further complexity is optional in the [roadmap](docs/ROADMAP.md).
 
-## Attribution
-
-This derivative preserves the original NIST source and licensing notice.
-Changes are documented in [MODIFICATIONS.md](MODIFICATIONS.md). NIST does not
-endorse this derivative, and the software is provided without warranty. See
-[LICENSE.md](LICENSE.md) for the full terms.
+This derivative preserves the original NIST source and [licensing notice](LICENSE.md).
+NIST does not endorse this derivative; the software is provided without warranty.
+Changes are listed in [MODIFICATIONS.md](MODIFICATIONS.md).

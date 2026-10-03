@@ -1,0 +1,389 @@
+{
+  "schema_version": "1.0",
+  "created_utc": "2026-10-03T02:16:48.188674+00:00",
+  "config": {
+    "profile": "slice-wise-parallel-3d",
+    "volume_shape_zyx": [
+      16,
+      129,
+      129
+    ],
+    "detector_shape_rc": [
+      16,
+      192
+    ],
+    "projections": 180,
+    "voxel_size_um": 16.0,
+    "seed": 2060
+  },
+  "memory_estimate": {
+    "label_volume_uint8_gib": 0.0002,
+    "working_volume_float32_gib": 0.001,
+    "projection_stack_float32_gib": 0.0021,
+    "projection_stack_uint16_gib": 0.001,
+    "reconstruction_float32_gib": 0.001,
+    "declared_numpy_buffers_gib": 0.0053,
+    "streamed_projection_floor_gib": 0.0033
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "is_google_colab": false,
+    "colab_release_tag": null,
+    "gpu": {
+      "available": "true",
+      "description": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.62, 8188"
+    },
+    "elapsed_seconds": 0.9577498000007836
+  },
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "astra-toolbox": "2.5.0",
+    "gvxr": null
+  },
+  "experiment": {
+    "method": "slice_wise_parallel_beam_3d",
+    "volume_shape_zyx": [
+      16,
+      129,
+      129
+    ],
+    "projection_shape_angle_z_bin": [
+      180,
+      16,
+      192
+    ],
+    "voxel_size_um": 16.0,
+    "seed_by_slice": [
+      2060,
+      2061,
+      2062,
+      2063,
+      2064,
+      2065,
+      2066,
+      2067,
+      2068,
+      2069,
+      2070,
+      2071,
+      2072,
+      2073,
+      2074,
+      2075
+    ],
+    "reconstructed_slices": 16,
+    "reference_model": "extruded_package_with_depth_bounded_candidate_defects",
+    "geometry_assumptions": "parallel rays, zero z mixing, aligned reference, isotropic spacing",
+    "memory_estimate_scope": "declared buffers only; not measured peak memory"
+  },
+  "result": {
+    "algorithm": "FBP_CUDA",
+    "normalized_rmse": 0.06457445025444031,
+    "normalization": "shared_known_attenuation_max_0.95",
+    "zero_count_rays": 0,
+    "timings_seconds": {
+      "projection_noise": 0.07584769999994023,
+      "reconstruction_wall": 0.6290733000005275,
+      "fbp_run_and_readback_sum": 0.5977700999992521,
+      "segmentation_and_3d_inspection": 0.25119420000009995,
+      "acquisition_reconstruction_inspection": 0.9577498000007836
+    },
+    "inspection_summary": {
+      "defect_count": 82,
+      "critical": 8,
+      "major": 3,
+      "minor": 71
+    },
+    "defect_evaluation": {
+      "metric_scope": "strict_3d_voxel_overlap_for_three_retained_material_signatures",
+      "per_defect": {
+        "solder_void": {
+          "true_positive_voxels": 104,
+          "false_positive_voxels": 1824,
+          "false_negative_voxels": 0,
+          "precision": 0.05394190871369295,
+          "recall": 1.0,
+          "dice": 0.10236220472440945,
+          "iou": 0.05394190871369295,
+          "predicted_voxels": 1928,
+          "truth_voxels": 104,
+          "predicted_volume_um3": 7897088.0,
+          "truth_volume_um3": 425984.0,
+          "relative_volume_error": 17.53846153846154
+        },
+        "solder_bridge": {
+          "true_positive_voxels": 348,
+          "false_positive_voxels": 0,
+          "false_negative_voxels": 180,
+          "precision": 1.0,
+          "recall": 0.6590909090909091,
+          "dice": 0.7945205479452054,
+          "iou": 0.6590909090909091,
+          "predicted_voxels": 348,
+          "truth_voxels": 528,
+          "predicted_volume_um3": 1425408.0,
+          "truth_volume_um3": 2162688.0,
+          "relative_volume_error": -0.3409090909090909
+        },
+        "copper_open": {
+          "true_positive_voxels": 240,
+          "false_positive_voxels": 35,
+          "false_negative_voxels": 0,
+          "precision": 0.8727272727272727,
+          "recall": 1.0,
+          "dice": 0.9320388349514563,
+          "iou": 0.8727272727272727,
+          "predicted_voxels": 275,
+          "truth_voxels": 240,
+          "predicted_volume_um3": 1126400.0,
+          "truth_volume_um3": 983040.0,
+          "relative_volume_error": 0.14583333333333334
+        }
+      },
+      "union": {
+        "true_positive_voxels": 692,
+        "false_positive_voxels": 1859,
+        "false_negative_voxels": 180,
+        "precision": 0.27126617012936105,
+        "recall": 0.7935779816513762,
+        "dice": 0.40432369266725093,
+        "iou": 0.25338703771512266,
+        "predicted_voxels": 2551,
+        "truth_voxels": 872,
+        "predicted_volume_um3": 10448896.0,
+        "truth_volume_um3": 3571712.0,
+        "relative_volume_error": 1.9254587155963303
+      }
+    }
+  },
+  "acquisition_by_slice": [
+    {
+      "z_index": 0,
+      "projector": "cuda",
+      "seed": 2060,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.005203900000196882
+    },
+    {
+      "z_index": 1,
+      "projector": "cuda",
+      "seed": 2061,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.0033898000001499895
+    },
+    {
+      "z_index": 2,
+      "projector": "cuda",
+      "seed": 2062,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.0036501999993561185
+    },
+    {
+      "z_index": 3,
+      "projector": "cuda",
+      "seed": 2063,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.018229799999971874
+    },
+    {
+      "z_index": 4,
+      "projector": "cuda",
+      "seed": 2064,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.003659199999674456
+    },
+    {
+      "z_index": 5,
+      "projector": "cuda",
+      "seed": 2065,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.003290499999820895
+    },
+    {
+      "z_index": 6,
+      "projector": "cuda",
+      "seed": 2066,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.0032558999992033932
+    },
+    {
+      "z_index": 7,
+      "projector": "cuda",
+      "seed": 2067,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.004002300000138348
+    },
+    {
+      "z_index": 8,
+      "projector": "cuda",
+      "seed": 2068,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.0031231000002662768
+    },
+    {
+      "z_index": 9,
+      "projector": "cuda",
+      "seed": 2069,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.003083800000240444
+    },
+    {
+      "z_index": 10,
+      "projector": "cuda",
+      "seed": 2070,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.0031896999998934916
+    },
+    {
+      "z_index": 11,
+      "projector": "cuda",
+      "seed": 2071,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.0033572000002095592
+    },
+    {
+      "z_index": 12,
+      "projector": "cuda",
+      "seed": 2072,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.003363799999533512
+    },
+    {
+      "z_index": 13,
+      "projector": "cuda",
+      "seed": 2073,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.003367600000274251
+    },
+    {
+      "z_index": 14,
+      "projector": "cuda",
+      "seed": 2074,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.0032417000002169516
+    },
+    {
+      "z_index": 15,
+      "projector": "cuda",
+      "seed": 2075,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.0037680000004911562
+    }
+  ],
+  "reconstruction_by_slice": [
+    {
+      "z_index": 0,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.04276359999948909
+    },
+    {
+      "z_index": 1,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.038039199999730045
+    },
+    {
+      "z_index": 2,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.035095400000500376
+    },
+    {
+      "z_index": 3,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.035537400000066555
+    },
+    {
+      "z_index": 4,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.03670659999988857
+    },
+    {
+      "z_index": 5,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.03722539999944274
+    },
+    {
+      "z_index": 6,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.03562379999948462
+    },
+    {
+      "z_index": 7,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.03838550000000396
+    },
+    {
+      "z_index": 8,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.036870799999633164
+    },
+    {
+      "z_index": 9,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.041318999999930384
+    },
+    {
+      "z_index": 10,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.03702290000001085
+    },
+    {
+      "z_index": 11,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.03674390000014682
+    },
+    {
+      "z_index": 12,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.038265600000158884
+    },
+    {
+      "z_index": 13,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.03676210000048741
+    },
+    {
+      "z_index": 14,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.035116500000185624
+    },
+    {
+      "z_index": 15,
+      "algorithm": "FBP_CUDA",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.03629240000009304
+    }
+  ]
+}

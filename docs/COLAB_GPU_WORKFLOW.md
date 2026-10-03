@@ -1,5 +1,30 @@
 # Colab GPU workflow
 
+## Recommended: connected 2D → 3D demonstration
+
+1. Open [Notebook 04 in Colab](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/04_slice_wise_3d_colab.ipynb).
+2. Select a GPU runtime if available, then run all cells. CPU fallback works too.
+3. Inspect the 16 × 129 × 129 phantom and its depth-localized defects.
+4. Generate the 180 × 16 × 192 parallel-beam projection stack. Each row has
+   its own slice data and noise seed.
+5. Reconstruct all 16 slices with the same CT function used by Notebook 02.
+6. Segment the assembled volume with fixed thresholds, then run the existing
+   3D reference-based inspector from Notebook 01.
+7. Review the 3D report, strict voxel metrics, and per-depth error profiles.
+8. Retain `/content/xsim_volume_outputs` for the arrays, report, figures,
+   truth/prediction masks, and per-layer runtime manifest.
+
+This is a simplified row-independent parallel-beam experiment, not cone-beam
+CT. Its [archived result](results/volume_bridge_2026-10-02.md) was measured
+locally on RTX 4060 and CPU; the updated Colab source has not been newly
+benchmarked on T4. The 3D filter uses 26-neighbour connectivity and a minimum
+of eight voxels; volumes are reported in µm³. The reference is already aligned.
+
+The links load notebooks from GitHub `main`. If an older notebook is open or
+saved in your Drive, reopen the link above; that independent saved copy does
+not automatically receive repository changes. Start a fresh session to avoid
+using a previously imported package. No separate Notebook 02 run is required.
+
 ## Why a reduced profile is required
 
 The NIST parallel-beam script allocates a 2400 × 1001 × 1201 float32
@@ -11,11 +36,11 @@ host-side arrays.
 
 The `quick-colab` planning profile describes a 129³ labelled volume, 180
 projections, and a 129 × 192 detector, with about 0.043 GiB of declared buffers.
-The executed notebook instead reconstructs a **129 × 129 2D slice** from a
+Notebook 02 instead reconstructs a **129 × 129 2D slice** from a
 **180 × 192 sinogram**. The 3D estimates are clearly labelled planning-only;
 they are not actual 3D reconstruction dimensions or measured memory usage.
 
-## Notebook sequence
+## Optional: single-slice Notebook 02 sequence
 
 1. Open `notebooks/02_astra_colab_gpu_smoke.ipynb` in Colab.
 2. Select a T4 GPU runtime when available.

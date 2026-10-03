@@ -1,0 +1,3236 @@
+{
+  "schema_version": "1.0",
+  "method": "labelled_reference_difference_with_26_connectivity",
+  "disclaimer": "Root causes are hypotheses for screening and require process evidence.",
+  "volume": {
+    "shape_zyx": [
+      16,
+      129,
+      129
+    ],
+    "voxel_size_um": 16.0,
+    "total_voxels": 266256
+  },
+  "summary": {
+    "defect_count": 82,
+    "critical": 8,
+    "major": 3,
+    "minor": 71
+  },
+  "material_metrics": {
+    "silicon_dioxide": {
+      "reference_voxels": 130176,
+      "candidate_voxels": 128440,
+      "intersection_over_union": 0.9801234246512411,
+      "dice": 0.9899619513100504,
+      "missing_voxels": 2166,
+      "excess_voxels": 430
+    },
+    "copper": {
+      "reference_voxels": 23376,
+      "candidate_voxels": 26631,
+      "intersection_over_union": 0.8523855385983109,
+      "dice": 0.9203111564380987,
+      "missing_voxels": 365,
+      "excess_voxels": 3620
+    },
+    "sac305_solder": {
+      "reference_voxels": 7152,
+      "candidate_voxels": 5572,
+      "intersection_over_union": 0.6965333333333333,
+      "dice": 0.8211254322540081,
+      "missing_voxels": 1928,
+      "excess_voxels": 348
+    }
+  },
+  "defects": [
+    {
+      "defect_id": "D0001",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 1984,
+      "volume_um3": 8126464.0,
+      "centroid_zyx_voxels": [
+        7.634576612903226,
+        91.9929435483871,
+        77.8508064516129
+      ],
+      "centroid_zyx_um": [
+        122.15322580645162,
+        1471.8870967741937,
+        1245.6129032258063
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          85,
+          100
+        ],
+        [
+          57,
+          100
+        ]
+      ],
+      "severity": "critical",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0002",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 924,
+      "volume_um3": 3784704.0,
+      "centroid_zyx_voxels": [
+        7.485930735930736,
+        91.98484848484848,
+        36.04545454545455
+      ],
+      "centroid_zyx_um": [
+        119.77489177489177,
+        1471.7575757575758,
+        576.7272727272727
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          85,
+          100
+        ],
+        [
+          29,
+          44
+        ]
+      ],
+      "severity": "critical",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0003",
+      "defect_kind": "solder_void_or_open",
+      "material": "sac305_solder",
+      "difference": "missing",
+      "voxel_count": 605,
+      "volume_um3": 2478080.0,
+      "centroid_zyx_voxels": [
+        7.487603305785124,
+        91.9702479338843,
+        36.079338842975204
+      ],
+      "centroid_zyx_um": [
+        119.80165289256199,
+        1471.5239669421487,
+        577.2694214876033
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          85,
+          100
+        ],
+        [
+          29,
+          44
+        ]
+      ],
+      "severity": "critical",
+      "candidate_root_causes": [
+        "trapped flux or outgassing during reflow",
+        "insufficient solder volume or poor wetting",
+        "reconstruction artefact near a high-attenuation interface"
+      ]
+    },
+    {
+      "defect_id": "D0004",
+      "defect_kind": "solder_void_or_open",
+      "material": "sac305_solder",
+      "difference": "missing",
+      "voxel_count": 580,
+      "volume_um3": 2375680.0,
+      "centroid_zyx_voxels": [
+        7.274137931034483,
+        91.96896551724137,
+        63.710344827586205
+      ],
+      "centroid_zyx_um": [
+        116.38620689655173,
+        1471.503448275862,
+        1019.3655172413793
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          85,
+          100
+        ],
+        [
+          57,
+          72
+        ]
+      ],
+      "severity": "critical",
+      "candidate_root_causes": [
+        "trapped flux or outgassing during reflow",
+        "insufficient solder volume or poor wetting",
+        "reconstruction artefact near a high-attenuation interface"
+      ]
+    },
+    {
+      "defect_id": "D0005",
+      "defect_kind": "solder_void_or_open",
+      "material": "sac305_solder",
+      "difference": "missing",
+      "voxel_count": 574,
+      "volume_um3": 2351104.0,
+      "centroid_zyx_voxels": [
+        7.29616724738676,
+        91.97909407665506,
+        92.26132404181185
+      ],
+      "centroid_zyx_um": [
+        116.73867595818815,
+        1471.665505226481,
+        1476.1811846689895
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          85,
+          100
+        ],
+        [
+          85,
+          100
+        ]
+      ],
+      "severity": "critical",
+      "candidate_root_causes": [
+        "trapped flux or outgassing during reflow",
+        "insufficient solder volume or poor wetting",
+        "reconstruction artefact near a high-attenuation interface"
+      ]
+    },
+    {
+      "defect_id": "D0006",
+      "defect_kind": "solder_bridge",
+      "material": "sac305_solder",
+      "difference": "excess",
+      "voxel_count": 348,
+      "volume_um3": 1425408.0,
+      "centroid_zyx_voxels": [
+        10.5,
+        92.51724137931035,
+        78.0
+      ],
+      "centroid_zyx_um": [
+        168.0,
+        1480.2758620689656,
+        1248.0
+      ],
+      "bounding_box_zyx": [
+        [
+          8,
+          14
+        ],
+        [
+          91,
+          95
+        ],
+        [
+          71,
+          86
+        ]
+      ],
+      "severity": "critical",
+      "candidate_root_causes": [
+        "excess paste deposition",
+        "component placement offset or solder collapse",
+        "segmentation blooming around solder"
+      ]
+    },
+    {
+      "defect_id": "D0007",
+      "defect_kind": "copper_open_or_underfill",
+      "material": "copper",
+      "difference": "missing",
+      "voxel_count": 266,
+      "volume_um3": 1089536.0,
+      "centroid_zyx_voxels": [
+        5.496240601503759,
+        36.06390977443609,
+        63.54135338345865
+      ],
+      "centroid_zyx_um": [
+        87.93984962406014,
+        577.0225563909775,
+        1016.6616541353384
+      ],
+      "bounding_box_zyx": [
+        [
+          2,
+          10
+        ],
+        [
+          35,
+          39
+        ],
+        [
+          58,
+          70
+        ]
+      ],
+      "severity": "critical",
+      "candidate_root_causes": [
+        "incomplete plating or etch over-removal",
+        "via or trace misregistration",
+        "beam-hardening or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0008",
+      "defect_kind": "solder_void_or_open",
+      "material": "sac305_solder",
+      "difference": "missing",
+      "voxel_count": 169,
+      "volume_um3": 692224.0,
+      "centroid_zyx_voxels": [
+        7.520710059171598,
+        92.01775147928994,
+        64.0
+      ],
+      "centroid_zyx_um": [
+        120.33136094674556,
+        1472.284023668639,
+        1024.0
+      ],
+      "bounding_box_zyx": [
+        [
+          4,
+          12
+        ],
+        [
+          90,
+          96
+        ],
+        [
+          62,
+          67
+        ]
+      ],
+      "severity": "critical",
+      "candidate_root_causes": [
+        "trapped flux or outgassing during reflow",
+        "insufficient solder volume or poor wetting",
+        "reconstruction artefact near a high-attenuation interface"
+      ]
+    },
+    {
+      "defect_id": "D0009",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 779,
+      "volume_um3": 3190784.0,
+      "centroid_zyx_voxels": [
+        9.509627727856225,
+        92.30808729139923,
+        78.00898587933247
+      ],
+      "centroid_zyx_um": [
+        152.1540436456996,
+        1476.9293966623877,
+        1248.1437740693195
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          86,
+          99
+        ],
+        [
+          68,
+          89
+        ]
+      ],
+      "severity": "major",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0010",
+      "defect_kind": "dielectric_misalignment",
+      "material": "silicon_dioxide",
+      "difference": "excess",
+      "voxel_count": 266,
+      "volume_um3": 1089536.0,
+      "centroid_zyx_voxels": [
+        5.496240601503759,
+        36.06390977443609,
+        63.54135338345865
+      ],
+      "centroid_zyx_um": [
+        87.93984962406014,
+        577.0225563909775,
+        1016.6616541353384
+      ],
+      "bounding_box_zyx": [
+        [
+          2,
+          10
+        ],
+        [
+          35,
+          39
+        ],
+        [
+          58,
+          70
+        ]
+      ],
+      "severity": "major",
+      "candidate_root_causes": [
+        "layer registration error",
+        "dielectric thickness variation",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0011",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 97,
+      "volume_um3": 397312.0,
+      "centroid_zyx_voxels": [
+        7.536082474226804,
+        92.03092783505154,
+        64.0
+      ],
+      "centroid_zyx_um": [
+        120.57731958762886,
+        1472.4948453608247,
+        1024.0
+      ],
+      "bounding_box_zyx": [
+        [
+          4,
+          12
+        ],
+        [
+          90,
+          96
+        ],
+        [
+          62,
+          67
+        ]
+      ],
+      "severity": "major",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0012",
+      "defect_kind": "dielectric_misalignment",
+      "material": "silicon_dioxide",
+      "difference": "excess",
+      "voxel_count": 65,
+      "volume_um3": 266240.0,
+      "centroid_zyx_voxels": [
+        7.538461538461538,
+        92.0,
+        64.0
+      ],
+      "centroid_zyx_um": [
+        120.61538461538461,
+        1472.0,
+        1024.0
+      ],
+      "bounding_box_zyx": [
+        [
+          4,
+          12
+        ],
+        [
+          91,
+          94
+        ],
+        [
+          63,
+          66
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "layer registration error",
+        "dielectric thickness variation",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0013",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 48,
+      "volume_um3": 196608.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        87.0,
+        31.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1392.0,
+        496.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          86,
+          89
+        ],
+        [
+          30,
+          33
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0014",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 48,
+      "volume_um3": 196608.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        87.0,
+        59.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1392.0,
+        944.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          86,
+          89
+        ],
+        [
+          58,
+          61
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0015",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 48,
+      "volume_um3": 196608.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        87.0,
+        97.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1392.0,
+        1552.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          86,
+          89
+        ],
+        [
+          96,
+          99
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0016",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 48,
+      "volume_um3": 196608.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        97.0,
+        31.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1552.0,
+        496.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          96,
+          99
+        ],
+        [
+          30,
+          33
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0017",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 48,
+      "volume_um3": 196608.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        97.0,
+        41.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1552.0,
+        656.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          96,
+          99
+        ],
+        [
+          40,
+          43
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0018",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 48,
+      "volume_um3": 196608.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        97.0,
+        59.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1552.0,
+        944.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          96,
+          99
+        ],
+        [
+          58,
+          61
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0019",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 48,
+      "volume_um3": 196608.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        97.0,
+        97.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1552.0,
+        1552.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          96,
+          99
+        ],
+        [
+          96,
+          99
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0020",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 47,
+      "volume_um3": 192512.0,
+      "centroid_zyx_voxels": [
+        7.382978723404255,
+        86.97872340425532,
+        40.97872340425532
+      ],
+      "centroid_zyx_um": [
+        118.12765957446808,
+        1391.659574468085,
+        655.6595744680851
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          86,
+          89
+        ],
+        [
+          40,
+          43
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0021",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 23,
+      "volume_um3": 94208.0,
+      "centroid_zyx_voxels": [
+        7.826086956521739,
+        85.0,
+        62.69565217391305
+      ],
+      "centroid_zyx_um": [
+        125.21739130434783,
+        1360.0,
+        1003.1304347826087
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          85,
+          86
+        ],
+        [
+          62,
+          64
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0022",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 18,
+      "volume_um3": 73728.0,
+      "centroid_zyx_voxels": [
+        7.611111111111111,
+        85.0,
+        65.11111111111111
+      ],
+      "centroid_zyx_um": [
+        121.77777777777777,
+        1360.0,
+        1041.7777777777778
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          85,
+          86
+        ],
+        [
+          65,
+          67
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0023",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 18,
+      "volume_um3": 73728.0,
+      "centroid_zyx_voxels": [
+        7.944444444444445,
+        99.0,
+        62.888888888888886
+      ],
+      "centroid_zyx_um": [
+        127.11111111111111,
+        1584.0,
+        1006.2222222222222
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          99,
+          100
+        ],
+        [
+          62,
+          64
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0024",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 17,
+      "volume_um3": 69632.0,
+      "centroid_zyx_voxels": [
+        7.176470588235294,
+        90.94117647058823,
+        57.0
+      ],
+      "centroid_zyx_um": [
+        114.82352941176471,
+        1455.0588235294117,
+        912.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          90,
+          92
+        ],
+        [
+          57,
+          58
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0025",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 17,
+      "volume_um3": 69632.0,
+      "centroid_zyx_voxels": [
+        7.117647058823529,
+        90.94117647058823,
+        99.0
+      ],
+      "centroid_zyx_um": [
+        113.88235294117646,
+        1455.0588235294117,
+        1584.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          90,
+          92
+        ],
+        [
+          99,
+          100
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0026",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 17,
+      "volume_um3": 69632.0,
+      "centroid_zyx_voxels": [
+        7.117647058823529,
+        93.05882352941177,
+        57.0
+      ],
+      "centroid_zyx_um": [
+        113.88235294117646,
+        1488.9411764705883,
+        912.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          93,
+          95
+        ],
+        [
+          57,
+          58
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0027",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 17,
+      "volume_um3": 69632.0,
+      "centroid_zyx_voxels": [
+        7.176470588235294,
+        99.0,
+        65.05882352941177
+      ],
+      "centroid_zyx_um": [
+        114.82352941176471,
+        1584.0,
+        1040.9411764705883
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          99,
+          100
+        ],
+        [
+          65,
+          67
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0028",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        22.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        352.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          22,
+          23
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0029",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        26.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        416.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          26,
+          27
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0030",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        50.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        800.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          50,
+          51
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0031",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        63.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1008.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          63,
+          64
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0032",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        67.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1072.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          67,
+          68
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0033",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        74.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1184.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          74,
+          75
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0034",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        78.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1248.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          78,
+          79
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0035",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        92.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1472.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          92,
+          93
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0036",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        102.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1632.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          102,
+          103
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0037",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        85.0,
+        35.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1360.0,
+        560.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          85,
+          86
+        ],
+        [
+          35,
+          36
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0038",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        85.0,
+        37.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1360.0,
+        592.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          85,
+          86
+        ],
+        [
+          37,
+          38
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0039",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        85.0,
+        91.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1360.0,
+        1456.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          85,
+          86
+        ],
+        [
+          91,
+          92
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0040",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        85.0,
+        93.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1360.0,
+        1488.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          85,
+          86
+        ],
+        [
+          93,
+          94
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0041",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        91.0,
+        29.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1456.0,
+        464.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          91,
+          92
+        ],
+        [
+          29,
+          30
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0042",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        91.0,
+        43.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1456.0,
+        688.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          91,
+          92
+        ],
+        [
+          43,
+          44
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0043",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        93.0,
+        29.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1488.0,
+        464.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          93,
+          94
+        ],
+        [
+          29,
+          30
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0044",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        93.0,
+        43.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1488.0,
+        688.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          93,
+          94
+        ],
+        [
+          43,
+          44
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0045",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        93.0,
+        99.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1488.0,
+        1584.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          93,
+          94
+        ],
+        [
+          99,
+          100
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0046",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        99.0,
+        35.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1584.0,
+        560.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          99,
+          100
+        ],
+        [
+          35,
+          36
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0047",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        99.0,
+        37.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1584.0,
+        592.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          99,
+          100
+        ],
+        [
+          37,
+          38
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0048",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        99.0,
+        91.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1584.0,
+        1456.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          99,
+          100
+        ],
+        [
+          91,
+          92
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0049",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        99.0,
+        93.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1584.0,
+        1488.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          99,
+          100
+        ],
+        [
+          93,
+          94
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0050",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        22.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        352.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          22,
+          23
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0051",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        26.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        416.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          26,
+          27
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0052",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        50.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        800.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          50,
+          51
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0053",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        63.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1008.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          63,
+          64
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0054",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        67.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1072.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          67,
+          68
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0055",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        74.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1184.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          74,
+          75
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0056",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        78.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1248.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          78,
+          79
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0057",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        92.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1472.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          92,
+          93
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0058",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 16,
+      "volume_um3": 65536.0,
+      "centroid_zyx_voxels": [
+        7.5,
+        65.0,
+        102.0
+      ],
+      "centroid_zyx_um": [
+        120.0,
+        1040.0,
+        1632.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          102,
+          103
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0059",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 15,
+      "volume_um3": 61440.0,
+      "centroid_zyx_voxels": [
+        8.0,
+        107.0,
+        10.0
+      ],
+      "centroid_zyx_um": [
+        128.0,
+        1712.0,
+        160.0
+      ],
+      "bounding_box_zyx": [
+        [
+          1,
+          16
+        ],
+        [
+          107,
+          108
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0060",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 13,
+      "volume_um3": 53248.0,
+      "centroid_zyx_voxels": [
+        6.0,
+        65.0,
+        37.0
+      ],
+      "centroid_zyx_um": [
+        96.0,
+        1040.0,
+        592.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          13
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          37,
+          38
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0061",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 13,
+      "volume_um3": 53248.0,
+      "centroid_zyx_voxels": [
+        9.0,
+        49.0,
+        78.0
+      ],
+      "centroid_zyx_um": [
+        144.0,
+        784.0,
+        1248.0
+      ],
+      "bounding_box_zyx": [
+        [
+          3,
+          16
+        ],
+        [
+          49,
+          50
+        ],
+        [
+          78,
+          79
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0062",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 13,
+      "volume_um3": 53248.0,
+      "centroid_zyx_voxels": [
+        9.0,
+        65.0,
+        54.0
+      ],
+      "centroid_zyx_um": [
+        144.0,
+        1040.0,
+        864.0
+      ],
+      "bounding_box_zyx": [
+        [
+          3,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          54,
+          55
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0063",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 13,
+      "volume_um3": 53248.0,
+      "centroid_zyx_voxels": [
+        6.0,
+        65.0,
+        37.0
+      ],
+      "centroid_zyx_um": [
+        96.0,
+        1040.0,
+        592.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          13
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          37,
+          38
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0064",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 13,
+      "volume_um3": 53248.0,
+      "centroid_zyx_voxels": [
+        9.0,
+        49.0,
+        78.0
+      ],
+      "centroid_zyx_um": [
+        144.0,
+        784.0,
+        1248.0
+      ],
+      "bounding_box_zyx": [
+        [
+          3,
+          16
+        ],
+        [
+          49,
+          50
+        ],
+        [
+          78,
+          79
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0065",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 13,
+      "volume_um3": 53248.0,
+      "centroid_zyx_voxels": [
+        9.0,
+        65.0,
+        54.0
+      ],
+      "centroid_zyx_um": [
+        144.0,
+        1040.0,
+        864.0
+      ],
+      "bounding_box_zyx": [
+        [
+          3,
+          16
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          54,
+          55
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0066",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 12,
+      "volume_um3": 49152.0,
+      "centroid_zyx_voxels": [
+        9.5,
+        38.0,
+        50.0
+      ],
+      "centroid_zyx_um": [
+        152.0,
+        608.0,
+        800.0
+      ],
+      "bounding_box_zyx": [
+        [
+          4,
+          16
+        ],
+        [
+          38,
+          39
+        ],
+        [
+          50,
+          51
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0067",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 12,
+      "volume_um3": 49152.0,
+      "centroid_zyx_voxels": [
+        9.5,
+        38.0,
+        50.0
+      ],
+      "centroid_zyx_um": [
+        152.0,
+        608.0,
+        800.0
+      ],
+      "bounding_box_zyx": [
+        [
+          4,
+          16
+        ],
+        [
+          38,
+          39
+        ],
+        [
+          50,
+          51
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0068",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 10,
+      "volume_um3": 40960.0,
+      "centroid_zyx_voxels": [
+        4.5,
+        53.0,
+        78.0
+      ],
+      "centroid_zyx_um": [
+        72.0,
+        848.0,
+        1248.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          10
+        ],
+        [
+          53,
+          54
+        ],
+        [
+          78,
+          79
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0069",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 10,
+      "volume_um3": 40960.0,
+      "centroid_zyx_voxels": [
+        4.5,
+        53.0,
+        78.0
+      ],
+      "centroid_zyx_um": [
+        72.0,
+        848.0,
+        1248.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          10
+        ],
+        [
+          53,
+          54
+        ],
+        [
+          78,
+          79
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0070",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 9,
+      "volume_um3": 36864.0,
+      "centroid_zyx_voxels": [
+        4.0,
+        49.0,
+        50.0
+      ],
+      "centroid_zyx_um": [
+        64.0,
+        784.0,
+        800.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          9
+        ],
+        [
+          49,
+          50
+        ],
+        [
+          50,
+          51
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0071",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 9,
+      "volume_um3": 36864.0,
+      "centroid_zyx_voxels": [
+        4.0,
+        53.0,
+        67.0
+      ],
+      "centroid_zyx_um": [
+        64.0,
+        848.0,
+        1072.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          9
+        ],
+        [
+          53,
+          54
+        ],
+        [
+          67,
+          68
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0072",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 9,
+      "volume_um3": 36864.0,
+      "centroid_zyx_voxels": [
+        8.0,
+        53.0,
+        37.0
+      ],
+      "centroid_zyx_um": [
+        128.0,
+        848.0,
+        592.0
+      ],
+      "bounding_box_zyx": [
+        [
+          4,
+          13
+        ],
+        [
+          53,
+          54
+        ],
+        [
+          37,
+          38
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0073",
+      "defect_kind": "dielectric_misalignment",
+      "material": "silicon_dioxide",
+      "difference": "excess",
+      "voxel_count": 9,
+      "volume_um3": 36864.0,
+      "centroid_zyx_voxels": [
+        11.0,
+        68.0,
+        115.0
+      ],
+      "centroid_zyx_um": [
+        176.0,
+        1088.0,
+        1840.0
+      ],
+      "bounding_box_zyx": [
+        [
+          7,
+          16
+        ],
+        [
+          68,
+          69
+        ],
+        [
+          115,
+          116
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "layer registration error",
+        "dielectric thickness variation",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0074",
+      "defect_kind": "copper_open_or_underfill",
+      "material": "copper",
+      "difference": "missing",
+      "voxel_count": 9,
+      "volume_um3": 36864.0,
+      "centroid_zyx_voxels": [
+        11.0,
+        68.0,
+        115.0
+      ],
+      "centroid_zyx_um": [
+        176.0,
+        1088.0,
+        1840.0
+      ],
+      "bounding_box_zyx": [
+        [
+          7,
+          16
+        ],
+        [
+          68,
+          69
+        ],
+        [
+          115,
+          116
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "incomplete plating or etch over-removal",
+        "via or trace misregistration",
+        "beam-hardening or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0075",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 9,
+      "volume_um3": 36864.0,
+      "centroid_zyx_voxels": [
+        4.0,
+        49.0,
+        50.0
+      ],
+      "centroid_zyx_um": [
+        64.0,
+        784.0,
+        800.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          9
+        ],
+        [
+          49,
+          50
+        ],
+        [
+          50,
+          51
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0076",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 9,
+      "volume_um3": 36864.0,
+      "centroid_zyx_voxels": [
+        4.0,
+        53.0,
+        67.0
+      ],
+      "centroid_zyx_um": [
+        64.0,
+        848.0,
+        1072.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          9
+        ],
+        [
+          53,
+          54
+        ],
+        [
+          67,
+          68
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0077",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 9,
+      "volume_um3": 36864.0,
+      "centroid_zyx_voxels": [
+        8.0,
+        53.0,
+        37.0
+      ],
+      "centroid_zyx_um": [
+        128.0,
+        848.0,
+        592.0
+      ],
+      "bounding_box_zyx": [
+        [
+          4,
+          13
+        ],
+        [
+          53,
+          54
+        ],
+        [
+          37,
+          38
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0078",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 8,
+      "volume_um3": 32768.0,
+      "centroid_zyx_voxels": [
+        3.5,
+        65.0,
+        106.0
+      ],
+      "centroid_zyx_um": [
+        56.0,
+        1040.0,
+        1696.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          8
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          106,
+          107
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0079",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 8,
+      "volume_um3": 32768.0,
+      "centroid_zyx_voxels": [
+        11.5,
+        49.0,
+        63.0
+      ],
+      "centroid_zyx_um": [
+        184.0,
+        784.0,
+        1008.0
+      ],
+      "bounding_box_zyx": [
+        [
+          8,
+          16
+        ],
+        [
+          49,
+          50
+        ],
+        [
+          63,
+          64
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0080",
+      "defect_kind": "dielectric_void_or_crack",
+      "material": "silicon_dioxide",
+      "difference": "missing",
+      "voxel_count": 8,
+      "volume_um3": 32768.0,
+      "centroid_zyx_voxels": [
+        11.5,
+        107.0,
+        117.0
+      ],
+      "centroid_zyx_um": [
+        184.0,
+        1712.0,
+        1872.0
+      ],
+      "bounding_box_zyx": [
+        [
+          8,
+          16
+        ],
+        [
+          107,
+          108
+        ],
+        [
+          117,
+          118
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "dielectric cure or lamination non-uniformity",
+        "thermomechanical stress cracking",
+        "segmentation or reconstruction artefact"
+      ]
+    },
+    {
+      "defect_id": "D0081",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 8,
+      "volume_um3": 32768.0,
+      "centroid_zyx_voxels": [
+        3.5,
+        65.0,
+        106.0
+      ],
+      "centroid_zyx_um": [
+        56.0,
+        1040.0,
+        1696.0
+      ],
+      "bounding_box_zyx": [
+        [
+          0,
+          8
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          106,
+          107
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    },
+    {
+      "defect_id": "D0082",
+      "defect_kind": "copper_bridge_or_residue",
+      "material": "copper",
+      "difference": "excess",
+      "voxel_count": 8,
+      "volume_um3": 32768.0,
+      "centroid_zyx_voxels": [
+        11.5,
+        49.0,
+        63.0
+      ],
+      "centroid_zyx_um": [
+        184.0,
+        784.0,
+        1008.0
+      ],
+      "bounding_box_zyx": [
+        [
+          8,
+          16
+        ],
+        [
+          49,
+          50
+        ],
+        [
+          63,
+          64
+        ]
+      ],
+      "severity": "minor",
+      "candidate_root_causes": [
+        "etch residue or over-plating",
+        "pattern registration error",
+        "partial-volume or thresholding artefact"
+      ]
+    }
+  ],
+  "input_provenance": {
+    "candidate": "fixed_threshold_segmentation_of_reconstructed_slice_stack",
+    "thresholds": [
+      0.075,
+      0.4,
+      0.8
+    ],
+    "geometry": "slice_wise_parallel_beam_no_z_mixing",
+    "min_component_voxels": 8,
+    "connectivity": 26
+  },
+  "evaluation": {
+    "metric_scope": "strict_3d_voxel_overlap_for_three_retained_material_signatures",
+    "per_defect": {
+      "solder_void": {
+        "true_positive_voxels": 104,
+        "false_positive_voxels": 1824,
+        "false_negative_voxels": 0,
+        "precision": 0.05394190871369295,
+        "recall": 1.0,
+        "dice": 0.10236220472440945,
+        "iou": 0.05394190871369295,
+        "predicted_voxels": 1928,
+        "truth_voxels": 104,
+        "predicted_volume_um3": 7897088.0,
+        "truth_volume_um3": 425984.0,
+        "relative_volume_error": 17.53846153846154
+      },
+      "solder_bridge": {
+        "true_positive_voxels": 348,
+        "false_positive_voxels": 0,
+        "false_negative_voxels": 180,
+        "precision": 1.0,
+        "recall": 0.6590909090909091,
+        "dice": 0.7945205479452054,
+        "iou": 0.6590909090909091,
+        "predicted_voxels": 348,
+        "truth_voxels": 528,
+        "predicted_volume_um3": 1425408.0,
+        "truth_volume_um3": 2162688.0,
+        "relative_volume_error": -0.3409090909090909
+      },
+      "copper_open": {
+        "true_positive_voxels": 240,
+        "false_positive_voxels": 35,
+        "false_negative_voxels": 0,
+        "precision": 0.8727272727272727,
+        "recall": 1.0,
+        "dice": 0.9320388349514563,
+        "iou": 0.8727272727272727,
+        "predicted_voxels": 275,
+        "truth_voxels": 240,
+        "predicted_volume_um3": 1126400.0,
+        "truth_volume_um3": 983040.0,
+        "relative_volume_error": 0.14583333333333334
+      }
+    },
+    "union": {
+      "true_positive_voxels": 692,
+      "false_positive_voxels": 1859,
+      "false_negative_voxels": 180,
+      "precision": 0.27126617012936105,
+      "recall": 0.7935779816513762,
+      "dice": 0.40432369266725093,
+      "iou": 0.25338703771512266,
+      "predicted_voxels": 2551,
+      "truth_voxels": 872,
+      "predicted_volume_um3": 10448896.0,
+      "truth_volume_um3": 3571712.0,
+      "relative_volume_error": 1.9254587155963303
+    }
+  }
+}

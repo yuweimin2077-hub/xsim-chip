@@ -1,0 +1,389 @@
+{
+  "schema_version": "1.0",
+  "created_utc": "2026-10-03T02:17:37.300533+00:00",
+  "config": {
+    "profile": "slice-wise-parallel-3d",
+    "volume_shape_zyx": [
+      16,
+      129,
+      129
+    ],
+    "detector_shape_rc": [
+      16,
+      192
+    ],
+    "projections": 180,
+    "voxel_size_um": 16.0,
+    "seed": 2060
+  },
+  "memory_estimate": {
+    "label_volume_uint8_gib": 0.0002,
+    "working_volume_float32_gib": 0.001,
+    "projection_stack_float32_gib": 0.0021,
+    "projection_stack_uint16_gib": 0.001,
+    "reconstruction_float32_gib": 0.001,
+    "declared_numpy_buffers_gib": 0.0053,
+    "streamed_projection_floor_gib": 0.0033
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "is_google_colab": false,
+    "colab_release_tag": null,
+    "gpu": {
+      "available": "true",
+      "description": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.62, 8188"
+    },
+    "elapsed_seconds": 0.5688196999999491
+  },
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "astra-toolbox": "2.5.0",
+    "gvxr": null
+  },
+  "experiment": {
+    "method": "slice_wise_parallel_beam_3d",
+    "volume_shape_zyx": [
+      16,
+      129,
+      129
+    ],
+    "projection_shape_angle_z_bin": [
+      180,
+      16,
+      192
+    ],
+    "voxel_size_um": 16.0,
+    "seed_by_slice": [
+      2060,
+      2061,
+      2062,
+      2063,
+      2064,
+      2065,
+      2066,
+      2067,
+      2068,
+      2069,
+      2070,
+      2071,
+      2072,
+      2073,
+      2074,
+      2075
+    ],
+    "reconstructed_slices": 16,
+    "reference_model": "extruded_package_with_depth_bounded_candidate_defects",
+    "geometry_assumptions": "parallel rays, zero z mixing, aligned reference, isotropic spacing",
+    "memory_estimate_scope": "declared buffers only; not measured peak memory"
+  },
+  "result": {
+    "algorithm": "FBP",
+    "normalized_rmse": 0.06414604187011719,
+    "normalization": "shared_known_attenuation_max_0.95",
+    "zero_count_rays": 0,
+    "timings_seconds": {
+      "projection_noise": 0.21503109999957815,
+      "reconstruction_wall": 0.14294020000033925,
+      "fbp_run_and_readback_sum": 0.12738070000159496,
+      "segmentation_and_3d_inspection": 0.20920899999964604,
+      "acquisition_reconstruction_inspection": 0.5688196999999491
+    },
+    "inspection_summary": {
+      "defect_count": 83,
+      "critical": 8,
+      "major": 3,
+      "minor": 72
+    },
+    "defect_evaluation": {
+      "metric_scope": "strict_3d_voxel_overlap_for_three_retained_material_signatures",
+      "per_defect": {
+        "solder_void": {
+          "true_positive_voxels": 104,
+          "false_positive_voxels": 1800,
+          "false_negative_voxels": 0,
+          "precision": 0.0546218487394958,
+          "recall": 1.0,
+          "dice": 0.10358565737051793,
+          "iou": 0.0546218487394958,
+          "predicted_voxels": 1904,
+          "truth_voxels": 104,
+          "predicted_volume_um3": 7798784.0,
+          "truth_volume_um3": 425984.0,
+          "relative_volume_error": 17.307692307692307
+        },
+        "solder_bridge": {
+          "true_positive_voxels": 348,
+          "false_positive_voxels": 0,
+          "false_negative_voxels": 180,
+          "precision": 1.0,
+          "recall": 0.6590909090909091,
+          "dice": 0.7945205479452054,
+          "iou": 0.6590909090909091,
+          "predicted_voxels": 348,
+          "truth_voxels": 528,
+          "predicted_volume_um3": 1425408.0,
+          "truth_volume_um3": 2162688.0,
+          "relative_volume_error": -0.3409090909090909
+        },
+        "copper_open": {
+          "true_positive_voxels": 240,
+          "false_positive_voxels": 23,
+          "false_negative_voxels": 0,
+          "precision": 0.9125475285171103,
+          "recall": 1.0,
+          "dice": 0.9542743538767395,
+          "iou": 0.9125475285171103,
+          "predicted_voxels": 263,
+          "truth_voxels": 240,
+          "predicted_volume_um3": 1077248.0,
+          "truth_volume_um3": 983040.0,
+          "relative_volume_error": 0.09583333333333334
+        }
+      },
+      "union": {
+        "true_positive_voxels": 692,
+        "false_positive_voxels": 1823,
+        "false_negative_voxels": 180,
+        "precision": 0.27514910536779325,
+        "recall": 0.7935779816513762,
+        "dice": 0.4086211987009153,
+        "iou": 0.2567717996289425,
+        "predicted_voxels": 2515,
+        "truth_voxels": 872,
+        "predicted_volume_um3": 10301440.0,
+        "truth_volume_um3": 3571712.0,
+        "relative_volume_error": 1.8841743119266054
+      }
+    }
+  },
+  "acquisition_by_slice": [
+    {
+      "z_index": 0,
+      "projector": "linear",
+      "seed": 2060,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.013201499999922817
+    },
+    {
+      "z_index": 1,
+      "projector": "linear",
+      "seed": 2061,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.012593200000083016
+    },
+    {
+      "z_index": 2,
+      "projector": "linear",
+      "seed": 2062,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.012971099999958824
+    },
+    {
+      "z_index": 3,
+      "projector": "linear",
+      "seed": 2063,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.012865900000178954
+    },
+    {
+      "z_index": 4,
+      "projector": "linear",
+      "seed": 2064,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.013285600000017439
+    },
+    {
+      "z_index": 5,
+      "projector": "linear",
+      "seed": 2065,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.013026499999796215
+    },
+    {
+      "z_index": 6,
+      "projector": "linear",
+      "seed": 2066,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.012764600000082282
+    },
+    {
+      "z_index": 7,
+      "projector": "linear",
+      "seed": 2067,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.01306139999996958
+    },
+    {
+      "z_index": 8,
+      "projector": "linear",
+      "seed": 2068,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.013466299999890907
+    },
+    {
+      "z_index": 9,
+      "projector": "linear",
+      "seed": 2069,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.012996899999961897
+    },
+    {
+      "z_index": 10,
+      "projector": "linear",
+      "seed": 2070,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.013900099999773374
+    },
+    {
+      "z_index": 11,
+      "projector": "linear",
+      "seed": 2071,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.01255120000041643
+    },
+    {
+      "z_index": 12,
+      "projector": "linear",
+      "seed": 2072,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.012860299999374547
+    },
+    {
+      "z_index": 13,
+      "projector": "linear",
+      "seed": 2073,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.015194899999187328
+    },
+    {
+      "z_index": 14,
+      "projector": "linear",
+      "seed": 2074,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.012334699999883014
+    },
+    {
+      "z_index": 15,
+      "projector": "linear",
+      "seed": 2075,
+      "photons": 100000,
+      "zero_count_rays": 0,
+      "projection_noise_seconds": 0.013264400000480236
+    }
+  ],
+  "reconstruction_by_slice": [
+    {
+      "z_index": 0,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.007750499999929161
+    },
+    {
+      "z_index": 1,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.008422699999755423
+    },
+    {
+      "z_index": 2,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.007811600000422914
+    },
+    {
+      "z_index": 3,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.00795899999957328
+    },
+    {
+      "z_index": 4,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.008344200000465207
+    },
+    {
+      "z_index": 5,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.008627400000477792
+    },
+    {
+      "z_index": 6,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.007786099999975704
+    },
+    {
+      "z_index": 7,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.007782399999996414
+    },
+    {
+      "z_index": 8,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.00806159999956435
+    },
+    {
+      "z_index": 9,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.007880799999838928
+    },
+    {
+      "z_index": 10,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.007866300000387128
+    },
+    {
+      "z_index": 11,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.00774710000041523
+    },
+    {
+      "z_index": 12,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.007656600000700564
+    },
+    {
+      "z_index": 13,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.007856999999603431
+    },
+    {
+      "z_index": 14,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.008155800000167801
+    },
+    {
+      "z_index": 15,
+      "algorithm": "FBP",
+      "filter": "hann",
+      "fbp_run_and_readback_seconds": 0.007671600000321632
+    }
+  ]
+}

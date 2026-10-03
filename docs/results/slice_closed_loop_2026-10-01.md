@@ -1,5 +1,9 @@
 # 2D reconstruction to defect inspection result
 
+> Historical 2D result. On 2026-10-02, [Notebook 04 connected the same CT
+> functions to the 3D inspector](volume_bridge_2026-10-02.md) using 16 independent
+> slice reconstructions. The measurements below are preserved unchanged.
+
 ## Completed chain
 
 Known-good reference + injected candidate → 180 X-ray projections → noisy
@@ -81,7 +85,8 @@ Reconstruction, segmented labels, predicted masks, and truth masks are saved
 there along with the report, manifest, and comparison image. Generated arrays
 are intentionally outside Git.
 
-This addition completes the small **2D** loop. The existing **3D** inspection
-notebook still starts with supplied material labels; it is not a measured
-3D reconstruction-to-detection workflow. Alignment, real-data segmentation,
-3D defect volume estimation, and process-cause validation remain future work.
+At the time of this result, only the small **2D** loop was connected and the
+**3D** inspection notebook used supplied material labels. The later
+[slice-wise 3D result](volume_bridge_2026-10-02.md) now closes that data connection
+and evaluates aggregate defect volume error. Real-data registration,
+segmentation, calibrated metrology, and process-cause validation remain future work.
