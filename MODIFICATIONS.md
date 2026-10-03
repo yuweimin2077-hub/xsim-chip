@@ -62,6 +62,9 @@ its licensing statement remain intact in `LICENSE.md`.
   and a regression check retaining the existing single-slice GPU metrics.
 - Updated the concise README, Colab entry point, and portfolio summary while
   retaining explicit geometry assumptions and false-positive limitations.
+- Re-executed Notebooks 01, 02, and 04 locally in Jupyter and embedded their
+  real text outputs and inline figures for GitHub preview, with explicit local
+  CPU/GPU provenance. Preserved the Colab experiment code and Notebook 03.
 
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.

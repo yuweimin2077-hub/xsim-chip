@@ -60,6 +60,9 @@ python tools/run_slice_notebook.py --volume
 | [01 · 3D label inspection](notebooks/01_defect_analysis_colab.ipynb) | Standalone introduction to the same 3D inspector |
 | [03 · gVXR spectral](notebooks/03_gvxr_colab_spectral.ipynb) | Separate single-material spectral smoke test |
 
+Notebooks 01, 02, and 04 include saved local CPU/GPU outputs and inline figures:
+open their GitHub preview to see results without running Colab.
+
 For development: `python -m pip install -e ".[dev,simulation]"`, then `pytest`.
 The original NIST generation, simulation, and reconstruction directories are
 preserved. See the [Colab guide](docs/COLAB_GPU_WORKFLOW.md) for details.

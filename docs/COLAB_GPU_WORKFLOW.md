@@ -25,6 +25,13 @@ saved in your Drive, reopen the link above; that independent saved copy does
 not automatically receive repository changes. Start a fresh session to avoid
 using a previously imported package. No separate Notebook 02 run is required.
 
+Notebooks 01, 02, and 04 now contain saved text outputs and inline PNG figures
+for GitHub preview. Each notebook identifies these as fresh local Windows
+CPU/GPU runs, not new Colab T4 measurements. The Colab-only installation cell
+is intentionally unexecuted in the saved snapshot. Experiment code is unchanged;
+timings may differ from the earlier archived reports. Running a notebook in
+Colab does not automatically commit its new outputs back to GitHub.
+
 ## Why a reduced profile is required
 
 The NIST parallel-beam script allocates a 2400 × 1001 × 1201 float32
