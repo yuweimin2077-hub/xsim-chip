@@ -19,6 +19,11 @@ The [Colab T4 validation](docs/results/llm_colab_gpu_2026-10-03.md) also passed:
 Qwen2.5-1.5B in FP16, three additional scenarios without fallback, and 3.80 GiB
 peak allocated memory. The executed GPU notebook and raw traces are archived.
 
+**LoRA/SFT pilot completed on T4:** [training and evaluation](docs/results/lora_colab_2026-10-04.md)
+reduced validation loss from 0.5198 to 0.2830 and increased unconstrained valid
+actions from 7/18 to 13/18. Evidence-selection validity regressed (2/6 to 1/6),
+so the reloadable adapter remains experimental and the default model is unchanged.
+
 [![Tests](https://github.com/yuweimin2077-hub/xsim-chip/actions/workflows/tests.yml/badge.svg)](https://github.com/yuweimin2077-hub/xsim-chip/actions/workflows/tests.yml)
 
 **Start here — connected 2D → 3D experiment:**
@@ -70,6 +75,7 @@ python tools/run_slice_notebook.py --volume
 
 | Notebook | Purpose |
 | --- | --- |
+| [06 · LoRA/SFT pilot](notebooks/06_lora_sft_colab.ipynb) | Synthetic workflow training, held-out evaluation and reloadable adapter |
 | [05 · LLM + RAG assistant](notebooks/05_llm_rag_agent_colab.ipynb) | Cited report and bounded model-driven inspection tools |
 | [04 · Connected 3D](notebooks/04_slice_wise_3d_colab.ipynb) | Recommended complete slice-wise experiment |
 | [02 · Single-slice CT](notebooks/02_astra_colab_gpu_smoke.ipynb) | Smaller 2D reconstruction and inspection |
@@ -92,7 +98,9 @@ python -m xsim_chip_analysis.assistant.cli --report docs/results/volume_bridge_2
 For actual model inference, install `.[llm]` and append
 `--model Qwen/Qwen2.5-1.5B-Instruct --strict`. The model weights are downloaded
 from Hugging Face on first use. Colab GPU and optional 4-bit loading are
-documented in Notebook 05. This extension does not train or fine-tune a model.
+documented in Notebook 05. Optional workflow fine-tuning is provided separately
+in [Notebook 06](notebooks/06_lora_sft_colab.ipynb) and the
+[LoRA training guide](docs/lora_training.md); it does not train the CT detector.
 
 ## Scope and attribution
 

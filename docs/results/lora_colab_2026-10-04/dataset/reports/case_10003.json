@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "method": "labelled_reference_difference_with_26_connectivity",
+  "disclaimer": "Root causes are hypotheses for screening and require process evidence.",
+  "volume": {
+    "shape_zyx": [
+      29,
+      32,
+      30
+    ],
+    "voxel_size_um": 8.0,
+    "total_voxels": 27840
+  },
+  "summary": {
+    "defect_count": 1,
+    "critical": 1,
+    "major": 0,
+    "minor": 0
+  },
+  "material_metrics": {
+    "silicon_dioxide": {
+      "reference_voxels": 0,
+      "candidate_voxels": 0,
+      "intersection_over_union": 1.0,
+      "dice": 1.0,
+      "missing_voxels": 0,
+      "excess_voxels": 0
+    },
+    "copper": {
+      "reference_voxels": 512,
+      "candidate_voxels": 512,
+      "intersection_over_union": 1.0,
+      "dice": 1.0,
+      "missing_voxels": 0,
+      "excess_voxels": 0
+    },
+    "sac305_solder": {
+      "reference_voxels": 1000,
+      "candidate_voxels": 1027,
+      "intersection_over_union": 0.9737098344693281,
+      "dice": 0.986679822397632,
+      "missing_voxels": 0,
+      "excess_voxels": 27
+    }
+  },
+  "defects": [
+    {
+      "defect_id": "F10003_1",
+      "defect_kind": "solder_bridge",
+      "material": "sac305_solder",
+      "difference": "excess",
+      "voxel_count": 27,
+      "volume_um3": 13824.0,
+      "centroid_zyx_voxels": [
+        4.0,
+        4.0,
+        18.0
+      ],
+      "centroid_zyx_um": [
+        32.0,
+        32.0,
+        144.0
+      ],
+      "bounding_box_zyx": [
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          17,
+          20
+        ]
+      ],
+      "severity": "critical",
+      "candidate_root_causes": [
+        "excess paste deposition",
+        "component placement offset or solder collapse",
+        "segmentation blooming around solder"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "method": "fixed_material_thresholds_then_aligned_reference_difference_2d",
+  "thresholds": [
+    0.075,
+    0.4,
+    0.8
+  ],
+  "shape_yx": [
+    33,
+    27
+  ],
+  "pixel_size_um": 2.5,
+  "min_component_pixels": 4,
+  "summary": {
+    "component_count": 2,
+    "suspected_defect_pixels": 13,
+    "suspected_defect_area_um2": 81.25
+  },
+  "components": [
+    {
+      "defect_kind": "solder_void",
+      "pixel_count": 9,
+      "area_um2": 56.25,
+      "centroid_yx_pixels": [
+        6.0,
+        6.0
+      ],
+      "centroid_yx_um": [
+        15.0,
+        15.0
+      ],
+      "defect_id": "F10016_1"
+    },
+    {
+      "defect_kind": "copper_open",
+      "pixel_count": 4,
+      "area_um2": 25.0,
+      "centroid_yx_pixels": [
+        18.5,
+        18.5
+      ],
+      "centroid_yx_um": [
+        46.25,
+        46.25
+      ],
+      "defect_id": "F10016_2"
+    }
+  ],
+  "limitations": "Aligned synthetic 2D screening baseline; boundaries and partial-volume effects can cause false positives. No measured 3D defect volume or causal diagnosis is inferred."
+}

@@ -1,0 +1,17 @@
+    - 'row "Oct 4, 2026, 11:45:05 AM WARNING {''train_runtime'': 165.6333, ''train_samples_per_second'': 0.869, ''train_steps_per_second'': 0.217, ''train_loss'': 0.29945170962148243, ''epoch'': 2.0}"':
+    - 'row "Oct 4, 2026, 11:45:05 AM WARNING {''eval_loss'': 0.28296959400177, ''eval_model_preparation_time'': 0.0099, ''eval_runtime'': 6.787, ''eval_samples_per_second'': 2.652, ''eval_steps_per_second'': 2.652, ''epoch'': 2.0}"':
+    - 'row "Oct 4, 2026, 11:44:58 AM WARNING {''loss'': 0.1492, ''grad_norm'': 0.49227267503738403, ''learning_rate'': 3.125e-06, ''epoch'': 2.0}"':
+    - 'row "Oct 4, 2026, 11:44:58 AM WARNING {''loss'': 0.1277, ''grad_norm'': 0.46251633763313293, ''learning_rate'': 1.25e-05, ''epoch'': 1.83}"':
+    - 'row "Oct 4, 2026, 11:44:58 AM WARNING {''loss'': 0.3305, ''grad_norm'': 0.5849418640136719, ''learning_rate'': 2.1875e-05, ''epoch'': 1.67}"':
+    - 'row "Oct 4, 2026, 11:44:58 AM WARNING {''loss'': 0.137, ''grad_norm'': 0.4335472285747528, ''learning_rate'': 3.125e-05, ''epoch'': 1.5}"':
+    - 'row "Oct 4, 2026, 11:44:58 AM WARNING {''loss'': 0.4353, ''grad_norm'': 0.2808617055416107, ''learning_rate'': 4.0625000000000005e-05, ''epoch'': 1.33}"':
+    - 'row "Oct 4, 2026, 11:44:58 AM WARNING {''loss'': 0.236, ''grad_norm'': 0.2678760588169098, ''learning_rate'': 5e-05, ''epoch'': 1.17}"':
+    - 'row "Oct 4, 2026, 11:44:58 AM WARNING {''eval_loss'': 0.33531275391578674, ''eval_model_preparation_time'': 0.0099, ''eval_runtime'': 6.7292, ''eval_samples_per_second'': 2.675, ''eval_steps_per_second'': 2.675, ''epoch'': 1.0}"':
+    - 'row "Oct 4, 2026, 11:43:29 AM WARNING {''loss'': 0.3115, ''grad_norm'': 0.3127369284629822, ''learning_rate'': 5.9375e-05, ''epoch'': 1.0}"':
+    - 'row "Oct 4, 2026, 11:43:29 AM WARNING {''loss'': 0.1874, ''grad_norm'': 0.7234447598457336, ''learning_rate'': 6.875e-05, ''epoch'': 0.83}"':
+    - 'row "Oct 4, 2026, 11:43:29 AM WARNING {''loss'': 0.1801, ''grad_norm'': 0.28215813636779785, ''learning_rate'': 7.8125e-05, ''epoch'': 0.67}"':
+    - 'row "Oct 4, 2026, 11:43:29 AM WARNING {''loss'': 0.5788, ''grad_norm'': 1.265830159187317, ''learning_rate'': 8.75e-05, ''epoch'': 0.5}"':
+    - 'row "Oct 4, 2026, 11:43:29 AM WARNING {''loss'': 0.376, ''grad_norm'': 0.7284907698631287, ''learning_rate'': 9.687500000000001e-05, ''epoch'': 0.33}"':
+    - 'row "Oct 4, 2026, 11:43:29 AM WARNING {''loss'': 0.544, ''grad_norm'': 0.46166396141052246, ''learning_rate'': 5e-05, ''epoch'': 0.17}"':
+    - row "Oct 4, 2026, 11:42:19 AM WARNING BASELINE_VALIDATION_LOSS 0.519801914691925":
+    - 'row "Oct 4, 2026, 11:41:43 AM WARNING TOKENIZATION {\"train\": {\"rows\": 72, \"max_tokens\": 1983, \"supervised_tokens\": 2996}, \"validation\": {\"rows\": 18, \"max_tokens\": 1977, \"supervised_tokens\": 751}, \"test\": {\"rows\": 18, \"max_tokens\": 1972, \"supervised_tokens\": 747}}"':

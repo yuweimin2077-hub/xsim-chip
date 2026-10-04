@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "case_30000",
+    "success": true,
+    "measurements_preserved": true,
+    "steps": 3
+  },
+  {
+    "case_id": "case_30001",
+    "success": true,
+    "measurements_preserved": true,
+    "steps": 3
+  },
+  {
+    "case_id": "case_30002",
+    "success": true,
+    "measurements_preserved": true,
+    "steps": 3
+  },
+  {
+    "case_id": "case_30003",
+    "success": true,
+    "measurements_preserved": true,
+    "steps": 3
+  },
+  {
+    "case_id": "case_30004",
+    "success": true,
+    "measurements_preserved": true,
+    "steps": 3
+  },
+  {
+    "case_id": "case_30005",
+    "success": true,
+    "measurements_preserved": true,
+    "steps": 3
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "method": "fixed_material_thresholds_then_aligned_reference_difference_2d",
+  "thresholds": [
+    0.075,
+    0.4,
+    0.8
+  ],
+  "shape_yx": [
+    28,
+    29
+  ],
+  "pixel_size_um": 4.0,
+  "min_component_pixels": 4,
+  "summary": {
+    "component_count": 2,
+    "suspected_defect_pixels": 13,
+    "suspected_defect_area_um2": 208.0
+  },
+  "components": [
+    {
+      "defect_kind": "solder_void",
+      "pixel_count": 4,
+      "area_um2": 64.0,
+      "centroid_yx_pixels": [
+        7.5,
+        7.5
+      ],
+      "centroid_yx_um": [
+        30.0,
+        30.0
+      ],
+      "defect_id": "F20005_1"
+    },
+    {
+      "defect_kind": "solder_bridge",
+      "pixel_count": 9,
+      "area_um2": 144.0,
+      "centroid_yx_pixels": [
+        4.0,
+        18.0
+      ],
+      "centroid_yx_um": [
+        16.0,
+        72.0
+      ],
+      "defect_id": "F20005_2"
+    }
+  ],
+  "limitations": "Aligned synthetic 2D screening baseline; boundaries and partial-volume effects can cause false positives. No measured 3D defect volume or causal diagnosis is inferred."
+}

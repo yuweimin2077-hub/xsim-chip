@@ -1,0 +1,4 @@
+# Preserve checksummed Colab artifact bytes on Windows as well as Linux.
+docs/results/lora_colab_2026-10-04/** -text
+# Raw rendered reports include their original terminal blank line.
+docs/results/lora_colab_2026-10-04/**/*.md whitespace=-blank-at-eof

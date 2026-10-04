@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "method": "labelled_reference_difference_with_26_connectivity",
+  "disclaimer": "Root causes are hypotheses for screening and require process evidence.",
+  "volume": {
+    "shape_zyx": [
+      33,
+      31,
+      34
+    ],
+    "voxel_size_um": 16.0,
+    "total_voxels": 34782
+  },
+  "summary": {
+    "defect_count": 0,
+    "critical": 0,
+    "major": 0,
+    "minor": 0
+  },
+  "material_metrics": {
+    "silicon_dioxide": {
+      "reference_voxels": 0,
+      "candidate_voxels": 0,
+      "intersection_over_union": 1.0,
+      "dice": 1.0,
+      "missing_voxels": 0,
+      "excess_voxels": 0
+    },
+    "copper": {
+      "reference_voxels": 512,
+      "candidate_voxels": 512,
+      "intersection_over_union": 1.0,
+      "dice": 1.0,
+      "missing_voxels": 0,
+      "excess_voxels": 0
+    },
+    "sac305_solder": {
+      "reference_voxels": 1000,
+      "candidate_voxels": 1000,
+      "intersection_over_union": 1.0,
+      "dice": 1.0,
+      "missing_voxels": 0,
+      "excess_voxels": 0
+    }
+  },
+  "defects": []
+}

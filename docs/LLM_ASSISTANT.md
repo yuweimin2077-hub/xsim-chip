@@ -131,7 +131,9 @@ The language layer does not improve CT detection precision. It does not establis
 electrical continuity, identify a verified manufacturing cause, invent a confidence
 probability, calculate a joint void fraction without its denominator, or assign
 industrial pass/fail criteria. It also cannot answer arbitrary questions beyond
-the supplied case and small corpus. LoRA/SFT, dense embeddings, larger expert
+the supplied case and small corpus. [Notebook 06](../notebooks/06_lora_sft_colab.ipynb)
+adds a separate [synthetic workflow LoRA/SFT pilot](lora_training.md).
+Fine-tuning on expert-reviewed industrial cases, dense embeddings, larger expert
 corpora and real-data causal validation remain future work.
 
 References: [Qwen model card](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct),

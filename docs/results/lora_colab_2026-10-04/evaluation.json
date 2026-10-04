@@ -1,0 +1,124 @@
+{
+  "scope": "held-out synthetic cases; unconstrained single-turn teacher-forced histories plus constrained end-to-end",
+  "test_used_for_training_or_checkpoint_selection": false,
+  "modes": {
+    "base": {
+      "unconstrained_valid": 7,
+      "unconstrained_total": 18,
+      "by_stage": {
+        "inspect_case": {
+          "valid": 0,
+          "total": 6
+        },
+        "search_knowledge": {
+          "valid": 5,
+          "total": 6
+        },
+        "finish": {
+          "valid": 2,
+          "total": 6
+        }
+      },
+      "artifact_included": 0,
+      "artifact_eligible": 5,
+      "end_to_end": [
+        {
+          "case_id": "case_30000",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        },
+        {
+          "case_id": "case_30001",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        },
+        {
+          "case_id": "case_30002",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        },
+        {
+          "case_id": "case_30003",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        },
+        {
+          "case_id": "case_30004",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        },
+        {
+          "case_id": "case_30005",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        }
+      ]
+    },
+    "adapter": {
+      "unconstrained_valid": 13,
+      "unconstrained_total": 18,
+      "by_stage": {
+        "inspect_case": {
+          "valid": 6,
+          "total": 6
+        },
+        "search_knowledge": {
+          "valid": 6,
+          "total": 6
+        },
+        "finish": {
+          "valid": 1,
+          "total": 6
+        }
+      },
+      "artifact_included": 0,
+      "artifact_eligible": 5,
+      "end_to_end": [
+        {
+          "case_id": "case_30000",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        },
+        {
+          "case_id": "case_30001",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        },
+        {
+          "case_id": "case_30002",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        },
+        {
+          "case_id": "case_30003",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        },
+        {
+          "case_id": "case_30004",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        },
+        {
+          "case_id": "case_30005",
+          "success": true,
+          "measurements_preserved": true,
+          "steps": 3
+        }
+      ]
+    }
+  },
+  "elapsed_seconds": 763.666765726,
+  "overall_peak_allocated_gib": 6.4469733238220215
+}

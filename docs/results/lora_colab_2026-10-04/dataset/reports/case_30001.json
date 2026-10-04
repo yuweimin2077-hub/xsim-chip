@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "method": "labelled_reference_difference_with_26_connectivity",
+  "disclaimer": "Root causes are hypotheses for screening and require process evidence.",
+  "volume": {
+    "shape_zyx": [
+      33,
+      29,
+      28
+    ],
+    "voxel_size_um": 8.0,
+    "total_voxels": 26796
+  },
+  "summary": {
+    "defect_count": 1,
+    "critical": 1,
+    "major": 0,
+    "minor": 0
+  },
+  "material_metrics": {
+    "silicon_dioxide": {
+      "reference_voxels": 0,
+      "candidate_voxels": 0,
+      "intersection_over_union": 1.0,
+      "dice": 1.0,
+      "missing_voxels": 0,
+      "excess_voxels": 0
+    },
+    "copper": {
+      "reference_voxels": 512,
+      "candidate_voxels": 512,
+      "intersection_over_union": 1.0,
+      "dice": 1.0,
+      "missing_voxels": 0,
+      "excess_voxels": 0
+    },
+    "sac305_solder": {
+      "reference_voxels": 1000,
+      "candidate_voxels": 936,
+      "intersection_over_union": 0.936,
+      "dice": 0.9669421487603306,
+      "missing_voxels": 64,
+      "excess_voxels": 0
+    }
+  },
+  "defects": [
+    {
+      "defect_id": "F30001_1",
+      "defect_kind": "solder_void_or_open",
+      "material": "sac305_solder",
+      "difference": "missing",
+      "voxel_count": 64,
+      "volume_um3": 32768.0,
+      "centroid_zyx_voxels": [
+        8.5,
+        8.5,
+        8.5
+      ],
+      "centroid_zyx_um": [
+        68.0,
+        68.0,
+        68.0
+      ],
+      "bounding_box_zyx": [
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "severity": "critical",
+      "candidate_root_causes": [
+        "trapped flux or outgassing during reflow",
+        "insufficient solder volume or poor wetting",
+        "reconstruction artefact near a high-attenuation interface"
+      ]
+    }
+  ]
+}

@@ -5,6 +5,11 @@ the CT detector, reconstruction, measurement accuracy, or manufacturing cause
 classifier. The base remains `Qwen/Qwen2.5-1.5B-Instruct` at revision
 `989aa7980e4cf806f80c7fef2b1adb7bc71aa306`, matching the prior GPU inference test.
 
+The [2026-10-04 Colab T4 run](results/lora_colab_2026-10-04.md) is complete.
+Its adapter is archived at `docs/results/lora_colab_2026-10-04/adapter`.
+Tool initiation improved, but evidence selection regressed; the adapter remains
+an experiment and is not the default backend.
+
 ## Run
 
 Open `notebooks/06_lora_sft_colab.ipynb` in Colab, save a Drive copy, select a T4

@@ -78,5 +78,16 @@ its licensing statement remain intact in `LICENSE.md`.
   with Qwen2.5-1.5B in FP16; archived the executed notebook, original reports,
   model/tool traces, measured memory/timings and artifact integrity checks.
 
+## 2026-10-04
+
+- Trained a Qwen2.5-1.5B LoRA/SFT adapter on Colab T4 using synthetic 2D/3D
+  workflow cases, case-grouped splits and assistant-completion-only loss.
+- Added Notebook 06, a reproducible training/evaluation script, optional CLI
+  adapter loading with base-revision checks, and dataset/evaluator regression tests.
+- Compared unconstrained next actions and constrained full-agent trajectories;
+  retained the evidence-selection regression and kept the base model as default.
+- Archived adapter weights, original dataset, raw outputs, loss history and
+  checksums, with explicit limits on synthetic data and industrial claims.
+
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.

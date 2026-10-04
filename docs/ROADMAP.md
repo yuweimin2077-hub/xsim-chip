@@ -74,6 +74,8 @@ interview-ready engineering workflow while preserving upstream attribution.
 - [x] Execute the real model on Colab T4; archive CUDA/FP16 evidence, three
   follow-up scenarios, memory/timing measurements and the executed notebook.
 - [ ] Train and evaluate LoRA/SFT adapters on independently reviewed cases.
+- [x] Complete a separate synthetic workflow LoRA pilot on Colab T4; archive
+  adapter weights, held-out comparisons and the evidence-selection regression.
 - [ ] Extend and evaluate the knowledge corpus with domain experts and real samples.
 
 ## Engineering rules

@@ -41,6 +41,9 @@ def test_all_teacher_actions_are_semantically_valid(dataset):
     for rows in dataset[2].values():
         for row in rows:
             assert score_action(row["target"], row)["valid"]
+    row = dataset[2]["test"][0]
+    fenced = score_action("```json\n" + row["target"] + "\n```", row)
+    assert fenced["valid"] and fenced["exact_teacher_match"] and fenced["error"] is None
 
 
 def test_evaluator_rejects_wrong_case_stage_query_and_unretrieved_source(dataset):

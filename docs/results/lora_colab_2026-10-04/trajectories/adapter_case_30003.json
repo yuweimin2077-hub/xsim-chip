@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.0",
+  "mode": "llm_agent",
+  "case_id": "case_30003",
+  "question": "Assess the supplied case; retain measurement units and uncertainty.",
+  "evidence": {
+    "dimensions": 3,
+    "shape": [
+      26,
+      34,
+      32
+    ],
+    "spacing_um": 8.0,
+    "provenance": "supplied_material_labels",
+    "component_count": 1,
+    "counts_by_kind": {
+      "solder_bridge": 1
+    },
+    "findings": [
+      {
+        "id": "F30003_1",
+        "kind": "solder_bridge",
+        "count": 27,
+        "size": 13824.0,
+        "unit": "um3",
+        "centroid_um": [
+          32.0,
+          32.0,
+          144.0
+        ]
+      }
+    ]
+  },
+  "input_provenance": {
+    "input": "saved_report",
+    "sha256": "887ebc44d9390f4b2c889cb1ed706ed884fc53c394607c82253764ab75be52bf"
+  },
+  "retrieved": [
+    {
+      "id": "K-BRIDGE",
+      "title": "QFN/SON solder bridging and land geometry",
+      "terms": "solder bridge excess solder short spacing 焊桥 桥连 短路 焊料多余",
+      "applies_to": [
+        "solder_bridge"
+      ],
+      "text": {
+        "en": "TI relates solder-bridge prevention to pad geometry and clearance. Excess-solder differences are a screening signature; imaging errors can also produce them.",
+        "zh": "TI 将焊桥预防与焊盘几何及间距联系起来。多余焊料差异属于筛查信号，成像误差也可能产生这种信号。"
+      },
+      "check": {
+        "en": "Review the actual land pattern and confirm connectivity in the reconstructed region. Do not import a package-specific acceptance limit into this demo.",
+        "zh": "检查实际焊盘布局并复核重建区域的连通性，不把特定封装的验收限值直接套用到本演示。"
+      },
+      "source_url": "https://www.ti.com/lit/an/slua271c/slua271c.pdf#page=6",
+      "locator": "SLUA271C, December 2023, sections 3.2-3.4, printed pages 6-7",
+      "scope": "QFN/SON geometry guidance; no universal pass/fail rule",
+      "retrieval_score": 5.2799
+    },
+    {
+      "id": "K-SCOPE",
+      "title": "Evidence limits and root-cause hypotheses",
+      "terms": "cause process evidence diagnosis confidence severity defect inspection 根因 原因 证据 严重 程度 检测 芯片 缺陷",
+      "applies_to": [
+        "*"
+      ],
+      "text": {
+        "en": "Differences and rule-based severity are screening results. No process measurements or calibrated causal probabilities are supplied. An absence of detected differences does not establish a defect-free part.",
+        "zh": "差异及规则严重程度属于筛查结果。目前没有提供工艺测量或校准后的因果概率；未检出差异也不能证明器件无缺陷。"
+      },
+      "check": {
+        "en": "Obtain process records, independent inspection and applicable acceptance criteria before making a manufacturing disposition.",
+        "zh": "作制造处置前，需要工艺记录、独立检测和适用的验收标准。"
+      },
+      "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/docs/FINAL_RESULT.md",
+      "locator": "Scope and limitations of the completed synthetic integration",
+      "scope": "Project limitations; no industrial acceptance certification",
+      "retrieval_score": 1.989142
+    },
+    {
+      "id": "K-COPPER",
+      "title": "Copper differences require independent confirmation",
+      "terms": "copper open missing copper excess residue bridge 铜 开路 铜缺失 残留",
+      "applies_to": [
+        "copper_open",
+        "copper_open_or_underfill",
+        "copper_bridge_or_residue"
+      ],
+      "text": {
+        "en": "The project assigns copper-difference signatures by comparing material labels. These labels do not measure electrical continuity or establish a plating or etching cause.",
+        "zh": "项目通过比较材料标签给出铜差异信号。这些标签并未测量电气连续性，也不能确认电镀或蚀刻根因。"
+      },
+      "check": {
+        "en": "Review reconstruction and segmentation, then use continuity tests or process records when a physical cause must be established.",
+        "zh": "先复核重建和分割；需要确认物理原因时，再结合导通测试或工艺记录。"
+      },
+      "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/xsim_chip_analysis/inspection.py",
+      "locator": "_DEFECT_KINDS and analyze_against_reference",
+      "scope": "Project screening logic, not externally validated causal evidence",
+      "retrieval_score": 1.895811
+    },
+    {
+      "id": "K-ARTIFACT",
+      "title": "Measured boundary false positives in the synthetic CT baseline",
+      "terms": "artifact false positive threshold partial volume Hann boundary void artefact 伪影 误报 边界 阈值 空洞",
+      "applies_to": [
+        "*"
+      ],
+      "text": {
+        "en": "The archived slice-wise experiment shows boundary misclassification after Hann FBP and fixed thresholding, including missing-solder predictions on clean slices. Candidate differences are not confirmed physical defects.",
+        "zh": "已归档的逐层实验显示，Hann FBP 与固定阈值分割会导致边界误分，包括在无缺陷层中预测出焊料缺失。候选差异不等于已确认的物理缺陷。"
+      },
+      "check": {
+        "en": "Inspect grayscale, reference alignment and neighboring slices together; validate any revised segmentation on independent samples.",
+        "zh": "同时检查灰度图、参考体对齐情况和相邻切片；改进分割后，用独立样本验证。"
+      },
+      "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/docs/results/volume_bridge_2026-10-02.md",
+      "locator": "Measured result and CUDA per-signature evaluation",
+      "scope": "Project synthetic baseline; not a general scanner calibration",
+      "retrieval_score": 1.363354
+    }
+  ],
+  "selections": [
+    {
+      "finding_id": "F30003_1",
+      "source_id": "K-ARTIFACT"
+    },
+    {
+      "finding_id": "F30003_1",
+      "source_id": "K-SCOPE"
+    },
+    {
+      "finding_id": "F30003_1",
+      "source_id": "K-BRIDGE"
+    }
+  ],
+  "trace": [
+    {
+      "raw_model_output": "{\"tool\": \"inspect_case\", \"arguments\": {\"case_id\": \"case_30003\"}}",
+      "tool": "inspect_case",
+      "arguments": {
+        "case_id": "case_30003"
+      },
+      "status": "accepted",
+      "result": {
+        "dimensions": 3,
+        "shape": [
+          26,
+          34,
+          32
+        ],
+        "spacing_um": 8.0,
+        "provenance": "supplied_material_labels",
+        "component_count": 1,
+        "counts_by_kind": {
+          "solder_bridge": 1
+        },
+        "findings": [
+          {
+            "id": "F30003_1",
+            "kind": "solder_bridge",
+            "count": 27,
+            "size": 13824.0,
+            "unit": "um3",
+            "centroid_um": [
+              32.0,
+              32.0,
+              144.0
+            ]
+          }
+        ],
+        "omitted_components": 0,
+        "scope": "screening differences; no confirmed cause or calibrated confidence"
+      }
+    },
+    {
+      "raw_model_output": "{\"tool\": \"search_knowledge\", \"arguments\": {\"query\": \"solder bridge screening differences\"}}",
+      "tool": "search_knowledge",
+      "arguments": {
+        "query": "solder bridge screening differences"
+      },
+      "status": "accepted",
+      "result": [
+        {
+          "id": "K-BRIDGE",
+          "title": "QFN/SON solder bridging and land geometry",
+          "terms": "solder bridge excess solder short spacing 焊桥 桥连 短路 焊料多余",
+          "applies_to": [
+            "solder_bridge"
+          ],
+          "text": {
+            "en": "TI relates solder-bridge prevention to pad geometry and clearance. Excess-solder differences are a screening signature; imaging errors can also produce them.",
+            "zh": "TI 将焊桥预防与焊盘几何及间距联系起来。多余焊料差异属于筛查信号，成像误差也可能产生这种信号。"
+          },
+          "check": {
+            "en": "Review the actual land pattern and confirm connectivity in the reconstructed region. Do not import a package-specific acceptance limit into this demo.",
+            "zh": "检查实际焊盘布局并复核重建区域的连通性，不把特定封装的验收限值直接套用到本演示。"
+          },
+          "source_url": "https://www.ti.com/lit/an/slua271c/slua271c.pdf#page=6",
+          "locator": "SLUA271C, December 2023, sections 3.2-3.4, printed pages 6-7",
+          "scope": "QFN/SON geometry guidance; no universal pass/fail rule",
+          "retrieval_score": 5.2799
+        },
+        {
+          "id": "K-SCOPE",
+          "title": "Evidence limits and root-cause hypotheses",
+          "terms": "cause process evidence diagnosis confidence severity defect inspection 根因 原因 证据 严重 程度 检测 芯片 缺陷",
+          "applies_to": [
+            "*"
+          ],
+          "text": {
+            "en": "Differences and rule-based severity are screening results. No process measurements or calibrated causal probabilities are supplied. An absence of detected differences does not establish a defect-free part.",
+            "zh": "差异及规则严重程度属于筛查结果。目前没有提供工艺测量或校准后的因果概率；未检出差异也不能证明器件无缺陷。"
+          },
+          "check": {
+            "en": "Obtain process records, independent inspection and applicable acceptance criteria before making a manufacturing disposition.",
+            "zh": "作制造处置前，需要工艺记录、独立检测和适用的验收标准。"
+          },
+          "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/docs/FINAL_RESULT.md",
+          "locator": "Scope and limitations of the completed synthetic integration",
+          "scope": "Project limitations; no industrial acceptance certification",
+          "retrieval_score": 1.989142
+        },
+        {
+          "id": "K-COPPER",
+          "title": "Copper differences require independent confirmation",
+          "terms": "copper open missing copper excess residue bridge 铜 开路 铜缺失 残留",
+          "applies_to": [
+            "copper_open",
+            "copper_open_or_underfill",
+            "copper_bridge_or_residue"
+          ],
+          "text": {
+            "en": "The project assigns copper-difference signatures by comparing material labels. These labels do not measure electrical continuity or establish a plating or etching cause.",
+            "zh": "项目通过比较材料标签给出铜差异信号。这些标签并未测量电气连续性，也不能确认电镀或蚀刻根因。"
+          },
+          "check": {
+            "en": "Review reconstruction and segmentation, then use continuity tests or process records when a physical cause must be established.",
+            "zh": "先复核重建和分割；需要确认物理原因时，再结合导通测试或工艺记录。"
+          },
+          "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/xsim_chip_analysis/inspection.py",
+          "locator": "_DEFECT_KINDS and analyze_against_reference",
+          "scope": "Project screening logic, not externally validated causal evidence",
+          "retrieval_score": 1.895811
+        },
+        {
+          "id": "K-ARTIFACT",
+          "title": "Measured boundary false positives in the synthetic CT baseline",
+          "terms": "artifact false positive threshold partial volume Hann boundary void artefact 伪影 误报 边界 阈值 空洞",
+          "applies_to": [
+            "*"
+          ],
+          "text": {
+            "en": "The archived slice-wise experiment shows boundary misclassification after Hann FBP and fixed thresholding, including missing-solder predictions on clean slices. Candidate differences are not confirmed physical defects.",
+            "zh": "已归档的逐层实验显示，Hann FBP 与固定阈值分割会导致边界误分，包括在无缺陷层中预测出焊料缺失。候选差异不等于已确认的物理缺陷。"
+          },
+          "check": {
+            "en": "Inspect grayscale, reference alignment and neighboring slices together; validate any revised segmentation on independent samples.",
+            "zh": "同时检查灰度图、参考体对齐情况和相邻切片；改进分割后，用独立样本验证。"
+          },
+          "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/docs/results/volume_bridge_2026-10-02.md",
+          "locator": "Measured result and CUDA per-signature evaluation",
+          "scope": "Project synthetic baseline; not a general scanner calibration",
+          "retrieval_score": 1.363354
+        }
+      ]
+    },
+    {
+      "raw_model_output": "{\"tool\": \"finish\", \"arguments\": {\"selections\": [{\"finding_id\": \"F30003_1\", \"source_id\": \"K-ARTIFACT\"}, {\"finding_id\": \"F30003_1\", \"source_id\": \"K-SCOPE\"}, {\"finding_id\": \"F30003_1\", \"source_id\": \"K-BRIDGE\"}]}}",
+      "tool": "finish",
+      "arguments": {
+        "selections": [
+          {
+            "finding_id": "F30003_1",
+            "source_id": "K-ARTIFACT"
+          },
+          {
+            "finding_id": "F30003_1",
+            "source_id": "K-SCOPE"
+          },
+          {
+            "finding_id": "F30003_1",
+            "source_id": "K-BRIDGE"
+          }
+        ]
+      },
+      "status": "accepted"
+    }
+  ],
+  "model": {
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "resolved_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "adapter_reloaded": true,
+    "evaluation_mode": "adapter"
+  },
+  "error": null,
+  "elapsed_seconds": 34.65127101400003
+}

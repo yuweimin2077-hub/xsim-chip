@@ -179,7 +179,7 @@ Valid alternative queries/selections need not exactly match teacher text.
             if evidence["findings"] and any(c["id"] == "K-ARTIFACT" for c in cards):
                 score["artifact_included"] = any(c["source_id"] == "K-ARTIFACT" for c in choices)
         score["valid"] = True
-        score["exact_teacher_match"] = json.loads(raw) == json.loads(row["target"])
+        score["exact_teacher_match"] = {"tool": tool, "arguments": args} == json.loads(row["target"])
     except (ValueError, TypeError, KeyError, IndexError) as exc:
         score["error"] = str(exc)
     return score

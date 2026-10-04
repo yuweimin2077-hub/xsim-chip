@@ -1,0 +1,21 @@
+{
+  "method": "fixed_material_thresholds_then_aligned_reference_difference_2d",
+  "thresholds": [
+    0.075,
+    0.4,
+    0.8
+  ],
+  "shape_yx": [
+    27,
+    31
+  ],
+  "pixel_size_um": 4.0,
+  "min_component_pixels": 4,
+  "summary": {
+    "component_count": 0,
+    "suspected_defect_pixels": 0,
+    "suspected_defect_area_um2": 0.0
+  },
+  "components": [],
+  "limitations": "Aligned synthetic 2D screening baseline; boundaries and partial-volume effects can cause false positives. No measured 3D defect volume or causal diagnosis is inferred."
+}

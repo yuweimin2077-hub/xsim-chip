@@ -11,6 +11,10 @@ The [Colab T4 run](results/llm_colab_gpu_2026-10-03.md) verified Qwen2.5-1.5B
 FP16 inference, the default workflow and three additional scenarios without
 fallback, with 3.80 GiB peak allocated memory across the follow-up cases.
 The executed notebook and original tool traces are archived.
+Notebook 06 adds a [completed synthetic LoRA pilot](results/lora_colab_2026-10-04.md):
+validation loss 0.5198 to 0.2830, unconstrained valid actions 7/18 to 13/18,
+but evidence-selection validity 2/6 to 1/6. The adapter remains optional and
+experimental; no improvement in CT detection accuracy is claimed.
 
 ## Outcome
 

@@ -1,0 +1,164 @@
+[
+  {
+    "case_id": "case_30000",
+    "stage": "inspect_case",
+    "raw": "{\"tool\": \"inspect_case\", \"arguments\": {\"case_id\": \"case_30000\"}}",
+    "valid": true,
+    "exact_teacher_match": true,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30000",
+    "stage": "search_knowledge",
+    "raw": "{\"tool\": \"search_knowledge\", \"arguments\": {\"query\": \"screening differences segmentation reconstruction slice imaging artifact\"}}",
+    "valid": true,
+    "exact_teacher_match": false,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30000",
+    "stage": "finish",
+    "raw": "{\"tool\": \"finish\", \"arguments\": {\"selections\": []}}",
+    "valid": true,
+    "exact_teacher_match": true,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30001",
+    "stage": "inspect_case",
+    "raw": "{\"tool\": \"inspect_case\", \"arguments\": {\"case_id\": \"case_30001\"}}",
+    "valid": true,
+    "exact_teacher_match": true,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30001",
+    "stage": "search_knowledge",
+    "raw": "{\"tool\": \"search_knowledge\", \"arguments\": {\"query\": \"solder void open screening differences\"}}",
+    "valid": true,
+    "exact_teacher_match": false,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30001",
+    "stage": "finish",
+    "raw": "{\"tool\": \"finish\", \"arguments\": {\"selections\": []}}",
+    "valid": false,
+    "exact_teacher_match": false,
+    "artifact_included": false,
+    "error": "nonempty findings require at least one grounded interpretation"
+  },
+  {
+    "case_id": "case_30002",
+    "stage": "inspect_case",
+    "raw": "{\"tool\": \"inspect_case\", \"arguments\": {\"case_id\": \"case_30002\"}}",
+    "valid": true,
+    "exact_teacher_match": true,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30002",
+    "stage": "search_knowledge",
+    "raw": "{\"tool\": \"search_knowledge\", \"arguments\": {\"query\": \"copper open screening differences imaging artifact\"}}",
+    "valid": true,
+    "exact_teacher_match": false,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30002",
+    "stage": "finish",
+    "raw": "{\"tool\": \"finish\", \"arguments\": {\"selections\": []}}",
+    "valid": false,
+    "exact_teacher_match": false,
+    "artifact_included": false,
+    "error": "nonempty findings require at least one grounded interpretation"
+  },
+  {
+    "case_id": "case_30003",
+    "stage": "inspect_case",
+    "raw": "{\"tool\": \"inspect_case\", \"arguments\": {\"case_id\": \"case_30003\"}}",
+    "valid": true,
+    "exact_teacher_match": true,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30003",
+    "stage": "search_knowledge",
+    "raw": "{\"tool\": \"search_knowledge\", \"arguments\": {\"query\": \"solder bridge screening differences\"}}",
+    "valid": true,
+    "exact_teacher_match": false,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30003",
+    "stage": "finish",
+    "raw": "{\"tool\": \"finish\", \"arguments\": {\"selections\": [{\"finding_id\": \"F30003_1\", \"source_id\": \"K-ARTIFACT\"}, {\"finding_id\": \"F30003_1\", \"source_id\": \"K-BRIDGE\"}, {\"finding_id\": \"F30003_1\", \"source_id\": \"K-COPPER\"}, {\"finding_id\": \"F30003_1\", \"source_id\": \"K-VOID\"}]}}",
+    "valid": false,
+    "exact_teacher_match": false,
+    "artifact_included": false,
+    "error": "source does not apply to this defect signature"
+  },
+  {
+    "case_id": "case_30004",
+    "stage": "inspect_case",
+    "raw": "{\"tool\": \"inspect_case\", \"arguments\": {\"case_id\": \"case_30004\"}}",
+    "valid": true,
+    "exact_teacher_match": true,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30004",
+    "stage": "search_knowledge",
+    "raw": "{\"tool\": \"search_knowledge\", \"arguments\": {\"query\": \"solder_void copper_open screening differences\"}}",
+    "valid": true,
+    "exact_teacher_match": false,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30004",
+    "stage": "finish",
+    "raw": "{\"tool\": \"finish\", \"arguments\": {\"selections\": []}}",
+    "valid": false,
+    "exact_teacher_match": false,
+    "artifact_included": false,
+    "error": "nonempty findings require at least one grounded interpretation"
+  },
+  {
+    "case_id": "case_30005",
+    "stage": "inspect_case",
+    "raw": "{\"tool\": \"inspect_case\", \"arguments\": {\"case_id\": \"case_30005\"}}",
+    "valid": true,
+    "exact_teacher_match": true,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30005",
+    "stage": "search_knowledge",
+    "raw": "{\"tool\": \"search_knowledge\", \"arguments\": {\"query\": \"solder void solder bridge screening differences\"}}",
+    "valid": true,
+    "exact_teacher_match": false,
+    "artifact_included": null,
+    "error": null
+  },
+  {
+    "case_id": "case_30005",
+    "stage": "finish",
+    "raw": "{\"tool\": \"finish\", \"arguments\": {\"selections\": [{\"finding_id\": \"F30005_1\", \"source_id\": \"K-ARTIFACT\"}, {\"finding_id\": \"F30005_2\", \"source_id\": \"K-COPPER\"}]}}",
+    "valid": false,
+    "exact_teacher_match": false,
+    "artifact_included": false,
+    "error": "source does not apply to this defect signature"
+  }
+]

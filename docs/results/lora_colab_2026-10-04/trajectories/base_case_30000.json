@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0",
+  "mode": "llm_agent",
+  "case_id": "case_30000",
+  "question": "这些区域可能有什么问题？请结合检测和资料判断。",
+  "evidence": {
+    "dimensions": 2,
+    "shape": [
+      34,
+      29
+    ],
+    "spacing_um": 8.0,
+    "provenance": "segmented_reconstructed_slice",
+    "component_count": 0,
+    "counts_by_kind": {},
+    "findings": []
+  },
+  "input_provenance": {
+    "input": "saved_report",
+    "sha256": "d70905549e5c77c88eb4779267ed617e2c7ef0f5e777a8fa095872016c766ccf"
+  },
+  "retrieved": [
+    {
+      "id": "K-SCOPE",
+      "title": "Evidence limits and root-cause hypotheses",
+      "terms": "cause process evidence diagnosis confidence severity defect inspection 根因 原因 证据 严重 程度 检测 芯片 缺陷",
+      "applies_to": [
+        "*"
+      ],
+      "text": {
+        "en": "Differences and rule-based severity are screening results. No process measurements or calibrated causal probabilities are supplied. An absence of detected differences does not establish a defect-free part.",
+        "zh": "差异及规则严重程度属于筛查结果。目前没有提供工艺测量或校准后的因果概率；未检出差异也不能证明器件无缺陷。"
+      },
+      "check": {
+        "en": "Obtain process records, independent inspection and applicable acceptance criteria before making a manufacturing disposition.",
+        "zh": "作制造处置前，需要工艺记录、独立检测和适用的验收标准。"
+      },
+      "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/docs/FINAL_RESULT.md",
+      "locator": "Scope and limitations of the completed synthetic integration",
+      "scope": "Project limitations; no industrial acceptance certification",
+      "retrieval_score": 7.890231
+    },
+    {
+      "id": "K-2D",
+      "title": "A slice measures area, not defect volume",
+      "terms": "2d area volume ratio percentage slice 二维 面积 体积 占比 百分比 切片",
+      "applies_to": [
+        "*"
+      ],
+      "text": {
+        "en": "Single-slice inspection reports pixel counts and area. A volumetric void fraction needs a segmented 3D region and an explicitly defined denominator; neither can be inferred from one slice or a component identifier.",
+        "zh": "单切片检测报告像素数和面积。空洞体积占比需要三维分割区域及明确的分母，不能由一张切片或一个连通域编号推断。"
+      },
+      "check": {
+        "en": "Request 3D data and an identified joint region for a joint-level volume fraction. Keep pixel-level evaluation scores separate from defect fractions.",
+        "zh": "计算单焊点体积占比时，需要三维数据及已识别的焊点区域；评价指标不能当作缺陷占比。"
+      },
+      "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/xsim_chip_analysis/slice_inspection.py",
+      "locator": "inspect_reconstructed_slice",
+      "scope": "Dimensionality and denominator constraints",
+      "retrieval_score": 4.80713
+    },
+    {
+      "id": "K-GEOMETRY",
+      "title": "Slice-wise 3D geometry and measurements",
+      "terms": "3d volume slice reconstruction dimension depth geometry 体积 三维 切片 深度 重建",
+      "applies_to": [
+        "*"
+      ],
+      "text": {
+        "en": "The connected demo reconstructs each parallel-beam detector row independently, then segments the stack and applies 3D reference comparison. It assumes aligned coordinates, isotropic voxels and no mixing between depths. It is not cone-beam CT.",
+        "zh": "贯通演示对每个平行束探测器行独立重建，再对堆叠体分割并做三维参考比较。它假定坐标对齐、各向同性体素且不同深度之间不混合；当前并非锥束 CT。"
+      },
+      "check": {
+        "en": "Confirm axis order, spacing and acquisition geometry before applying this workflow to another dataset.",
+        "zh": "用于其他数据前，确认轴顺序、体素间距和采集几何。"
+      },
+      "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/xsim_chip_analysis/parallel_beam.py",
+      "locator": "reconstruct_projection_stack",
+      "scope": "Aligned synthetic slice-wise parallel-beam model",
+      "retrieval_score": 4.716392
+    },
+    {
+      "id": "K-COPPER",
+      "title": "Copper differences require independent confirmation",
+      "terms": "copper open missing copper excess residue bridge 铜 开路 铜缺失 残留",
+      "applies_to": [
+        "copper_open",
+        "copper_open_or_underfill",
+        "copper_bridge_or_residue"
+      ],
+      "text": {
+        "en": "The project assigns copper-difference signatures by comparing material labels. These labels do not measure electrical continuity or establish a plating or etching cause.",
+        "zh": "项目通过比较材料标签给出铜差异信号。这些标签并未测量电气连续性，也不能确认电镀或蚀刻根因。"
+      },
+      "check": {
+        "en": "Review reconstruction and segmentation, then use continuity tests or process records when a physical cause must be established.",
+        "zh": "先复核重建和分割；需要确认物理原因时，再结合导通测试或工艺记录。"
+      },
+      "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/xsim_chip_analysis/inspection.py",
+      "locator": "_DEFECT_KINDS and analyze_against_reference",
+      "scope": "Project screening logic, not externally validated causal evidence",
+      "retrieval_score": 3.708224
+    }
+  ],
+  "selections": [],
+  "trace": [
+    {
+      "raw_model_output": "{\n  \"tool\": \"inspect_case\",\n  \"arguments\": {\n    \"case_id\": \"case_30000\"\n  }\n}",
+      "tool": "inspect_case",
+      "arguments": {
+        "case_id": "case_30000"
+      },
+      "status": "accepted",
+      "result": {
+        "dimensions": 2,
+        "shape": [
+          34,
+          29
+        ],
+        "spacing_um": 8.0,
+        "provenance": "segmented_reconstructed_slice",
+        "component_count": 0,
+        "counts_by_kind": {},
+        "findings": [],
+        "omitted_components": 0,
+        "scope": "screening differences; no confirmed cause or calibrated confidence"
+      }
+    },
+    {
+      "raw_model_output": "{\n  \"tool\": \"search_knowledge\",\n  \"arguments\": {\n    \"query\": \"screening differences segmentation reconstruction slice component count counts by kind omitted components scope screening differences no confirmed cause calibrated confidence\"\n  }\n}",
+      "tool": "search_knowledge",
+      "arguments": {
+        "query": "screening differences segmentation reconstruction slice component count counts by kind omitted components scope screening differences no confirmed cause calibrated confidence"
+      },
+      "status": "accepted",
+      "result": [
+        {
+          "id": "K-SCOPE",
+          "title": "Evidence limits and root-cause hypotheses",
+          "terms": "cause process evidence diagnosis confidence severity defect inspection 根因 原因 证据 严重 程度 检测 芯片 缺陷",
+          "applies_to": [
+            "*"
+          ],
+          "text": {
+            "en": "Differences and rule-based severity are screening results. No process measurements or calibrated causal probabilities are supplied. An absence of detected differences does not establish a defect-free part.",
+            "zh": "差异及规则严重程度属于筛查结果。目前没有提供工艺测量或校准后的因果概率；未检出差异也不能证明器件无缺陷。"
+          },
+          "check": {
+            "en": "Obtain process records, independent inspection and applicable acceptance criteria before making a manufacturing disposition.",
+            "zh": "作制造处置前，需要工艺记录、独立检测和适用的验收标准。"
+          },
+          "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/docs/FINAL_RESULT.md",
+          "locator": "Scope and limitations of the completed synthetic integration",
+          "scope": "Project limitations; no industrial acceptance certification",
+          "retrieval_score": 7.890231
+        },
+        {
+          "id": "K-2D",
+          "title": "A slice measures area, not defect volume",
+          "terms": "2d area volume ratio percentage slice 二维 面积 体积 占比 百分比 切片",
+          "applies_to": [
+            "*"
+          ],
+          "text": {
+            "en": "Single-slice inspection reports pixel counts and area. A volumetric void fraction needs a segmented 3D region and an explicitly defined denominator; neither can be inferred from one slice or a component identifier.",
+            "zh": "单切片检测报告像素数和面积。空洞体积占比需要三维分割区域及明确的分母，不能由一张切片或一个连通域编号推断。"
+          },
+          "check": {
+            "en": "Request 3D data and an identified joint region for a joint-level volume fraction. Keep pixel-level evaluation scores separate from defect fractions.",
+            "zh": "计算单焊点体积占比时，需要三维数据及已识别的焊点区域；评价指标不能当作缺陷占比。"
+          },
+          "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/xsim_chip_analysis/slice_inspection.py",
+          "locator": "inspect_reconstructed_slice",
+          "scope": "Dimensionality and denominator constraints",
+          "retrieval_score": 4.80713
+        },
+        {
+          "id": "K-GEOMETRY",
+          "title": "Slice-wise 3D geometry and measurements",
+          "terms": "3d volume slice reconstruction dimension depth geometry 体积 三维 切片 深度 重建",
+          "applies_to": [
+            "*"
+          ],
+          "text": {
+            "en": "The connected demo reconstructs each parallel-beam detector row independently, then segments the stack and applies 3D reference comparison. It assumes aligned coordinates, isotropic voxels and no mixing between depths. It is not cone-beam CT.",
+            "zh": "贯通演示对每个平行束探测器行独立重建，再对堆叠体分割并做三维参考比较。它假定坐标对齐、各向同性体素且不同深度之间不混合；当前并非锥束 CT。"
+          },
+          "check": {
+            "en": "Confirm axis order, spacing and acquisition geometry before applying this workflow to another dataset.",
+            "zh": "用于其他数据前，确认轴顺序、体素间距和采集几何。"
+          },
+          "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/xsim_chip_analysis/parallel_beam.py",
+          "locator": "reconstruct_projection_stack",
+          "scope": "Aligned synthetic slice-wise parallel-beam model",
+          "retrieval_score": 4.716392
+        },
+        {
+          "id": "K-COPPER",
+          "title": "Copper differences require independent confirmation",
+          "terms": "copper open missing copper excess residue bridge 铜 开路 铜缺失 残留",
+          "applies_to": [
+            "copper_open",
+            "copper_open_or_underfill",
+            "copper_bridge_or_residue"
+          ],
+          "text": {
+            "en": "The project assigns copper-difference signatures by comparing material labels. These labels do not measure electrical continuity or establish a plating or etching cause.",
+            "zh": "项目通过比较材料标签给出铜差异信号。这些标签并未测量电气连续性，也不能确认电镀或蚀刻根因。"
+          },
+          "check": {
+            "en": "Review reconstruction and segmentation, then use continuity tests or process records when a physical cause must be established.",
+            "zh": "先复核重建和分割；需要确认物理原因时，再结合导通测试或工艺记录。"
+          },
+          "source_url": "https://github.com/yuweimin2077-hub/xsim-chip/blob/cfda8bf/xsim_chip_analysis/inspection.py",
+          "locator": "_DEFECT_KINDS and analyze_against_reference",
+          "scope": "Project screening logic, not externally validated causal evidence",
+          "retrieval_score": 3.708224
+        }
+      ]
+    },
+    {
+      "raw_model_output": "{\n  \"tool\": \"finish\",\n  \"arguments\": {\n    \"selections\": []\n  }\n}",
+      "tool": "finish",
+      "arguments": {
+        "selections": []
+      },
+      "status": "accepted"
+    }
+  ],
+  "model": {
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "resolved_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "adapter_reloaded": true,
+    "evaluation_mode": "base"
+  },
+  "error": null,
+  "elapsed_seconds": 59.585326683000005
+}

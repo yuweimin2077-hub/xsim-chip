@@ -1,0 +1,349 @@
+{
+  "schema_version": 1,
+  "label_source": "programmatic workflow teacher; NOT expert root-cause labels",
+  "limitations": "Ideal synthetic arrays; no projection/reconstruction, real scanner or process validation.",
+  "splits": {
+    "train": {
+      "cases": [
+        {
+          "case_id": "case_10000",
+          "seed": 10000,
+          "scenario": 0,
+          "dimensions": 2,
+          "fingerprint": "0bd33c1208060ea59cd8d6e289febecfad5f8d953833001f2c98401f6b411b5b",
+          "question": "请分析样本中的材料差异，并引用相关资料。",
+          "report": "reports/case_10000.json"
+        },
+        {
+          "case_id": "case_10001",
+          "seed": 10001,
+          "scenario": 1,
+          "dimensions": 3,
+          "fingerprint": "8252c702bf5178bce0f0786a60b0709b257b930c69eaa430b6a417980c0b7382",
+          "question": "Check this sample and consider imaging artifacts.",
+          "report": "reports/case_10001.json"
+        },
+        {
+          "case_id": "case_10002",
+          "seed": 10002,
+          "scenario": 2,
+          "dimensions": 2,
+          "fingerprint": "259e22b8d87e0f1eaf813ab3bbaa66928cebc24d03eb0cd38b149222cb76fa2b",
+          "question": "检测异常区域，区分二维面积和三维体积。",
+          "report": "reports/case_10002.json"
+        },
+        {
+          "case_id": "case_10003",
+          "seed": 10003,
+          "scenario": 3,
+          "dimensions": 3,
+          "fingerprint": "d5b85031a8e1ed045a0782048e3c8517509de9c7842801ab5eeee3b80c7d7dd8",
+          "question": "Find suspected defects without claiming a proven root cause.",
+          "report": "reports/case_10003.json"
+        },
+        {
+          "case_id": "case_10004",
+          "seed": 10004,
+          "scenario": 4,
+          "dimensions": 2,
+          "fingerprint": "5d9e1389e122dbd45126870396e663b20d64ddb0a7918d6610aad754db602ab4",
+          "question": "请分析样本中的材料差异，并引用相关资料。",
+          "report": "reports/case_10004.json"
+        },
+        {
+          "case_id": "case_10005",
+          "seed": 10005,
+          "scenario": 5,
+          "dimensions": 3,
+          "fingerprint": "b0df96d7a07b859a8de8a2ea87044827a77714a3a11a640c0cb6807d4442843f",
+          "question": "Check this sample and consider imaging artifacts.",
+          "report": "reports/case_10005.json"
+        },
+        {
+          "case_id": "case_10006",
+          "seed": 10006,
+          "scenario": 0,
+          "dimensions": 3,
+          "fingerprint": "7a50f75d7d8f67718f2e269881974f499a00781c72be3cd3985de4c81e499277",
+          "question": "检测异常区域，区分二维面积和三维体积。",
+          "report": "reports/case_10006.json"
+        },
+        {
+          "case_id": "case_10007",
+          "seed": 10007,
+          "scenario": 1,
+          "dimensions": 2,
+          "fingerprint": "695dbbb9c0d1c53c8ddbf81f5fb35aa52d2a5b175cfa3a31a771a2c4177d8e58",
+          "question": "Find suspected defects without claiming a proven root cause.",
+          "report": "reports/case_10007.json"
+        },
+        {
+          "case_id": "case_10008",
+          "seed": 10008,
+          "scenario": 2,
+          "dimensions": 3,
+          "fingerprint": "5201da5b2029ded825b7343c6553b27f8be1fcd6e876dee9afe2f07faaecee30",
+          "question": "请分析样本中的材料差异，并引用相关资料。",
+          "report": "reports/case_10008.json"
+        },
+        {
+          "case_id": "case_10009",
+          "seed": 10009,
+          "scenario": 3,
+          "dimensions": 2,
+          "fingerprint": "39c28344f834a049b6cac105a112819b680ae3cb5278066576f70e9e5ace83c8",
+          "question": "Check this sample and consider imaging artifacts.",
+          "report": "reports/case_10009.json"
+        },
+        {
+          "case_id": "case_10010",
+          "seed": 10010,
+          "scenario": 4,
+          "dimensions": 3,
+          "fingerprint": "b06d339a5b3c22ece1ea42737f16e8d6b1fea10939e6a30ad339b031821474eb",
+          "question": "检测异常区域，区分二维面积和三维体积。",
+          "report": "reports/case_10010.json"
+        },
+        {
+          "case_id": "case_10011",
+          "seed": 10011,
+          "scenario": 5,
+          "dimensions": 2,
+          "fingerprint": "d60da83e6b094558dbbf0babfa30ccc5d1a3b2cc3ec4acc15474917d576dd155",
+          "question": "Find suspected defects without claiming a proven root cause.",
+          "report": "reports/case_10011.json"
+        },
+        {
+          "case_id": "case_10012",
+          "seed": 10012,
+          "scenario": 0,
+          "dimensions": 2,
+          "fingerprint": "f8b7127a4811a0e1e24acf4aa6c472c9b459065ed0c88caba5ca24c13d000305",
+          "question": "请分析样本中的材料差异，并引用相关资料。",
+          "report": "reports/case_10012.json"
+        },
+        {
+          "case_id": "case_10013",
+          "seed": 10013,
+          "scenario": 1,
+          "dimensions": 3,
+          "fingerprint": "aa3e90f5ca193e82b93c043c5f45ef0b4ca0ee9c01baa53206f05a09827296fd",
+          "question": "Check this sample and consider imaging artifacts.",
+          "report": "reports/case_10013.json"
+        },
+        {
+          "case_id": "case_10014",
+          "seed": 10014,
+          "scenario": 2,
+          "dimensions": 2,
+          "fingerprint": "b4c9bad1045f948da757b14d6e6648c241cdc7bd387c6da68513183accb52b64",
+          "question": "检测异常区域，区分二维面积和三维体积。",
+          "report": "reports/case_10014.json"
+        },
+        {
+          "case_id": "case_10015",
+          "seed": 10015,
+          "scenario": 3,
+          "dimensions": 3,
+          "fingerprint": "4a4c9cd71d07c70c86c3c096254b1ccfd735085088054c3d7ece0c2a3122e152",
+          "question": "Find suspected defects without claiming a proven root cause.",
+          "report": "reports/case_10015.json"
+        },
+        {
+          "case_id": "case_10016",
+          "seed": 10016,
+          "scenario": 4,
+          "dimensions": 2,
+          "fingerprint": "863471cde0315d384937d02be0a093f139338f4793368d05e37dfb3d355f9194",
+          "question": "请分析样本中的材料差异，并引用相关资料。",
+          "report": "reports/case_10016.json"
+        },
+        {
+          "case_id": "case_10017",
+          "seed": 10017,
+          "scenario": 5,
+          "dimensions": 3,
+          "fingerprint": "fb4cd28d373622af2dc89917e41293462a4ed25e7fadebaa2a2c1b3f512dcd02",
+          "question": "Check this sample and consider imaging artifacts.",
+          "report": "reports/case_10017.json"
+        },
+        {
+          "case_id": "case_10018",
+          "seed": 10018,
+          "scenario": 0,
+          "dimensions": 3,
+          "fingerprint": "f467ef8879f565f2d77dc87d8b7de2c3511e279843cc43bc1656d8caa5bb0811",
+          "question": "检测异常区域，区分二维面积和三维体积。",
+          "report": "reports/case_10018.json"
+        },
+        {
+          "case_id": "case_10019",
+          "seed": 10019,
+          "scenario": 1,
+          "dimensions": 2,
+          "fingerprint": "1c7bd68ee5e316bf682b8b218a5466319dcbb0f6e1e079d0ba51ae087e42cdad",
+          "question": "Find suspected defects without claiming a proven root cause.",
+          "report": "reports/case_10019.json"
+        },
+        {
+          "case_id": "case_10020",
+          "seed": 10020,
+          "scenario": 2,
+          "dimensions": 3,
+          "fingerprint": "4a2643f4f1655c1fba0a531259181d15b55862700d456b632caef1f05bfd1539",
+          "question": "请分析样本中的材料差异，并引用相关资料。",
+          "report": "reports/case_10020.json"
+        },
+        {
+          "case_id": "case_10021",
+          "seed": 10021,
+          "scenario": 3,
+          "dimensions": 2,
+          "fingerprint": "3511a5afb83c9e6872e5c7e14009b62416b6918329de0d18a1fffaae93eaadfe",
+          "question": "Check this sample and consider imaging artifacts.",
+          "report": "reports/case_10021.json"
+        },
+        {
+          "case_id": "case_10022",
+          "seed": 10022,
+          "scenario": 4,
+          "dimensions": 3,
+          "fingerprint": "fc93d790704c3f2eabdd6e5758bedc362239905ff3b9f7d2e6c3657a90ccac37",
+          "question": "检测异常区域，区分二维面积和三维体积。",
+          "report": "reports/case_10022.json"
+        },
+        {
+          "case_id": "case_10023",
+          "seed": 10023,
+          "scenario": 5,
+          "dimensions": 2,
+          "fingerprint": "e7c829519d109979899f05094b30121279833b2b76bd70b41a0ddde47a511b6a",
+          "question": "Find suspected defects without claiming a proven root cause.",
+          "report": "reports/case_10023.json"
+        }
+      ],
+      "rows": 72,
+      "sha256": "92fc039e6c4f28b600e6cde24087cb9116ff30a5c38e3a5651c638f8963f647a"
+    },
+    "validation": {
+      "cases": [
+        {
+          "case_id": "case_20000",
+          "seed": 20000,
+          "scenario": 0,
+          "dimensions": 3,
+          "fingerprint": "e1f566f6ad9b915ddb38c4e1a08d117fb199aea4f53bed80a8bca183c7b307cd",
+          "question": "请检查这个样品，提供有依据的筛查结果。",
+          "report": "reports/case_20000.json"
+        },
+        {
+          "case_id": "case_20001",
+          "seed": 20001,
+          "scenario": 1,
+          "dimensions": 2,
+          "fingerprint": "51a63eef4df7929cd80b6ba8b99fd558c84d303071c0faac018bd533356ca874",
+          "question": "Review the evidence and select applicable references.",
+          "report": "reports/case_20001.json"
+        },
+        {
+          "case_id": "case_20002",
+          "seed": 20002,
+          "scenario": 2,
+          "dimensions": 3,
+          "fingerprint": "e05cc8ad51bf9cf2938f4d368848b149ebb783b5174229c83cb7f072907038b3",
+          "question": "请检查这个样品，提供有依据的筛查结果。",
+          "report": "reports/case_20002.json"
+        },
+        {
+          "case_id": "case_20003",
+          "seed": 20003,
+          "scenario": 3,
+          "dimensions": 2,
+          "fingerprint": "dc01e136c6304713b695ee57843b22f1e121186eaf0c60f44444ac08188df3f0",
+          "question": "Review the evidence and select applicable references.",
+          "report": "reports/case_20003.json"
+        },
+        {
+          "case_id": "case_20004",
+          "seed": 20004,
+          "scenario": 4,
+          "dimensions": 3,
+          "fingerprint": "84da0a035ddb8f5d126c65ddbffeab52b9a54d3170052494c8fecf6fdca9b2a0",
+          "question": "请检查这个样品，提供有依据的筛查结果。",
+          "report": "reports/case_20004.json"
+        },
+        {
+          "case_id": "case_20005",
+          "seed": 20005,
+          "scenario": 5,
+          "dimensions": 2,
+          "fingerprint": "d1794ebc5e9b301d7593fa474a65f1e4b8ec4b1069894c7de79a44049bca2bbb",
+          "question": "Review the evidence and select applicable references.",
+          "report": "reports/case_20005.json"
+        }
+      ],
+      "rows": 18,
+      "sha256": "f8a6e93bf7528ff628e45b1a4dca2f6bd05c5581bd02ca0e97eb099e60597500"
+    },
+    "test": {
+      "cases": [
+        {
+          "case_id": "case_30000",
+          "seed": 30000,
+          "scenario": 0,
+          "dimensions": 2,
+          "fingerprint": "a055811493e6cac5b469561f732da679ecc7134ee9450e0bba6cfdef5ac90cd8",
+          "question": "这些区域可能有什么问题？请结合检测和资料判断。",
+          "report": "reports/case_30000.json"
+        },
+        {
+          "case_id": "case_30001",
+          "seed": 30001,
+          "scenario": 1,
+          "dimensions": 3,
+          "fingerprint": "128d54d776fdc5f051031078fef63f533778d432e6202319982bead1d3d2ee40",
+          "question": "Assess the supplied case; retain measurement units and uncertainty.",
+          "report": "reports/case_30001.json"
+        },
+        {
+          "case_id": "case_30002",
+          "seed": 30002,
+          "scenario": 2,
+          "dimensions": 2,
+          "fingerprint": "ccbc764c4fde5e8e8b21441d00232b7551da16d7eb28ffb22d1377da3d98d242",
+          "question": "这些区域可能有什么问题？请结合检测和资料判断。",
+          "report": "reports/case_30002.json"
+        },
+        {
+          "case_id": "case_30003",
+          "seed": 30003,
+          "scenario": 3,
+          "dimensions": 3,
+          "fingerprint": "673d8d9695bbf75aa41e86fc4449552cb556b4bbb4ffaa9f44d37c4400bcd0e1",
+          "question": "Assess the supplied case; retain measurement units and uncertainty.",
+          "report": "reports/case_30003.json"
+        },
+        {
+          "case_id": "case_30004",
+          "seed": 30004,
+          "scenario": 4,
+          "dimensions": 2,
+          "fingerprint": "787444334db4aca2d91ce594aead1c2e26847151ed86def5f0c6d1eb92ab5ffd",
+          "question": "这些区域可能有什么问题？请结合检测和资料判断。",
+          "report": "reports/case_30004.json"
+        },
+        {
+          "case_id": "case_30005",
+          "seed": 30005,
+          "scenario": 5,
+          "dimensions": 3,
+          "fingerprint": "1fbda99f783567c7e3bf62852cd75abbc4a02cf79156edf4fafbbf14d28c0317",
+          "question": "Assess the supplied case; retain measurement units and uncertainty.",
+          "report": "reports/case_30005.json"
+        }
+      ],
+      "rows": 18,
+      "sha256": "5f3265c3dd995d6c0180a77892d4249f69ddc62c60ef9e88decac169616ccc38"
+    }
+  }
+}
