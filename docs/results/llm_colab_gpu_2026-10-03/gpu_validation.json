@@ -1,0 +1,82 @@
+{
+  "executed_utc": "2026-10-03T23:30:57.190973+00:00",
+  "environment": "Google Colab",
+  "colab_run": true,
+  "git_commit": "efd65eba69ac40167dd21612b159a618280aa644",
+  "gpu_name": "Tesla T4",
+  "gpu_total_memory_gib": 14.56317138671875,
+  "cuda_version": "13.0",
+  "python": "3.13.15",
+  "parameter_devices": [
+    "cuda:0"
+  ],
+  "parameter_dtypes": [
+    "torch.float16"
+  ],
+  "model": {
+    "backend": "huggingface_transformers",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "requested_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "resolved_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "device": "cuda:0",
+    "load_in_4bit": false,
+    "structured_decoding": "lm-format-enforcer; stage-specific JSON schema",
+    "max_new_tokens": 384,
+    "max_input_tokens": 8192,
+    "python": "3.13.15",
+    "packages": {
+      "torch": "2.11.0+cu130",
+      "transformers": "4.57.6",
+      "accelerate": "1.15.0",
+      "lm-format-enforcer": "0.11.3"
+    }
+  },
+  "notebook_elapsed_seconds": 52.93718626500004,
+  "notebook_trace": [
+    {
+      "tool": "inspect_case",
+      "status": "accepted"
+    },
+    {
+      "tool": "search_knowledge",
+      "status": "accepted"
+    },
+    {
+      "tool": "finish",
+      "status": "accepted"
+    }
+  ],
+  "measurements_equal_to_baseline": true,
+  "scope": "GPU execution and grounding smoke tests, not industrial accuracy validation",
+  "cases": [
+    {
+      "case": "volume_void",
+      "mode": "llm_agent",
+      "dimensions": 3,
+      "components": 82,
+      "elapsed_seconds": 80.239305263,
+      "accepted_steps": 3,
+      "rejected_steps": 0
+    },
+    {
+      "case": "slice_area",
+      "mode": "llm_agent",
+      "dimensions": 2,
+      "components": 6,
+      "elapsed_seconds": 39.87589474299966,
+      "accepted_steps": 3,
+      "rejected_steps": 0
+    },
+    {
+      "case": "volume_copper",
+      "mode": "llm_agent",
+      "dimensions": 3,
+      "components": 82,
+      "elapsed_seconds": 38.9836566189997,
+      "accepted_steps": 3,
+      "rejected_steps": 0
+    }
+  ],
+  "peak_allocated_gib": 3.8001179695129395,
+  "peak_reserved_gib": 4.62890625
+}

@@ -74,6 +74,9 @@ its licensing statement remain intact in `LICENSE.md`.
 - Kept all numeric measurements in deterministic Python and labelled retrieval-only/fallback modes.
 - Added adversarial protocol, grounding, dimensionality and real inspection integration tests.
 - Preserved the original CT algorithms and declared LoRA/SFT as future work.
+- Executed Notebook 05 and three additional assistant scenarios on Colab T4
+  with Qwen2.5-1.5B in FP16; archived the executed notebook, original reports,
+  model/tool traces, measured memory/timings and artifact integrity checks.
 
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.

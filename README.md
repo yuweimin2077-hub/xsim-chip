@@ -15,6 +15,9 @@ and reviewed bilingual text supplies the explanations. See the
 [assistant guide](docs/LLM_ASSISTANT.md) for scope and reproduction.
 The [executed validation](docs/results/llm_assistant_2026-10-03.md) records real
 Qwen CPU inference, three successful tool-workflow scenarios and 100 passing tests.
+The [Colab T4 validation](docs/results/llm_colab_gpu_2026-10-03.md) also passed:
+Qwen2.5-1.5B in FP16, three additional scenarios without fallback, and 3.80 GiB
+peak allocated memory. The executed GPU notebook and raw traces are archived.
 
 [![Tests](https://github.com/yuweimin2077-hub/xsim-chip/actions/workflows/tests.yml/badge.svg)](https://github.com/yuweimin2077-hub/xsim-chip/actions/workflows/tests.yml)
 

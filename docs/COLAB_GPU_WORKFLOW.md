@@ -8,6 +8,18 @@ It can use the archived report immediately or inspect Notebook 04 output arrays
 in the same runtime. The [assistant guide](LLM_ASSISTANT.md) describes model
 memory, optional quantization, inputs and the explicitly labelled offline mode.
 
+Before running, save a copy in Drive so cell outputs persist after the temporary
+runtime ends. Select **T4 GPU**, then run all cells. Download the executed `.ipynb`
+and the files in `/content/xsim_assistant_outputs` before disconnecting; saving
+the notebook alone does not preserve arbitrary files on the runtime disk.
+
+The [2026-10-03 assistant T4 run](results/llm_colab_gpu_2026-10-03.md) completed
+the default workflow and three additional cases in FP16 without fallback.
+Peak allocated memory was 3.80 GiB across the three follow-up cases. Its saved
+notebook, reports and tool traces are available in the archive. This language
+assistant test uses existing reports and does not constitute a new GPU test
+of Notebook 04's CT reconstruction.
+
 ## Recommended: connected 2D → 3D demonstration
 
 1. Open [Notebook 04 in Colab](https://colab.research.google.com/github/yuweimin2077-hub/xsim-chip/blob/main/notebooks/04_slice_wise_3d_colab.ipynb).

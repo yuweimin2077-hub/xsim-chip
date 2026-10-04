@@ -71,6 +71,8 @@ interview-ready engineering workflow while preserving upstream attribution.
 - [x] Add optional PyTorch/Hugging Face model inference and bounded JSON tool actions.
 - [x] Validate source/finding references and preserve numeric measurements in Python.
 - [x] Add a Colab notebook, offline baseline, command-line interface and regression tests.
+- [x] Execute the real model on Colab T4; archive CUDA/FP16 evidence, three
+  follow-up scenarios, memory/timing measurements and the executed notebook.
 - [ ] Train and evaluate LoRA/SFT adapters on independently reviewed cases.
 - [ ] Extend and evaluate the knowledge corpus with domain experts and real samples.
 

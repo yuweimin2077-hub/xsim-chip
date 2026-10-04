@@ -7,6 +7,10 @@ BM25 retrieval and bounded inspection tools on top of the connected CT pipeline.
 It preserves numeric evidence and renders reviewed Chinese/English explanations
 selected by the model. It does not change CT detection accuracy or claim
 fine-tuning. See the [assistant guide](LLM_ASSISTANT.md).
+The [Colab T4 run](results/llm_colab_gpu_2026-10-03.md) verified Qwen2.5-1.5B
+FP16 inference, the default workflow and three additional scenarios without
+fallback, with 3.80 GiB peak allocated memory across the follow-up cases.
+The executed notebook and original tool traces are archived.
 
 ## Outcome
 

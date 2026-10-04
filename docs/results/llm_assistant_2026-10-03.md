@@ -4,6 +4,9 @@ This extension adds a real Hugging Face language model, a small attributed
 retrieval corpus, registered inspection tools and cited Chinese/English reports.
 Existing CT reconstruction and material-difference measurements are unchanged.
 
+A later [Colab T4 run](llm_colab_gpu_2026-10-03.md) is archived separately.
+The results below remain the original local CPU validation.
+
 ## Environment and reproduction
 
 Executed on local Windows with Python 3.12.3 and **CPU** inference. Notebook 05

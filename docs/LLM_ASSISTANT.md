@@ -113,7 +113,11 @@ in each result; pass `--revision` to replay a specific revision.
 ## Validation and limits
 
 See the [executed validation and saved reports](results/llm_assistant_2026-10-03.md)
-for real Qwen CPU runs, exact model revision and the distinction from Colab GPU execution.
+for real Qwen CPU runs and the exact model revision. The separate
+[Colab T4 validation](results/llm_colab_gpu_2026-10-03.md) records successful FP16
+GPU inference, three follow-up scenarios, timings, memory and raw tool traces.
+The regular Notebook 05 preview retains its labelled CPU outputs; the GPU
+archive contains the fully executed Colab copy.
 
 Run `pytest --cov=xsim_chip_analysis --cov-fail-under=85` for the offline suite.
 Tests exercise archived 2D/3D reports, real inspection on small volume arrays,
