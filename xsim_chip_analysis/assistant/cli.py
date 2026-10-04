@@ -19,6 +19,7 @@ def main():
     parser.add_argument("--model", help="Hugging Face model ID; omitted means retrieval-only, no LLM")
     parser.add_argument("--revision", default="main")
     parser.add_argument("--cache-dir")
+    parser.add_argument("--adapter", help="local trained PEFT adapter directory; requires --model")
     parser.add_argument("--four-bit", action="store_true")
     parser.add_argument("--strict", action="store_true", help="fail instead of falling back if the model fails")
     parser.add_argument("--output-dir", type=Path, default=Path("outputs/assistant"))
@@ -30,11 +31,14 @@ def main():
         parser.error("provide --report OR both --reference and --reconstruction")
     if args.four_bit and not args.model:
         parser.error("--four-bit requires --model")
+    if args.adapter and not args.model:
+        parser.error("--adapter requires --model")
     backend = None
     if args.model:
         from .huggingface import HuggingFaceBackend
         backend = HuggingFaceBackend(args.model, revision=args.revision,
-                                    load_in_4bit=args.four_bit, cache_dir=args.cache_dir)
+                                    load_in_4bit=args.four_bit, cache_dir=args.cache_dir,
+                                    adapter_path=args.adapter)
     case = InspectionCase("sample", args.report, args.reference, args.reconstruction, args.spacing_um)
     result = InspectionAssistant(case).run(args.question, backend, strict=args.strict)
     args.output_dir.mkdir(parents=True, exist_ok=True)

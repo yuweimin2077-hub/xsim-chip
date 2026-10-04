@@ -14,7 +14,8 @@ class HuggingFaceBackend:
 
     def __init__(self, model_id: str = DEFAULT_MODEL, *, revision: str = "main",
                  load_in_4bit: bool = False, max_new_tokens: int = 384,
-                 max_input_tokens: int = 8192, cache_dir: str | None = None):
+                 max_input_tokens: int = 8192, cache_dir: str | None = None,
+                 adapter_path: str | None = None):
         import torch
         from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
@@ -34,6 +35,15 @@ class HuggingFaceBackend:
                 bnb_4bit_compute_dtype=torch.float16, bnb_4bit_use_double_quant=True,
             )
         self.model = AutoModelForCausalLM.from_pretrained(model_id, **common, **options).eval()
+        if adapter_path:
+            from peft import PeftConfig, PeftModel
+            config = PeftConfig.from_pretrained(adapter_path)
+            if config.base_model_name_or_path != model_id:
+                raise ValueError("adapter was trained on a different base model")
+            resolved = getattr(self.model.config, "_commit_hash", None)
+            if config.revision and config.revision != resolved:
+                raise ValueError("adapter base revision does not match loaded model")
+            self.model = PeftModel.from_pretrained(self.model, adapter_path).eval()
         self.metadata = {"backend": "huggingface_transformers", "model_id": model_id,
                          "requested_revision": revision,
                          "resolved_revision": getattr(self.model.config, "_commit_hash", None),
@@ -42,6 +52,9 @@ class HuggingFaceBackend:
                          "max_new_tokens": max_new_tokens, "max_input_tokens": max_input_tokens,
                          "python": platform.python_version(),
                          "packages": {name: version(name) for name in ("torch", "transformers", "accelerate", "lm-format-enforcer")}}
+        if adapter_path:
+            self.metadata["adapter"] = {"path": str(adapter_path), "peft": version("peft"),
+                                        "base_revision": config.revision}
 
     def generate(self, messages: list[dict], *, schema: dict) -> str:
         import torch
