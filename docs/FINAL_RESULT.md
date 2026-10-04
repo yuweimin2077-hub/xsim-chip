@@ -1,12 +1,18 @@
 # Final portfolio result
 
+**Portfolio scope completed on 2026-10-04.** The connected CT inspection
+prototype, evidence-grounded assistant and synthetic LoRA experiment are ready
+to demonstrate. Industrial validation remains future work. Follow the
+[five-minute demo guide](DEMO_GUIDE.md) for the recommended presentation order.
+
 ## Language assistant extension
 
 Notebook 05 adds a Colab-ready PyTorch/Hugging Face language model, attributed
 BM25 retrieval and bounded inspection tools on top of the connected CT pipeline.
 It preserves numeric evidence and renders reviewed Chinese/English explanations
-selected by the model. It does not change CT detection accuracy or claim
-fine-tuning. See the [assistant guide](LLM_ASSISTANT.md).
+selected by the model. Notebook 05 uses the base model; Notebook 06 provides
+the separate fine-tuning experiment. Neither changes the CT detector.
+See the [assistant guide](LLM_ASSISTANT.md).
 The [Colab T4 run](results/llm_colab_gpu_2026-10-03.md) verified Qwen2.5-1.5B
 FP16 inference, the default workflow and three additional scenarios without
 fallback, with 3.80 GiB peak allocated memory across the follow-up cases.
@@ -28,10 +34,14 @@ by copying a single reconstructed image, and detection does not read the
 candidate's true material labels. A known-good, aligned reference is used for
 comparison; defect truth is used afterward for evaluation only.
 
-This completes the requested small integration. Full cone-beam reconstruction,
-real-data registration, scanner calibration, and production benchmarking remain
-optional future work. No additional complex module is needed to explain this
-portfolio result honestly.
+The original direct reference-comparison path also remains available for supplied
+2D/3D material labels, without adding projection or reconstruction. The connected
+notebook is an additional experiment. Its 16 slices follow this demo's input
+shape; 16 is not a required layer count for all volumes.
+
+Full cone-beam reconstruction, real-data registration, scanner calibration,
+expert-reviewed training data and production benchmarking remain optional
+future work in the [roadmap](ROADMAP.md).
 
 ## Measured result
 
@@ -53,9 +63,29 @@ candidate-region measurements and screening hypotheses, respectively.
 The full experiment ran locally on an RTX 4060 Laptop GPU and CPU; **the updated
 3D notebook has not been newly measured on a Colab T4**. See the
 [complete result, manifests, and depth profiles](results/volume_bridge_2026-10-02.md).
-There are 64 passing local tests with 97.03% coverage, including real ASTRA CPU
-and available-GPU checks. CI covers Python 3.11–3.13 with the GPU-only test
-skipped where hardware is unavailable.
+
+## Current validation
+
+The 2026-10-04 closeout check passed **104 local tests with 88.92% coverage**
+on Windows/Python 3.12.3, meeting the 85% coverage gate. The suite includes
+the CT, assistant and training utilities. Real model inference and training
+are verified by the separate archived experiments, not by offline test doubles.
+CI runs the automated checks on Python 3.11–3.13, skipping the GPU-only test
+where hardware is unavailable.
+
+The offline assistant check retrieved the expected card among the top three
+results for all eight hand-authored queries and generated three reports.
+This is a smoke check of the supplied corpus, not an independent accuracy
+benchmark. Dated result pages retain their original test counts and timings.
+
+| Evidence | Execution environment | What it verifies |
+| --- | --- | --- |
+| [Connected 3D experiment](results/volume_bridge_2026-10-02.md) | Local RTX 4060 Laptop GPU and CPU | Projection → slice reconstruction → 3D inspection |
+| [Language assistant](results/llm_colab_gpu_2026-10-03.md) | Colab T4, Qwen2.5-1.5B FP16 | Model inference and tool use on archived reports |
+| [LoRA pilot](results/lora_colab_2026-10-04.md) | Colab T4 | Training, adapter reload, independent test cases and integration smoke check |
+
+These are separately archived experiments. The complete CT reconstruction and
+language workflow has not been newly executed together in a single Colab T4 run.
 
 ![Reconstructed volume connected to the 3D inspector](results/volume_bridge_2026-10-02/volume_connection.jpg)
 
@@ -84,7 +114,48 @@ for semiconductor packaging
   evaluation; documented false positives and misses rather than claiming
   production-level accuracy.
 - Verified a 16 × 129 × 129 volume locally on CUDA and CPU, with reproducible
-  notebooks, runtime manifests, 64 local tests, and Python 3.11–3.13 CI.
+  notebooks, runtime manifests, 104 passing local tests, and Python 3.11–3.13 CI.
+- Integrated Qwen2.5-1.5B, BM25 retrieval and bounded tool calling; validated
+  FP16 inference and a LoRA/SFT pilot on Colab T4, preserving exact Python
+  measurements and attributed evidence in reports.
+
+### Application form wording (English)
+
+**Description**
+
+Independent project extending NIST's open-source xsim-chip into a semiconductor
+package X-ray CT inspection prototype. Connected slice-wise reconstruction,
+material segmentation and 3D reference comparison, then added a Qwen2.5 assistant
+for technical evidence retrieval and defect-report explanations. Validation
+currently uses synthetic package data.
+
+**Responsibilities**
+
+Implemented the 2D-to-3D inspection connection, synthetic solder-void,
+solder-bridge and copper-open cases, and defect location and size measurements.
+Evaluated false positives and missed defect voxels against separate ground
+truth. Integrated BM25 retrieval and constrained JSON tool calling, then trained
+and evaluated a LoRA adapter with separate training, validation and test cases.
+
+**Achievement**
+
+Delivered six Colab notebooks, archived CPU/GPU experiment results and 104 passing
+automated tests. Verified a 16 × 129 × 129 reconstruction and inspection example
+locally and completed Qwen2.5 inference and LoRA training on Colab T4. Validation
+completion loss decreased from 0.5198 to 0.2830; valid unconstrained next actions
+increased from 7/18 to 13/18 across six held-out synthetic cases. Evidence
+selection regressed, so the adapter remains experimental and the base model
+remains the default.
+
+The 13/18 figure measures individual next-action turns with supplied histories;
+it is not a complete autonomous-case success rate or a CT detection metric.
+
+### Chinese resume wording
+
+- 基于 NIST 开源项目 xsim-chip，连接逐层 X 射线投影、ASTRA 重建、材料分割与三维参考差异分析，并保留直接分析二维/三维材料标签的路径。
+- 构造焊料空洞、焊桥和铜导体断路合成案例，实现缺陷位置、面积与体积测量，使用独立真值评估误报和漏检。
+- 集成 Qwen2.5、BM25 资料检索与受限工具调用，在 Colab T4 上完成推理及 LoRA/SFT 小规模训练实验；通过 Python 保留测量数值并提供资料引用。
+- 交付 6 份 Colab Notebook、实验记录和 104 项通过的本地自动化测试。当前成果为合成数据验证的原型，微调适配器保留为实验选项。
 
 ## Interview explanation
 

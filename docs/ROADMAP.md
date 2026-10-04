@@ -3,9 +3,12 @@
 The objective is to turn the NIST proof of concept into a reproducible,
 interview-ready engineering workflow while preserving upstream attribution.
 
-> Portfolio scope includes Milestones 1–2, the 2D inspection loop, and a small
-> slice-wise 3D reconstruction-to-inspection bridge. The remaining unchecked
-> items are optional future work, not required tasks for this portfolio.
+> Portfolio scope is complete as of 2026-10-04: the reduced simulation and
+> inspection workflows, the slice-wise 3D bridge, the evidence-grounded language
+> assistant, and the synthetic LoRA pilot. The pilot includes a documented
+> evidence-selection regression and remains experimental. The remaining
+> unchecked items are optional future work, not release blockers.
+> See the [final result](FINAL_RESULT.md) and [demo guide](DEMO_GUIDE.md).
 
 ## Milestone 1 — Colab-ready defect analytics
 
@@ -58,8 +61,8 @@ interview-ready engineering workflow while preserving upstream attribution.
 
 ## Milestone 5 — Root-cause analysis and presentation
 
-- Join defect signatures with simulated process parameters.
-- Add interpretable feature importance and hypothesis calibration.
+- [ ] Join defect signatures with simulated process parameters.
+- [ ] Add interpretable feature importance and hypothesis calibration.
 - [x] Publish a concise portfolio summary, figures, measured error tables,
   and a reproducible connected demo.
 - [ ] Add a bilingual presentation and process-parameter benchmark study.

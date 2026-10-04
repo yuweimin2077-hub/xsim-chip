@@ -88,6 +88,12 @@ its licensing statement remain intact in `LICENSE.md`.
   retained the evidence-selection regression and kept the base model as default.
 - Archived adapter weights, original dataset, raw outputs, loss history and
   checksums, with explicit limits on synthetic data and industrial claims.
+- Closed the portfolio scope with a demo guide, bilingual resume/interview
+  wording, consistent current test counts, and explicit experiment provenance.
+- Rechecked 104 local tests (88.92% coverage) and the offline retrieval/report
+  checks; preserved dated experiment records as historical evidence.
+- Excluded two local resume drafts from version control while retaining them
+  on disk.
 
 The original source is acknowledged at
 <https://github.com/usnistgov/xsim-chip>.

@@ -15,3 +15,7 @@ htmlcov/
 build/
 dist/
 outputs/
+
+# Local resume drafts; retain on disk, exclude from the public project.
+/CV_with_Xray_CT_Project.docx
+/CV_with_Xray_CT_Project_Updated.docx
